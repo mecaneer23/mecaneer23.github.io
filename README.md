@@ -1,4 +1,6 @@
-# mecaneer23.github.io
+# [mecaneer23.github.io](https://github.com/mecaneer23/mecaneer23.github.io)
+
+[Link to GitHub](https://github.com/mecaneer23)
 
 Links to stuff hosted at this url:
 
