@@ -1,0 +1,20 @@
+#container {
+    position: absolute;
+    left: 5%;
+    color: lightgrey;
+}
+
+a {
+    color: green;
+}
+
+#pfp {
+    position: absolute;
+    left: 75%;
+    top: 50%;
+    transform: translate(-75%, -50%);
+}
+
+body {
+    background-color: black;
+}
