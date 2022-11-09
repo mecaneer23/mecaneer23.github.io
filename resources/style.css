@@ -18,3 +18,12 @@ a {
 body {
     background-color: black;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.grid-item {
+    padding-right: 10em;
+}
