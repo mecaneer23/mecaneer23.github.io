@@ -12,7 +12,7 @@
 
 <body>
     <div id="container">
-        <h1><a href="https://github.com/mecaneer23/mecaneer23.github.io">mecaneer23.github.io</a></h1>
+        <h1><a href="https://github.com/mecaneer23/">mecaneer23.github.io</a></h1>
         <div class="grid-container">
             <div class="grid-item">
                 <div>
@@ -39,6 +39,14 @@
     <a id="pfp" href="https://github.com/mecaneer23">
         <img src="resources/gearsNoBackground.png">
     </a>
+    <script>
+        document.body.addEventListener("keyup", function (event) {
+            if (event.keyCode === 190) { // "."
+                event.preventDefault();
+                window.location.href = "https://github.dev/mecaneer23/mecaneer23.github.io/";
+            }
+        });
+    </script>
 </body>
 
 </html>
