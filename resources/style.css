@@ -13,6 +13,20 @@ a {
     left: 75%;
     top: 50%;
     transform: translate(-75%, -50%);
+    z-index: -1;
+}
+
+@media (max-width: 1050px) {
+    #pfp {
+        pointer-events: none;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    li a {
+        color: lightgreen;
+        background-color: black;
+    }
 }
 
 body {
@@ -25,5 +39,5 @@ body {
 }
 
 .grid-item {
-    padding-right: 10em;
+    padding-right: 15vh;
 }
