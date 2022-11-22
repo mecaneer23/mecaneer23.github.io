@@ -1,6 +1,6 @@
-# mecaneer23  
+# mecaneer23.github.io
 
-[[![](resources/gearsNoBackground.png)](https://github.com/mecaneer23)
+[!resources/gearsNoBackground.png](https://github.com/mecaneer23)
 
 Stuff hosted at this url:
 
