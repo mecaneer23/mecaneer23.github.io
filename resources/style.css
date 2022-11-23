@@ -1,7 +1,6 @@
 .container {
     position: absolute;
     left: 5%;
-    color: lightgrey;
 }
 
 a {
@@ -30,6 +29,7 @@ a {
 }
 
 body {
+    color: lightgrey;
     background-color: black;
 }
 
@@ -40,10 +40,4 @@ body {
 
 .grid-item {
     padding-right: 15vh;
-}
-
-.centered {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
 }
