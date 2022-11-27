@@ -1,5 +1,12 @@
+:root { /* Color theme */
+    --accent: green;
+    --light-accent: lightgreen;
+    --text: lightgray;
+    --background: black;
+}
+
 .hr {
-    background-color: green;
+    background-color: var(--accent);
     height: 1px;
     width: 33.3vw;
 }
@@ -11,7 +18,7 @@
 }
 
 a {
-    color: green;
+    color: var(--accent);
 }
 
 #pfp {
@@ -30,8 +37,8 @@ a {
         transform: translate(-50%, -50%);
     }
     li a {
-        color: lightgreen;
-        background-color: black;
+        color: var(--light-accent);
+        background-color: var(--background);
     }
     .hr {
         width: 100%;
@@ -39,8 +46,8 @@ a {
 }
 
 body {
-    color: lightgrey;
-    background-color: black;
+    color: var(--text);
+    background-color: var(--background);
 }
 
 .grid-container {
