@@ -1,3 +1,10 @@
+.hr {
+    background-color: green;
+    height: 1px;
+    width: 33.3vw;
+}
+
+
 .container {
     position: absolute;
     left: 5%;
