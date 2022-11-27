@@ -33,6 +33,9 @@ a {
         color: lightgreen;
         background-color: black;
     }
+    .hr {
+        width: 100%;
+    }
 }
 
 body {
