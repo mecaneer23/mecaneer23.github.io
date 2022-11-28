@@ -39,5 +39,5 @@ window.addEventListener("load", () => {
     refresh_navbar();
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => set_colorscheme(e, null));
     document.getElementById("toggle").addEventListener("click", toggle_colorscheme);
-    set_colorscheme(null, window.matchMedia("(prefers-color-scheme: dark)") ? "dark" : "light");
+    set_colorscheme(null, window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 })
