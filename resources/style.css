@@ -1,26 +1,25 @@
+[data-theme="dark"] {
+    --text-color: lightgray;
+    --background: black;
+}
+
+[data-theme="light"] {
+    --text-color: black;
+    --background: white;
+}
+
 :root {
-    /* Color theme */
     --accent: green;
     --light-accent: lightgreen;
-    --dark-mode-text-color: lightgray;
-    --dark-mode-background: black;
-    --light-mode-text-color: black;
-    --light-mode-background: white;
-    --text-color: var(--dark-mode-text-color);
-    --background: var(--dark-mode-background);
     --text-font: "Bahnschrift", "Arial";
     --header-font: "Futura";
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --text-color: var(--light-mode-text-color);
-    --background: var(--light-mode-background);
-    }
-    .toggle {
+/* @media (prefers-color-scheme: light) {
+    #toggle {
         background-color: var(--dark-mode-background) !important;
     }
-}
+} */
 
 @media (max-width: 1050px) {
     #pfp {
@@ -46,8 +45,8 @@
     width: 33.3vw;
 }
 
-.toggle {
-    background-color: var(--light-mode-background);
+#toggle {
+    background-color: #ff0000;
     border: none;
     border-radius: 50%;
     width: 3vw;
