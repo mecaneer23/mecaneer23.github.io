@@ -1,8 +1,43 @@
-:root { /* Color theme */
+:root {
+    /* Color theme */
     --accent: green;
     --light-accent: lightgreen;
-    --text: lightgray;
-    --background: black;
+    --dark-mode-text-color: lightgray;
+    --dark-mode-background: black;
+    --light-mode-text-color: black;
+    --light-mode-background: white;
+    --text-color: var(--dark-mode-text-color);
+    --background: var(--dark-mode-background);
+    --text-font: "Bahnschrift", "Arial";
+    --header-font: "Futura";
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --text-color: var(--light-mode-text-color);
+    --background: var(--light-mode-background);
+    }
+    .toggle {
+        background-color: var(--dark-mode-background) !important;
+    }
+}
+
+@media (max-width: 1050px) {
+    #pfp {
+        pointer-events: none;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    li a {
+        color: var(--light-accent);
+        background-color: var(--background);
+    }
+
+    .hr {
+        width: 100%;
+    }
 }
 
 .hr {
@@ -11,6 +46,42 @@
     width: 33.3vw;
 }
 
+.toggle {
+    background-color: var(--light-mode-background);
+    border: none;
+    border-radius: 50%;
+    width: 3vw;
+    height: 3vw;
+    display: inline-block;
+    cursor: pointer;
+    /* transform: translateY(25%); */
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#site-title a {
+    text-decoration: none;
+}
+
+.nav-item {
+    display: inline-block;
+    padding: 0 3vw;
+    font-size: 1.25em;
+}
+
+.nav-item a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover,
+a.current {
+    color: var(--light-accent);
+}
 
 .container {
     position: absolute;
@@ -29,25 +100,11 @@ a {
     z-index: -1;
 }
 
-@media (max-width: 1050px) {
-    #pfp {
-        pointer-events: none;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-    li a {
-        color: var(--light-accent);
-        background-color: var(--background);
-    }
-    .hr {
-        width: 100%;
-    }
-}
-
 body {
-    color: var(--text);
+    color: var(--text-color);
     background-color: var(--background);
+    font-family: var(--text-font);
+    margin: 0px 16px;
 }
 
 .grid-container {

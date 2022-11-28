@@ -2,52 +2,51 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mecaneer23</title>
-    <link rel="stylesheet" href="/resources/style.css">
-    <link rel="icon" href="/resources/gearsNoBackground.png">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mecaneer23</title>
+    <link rel="stylesheet" href="/resources/style.css" />
+    <link rel="icon" href="/resources/gearsNoBackground.png" />
+    <script src="/resources/tools.js"></script>
 </head>
 
-<body>
-    <div class="container">
-        <h1><a href="https://github.com/mecaneer23/">mecaneer23.github.io</a></h1>
-        <div class="grid-container">
-            <div class="grid-item">
-                <div>
-                    <p>Stuff hosted at this url:</p>
-                    <ul>
-                        <li><a href="https://mecaneer23.github.io/BinarytoDecimal/">Binary to decimal</a></li>
-                        <li><a href="https://mecaneer23.github.io/guessing-game/">Guessing game</a></li>
-                        <li><a href="https://mecaneer23.github.io/tic-tac-toe/">Tic tac toe</a></li>
-                        <li><a href="https://mecaneer23.github.io/wordle/">Wordle solver</a></li>
-                    </ul>
-                </div>
-            </div class="grid-item">
-                <div>
-                    <p>Downloads:</p>
-                    <ul>
-                        <li><a href="/downloads/sl-linux.html">SL for Linux</a></li>
-                        <li><a href="/downloads/sl-macos.html">SL for MacOS</a></li>
-                        <!-- <li><a href="/downloads/sl-windows.html">SL for Windows</a></li> -->
-                        <li><a href="/downloads/driver-station.html">FtcDriverStation v8.1</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <a id="pfp" href="https://github.com/mecaneer23">
-        <img src="resources/gearsNoBackground.png">
-    </a>
-    <script>
-        document.body.addEventListener("keyup", function (event) {
-            if (event.keyCode === 190) { // "."
-                event.preventDefault();
-                window.location.href = "https://github.dev/mecaneer23/mecaneer23.github.io/";
-            }
-        });
-    </script>
+<body onload="onload()">
+    <header id="header">
+        <h1 id="site-title" onclick="refresh_navbar()">
+            <a href="/">Mecaneer23</a>
+        </h1>
+        <nav>
+            <ul id="main-nav">
+                <li class="nav-item">
+                    <button title="Toggles light & dark theme" class="toggle"></button>
+                </li>
+                <li class="nav-item">
+                    <a href="/pages/about.html" onclick="refresh_navbar()">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pages/rates.html" onclick="refresh_navbar()">Services & Rates</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pages/portfolio.html" onclick="refresh_navbar()">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pages/contact.html" onclick="refresh_navbar()">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <a id="pfp" href="https://github.com/mecaneer23">
+            <img src="/resources/gearsNoBackground.png" />
+        </a>
+        <!--
+            move file to pages,
+            rename to template.html,
+            copy into /index.html
+        -->
+    </main>
+    <footer></footer>
 </body>
 
 </html>
