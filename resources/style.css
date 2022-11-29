@@ -1,12 +1,12 @@
 [data-theme="dark"] {
-    --text-color: #D3D3D3;
+    --text-color: #EAEFEA;
     --background: #36393F;
     --light-accent: #90EE90;
 }
 
 [data-theme="light"] {
     --text-color: #36393F;
-    --background: #D3D3D3;
+    --background: #EAEFEA;
     --light-accent: #005000;
 }
 
