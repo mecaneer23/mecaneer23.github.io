@@ -14,6 +14,7 @@ function inner_navbar(item) {
 
 function inner_colorscheme(theme) {
     document.body.setAttribute("data-theme", theme);
+    localStorage.setItem("colorscheme", theme);
 }
 
 function set_colorscheme(event, theme) {
@@ -43,5 +44,5 @@ window.addEventListener("load", () => {
     refresh_navbar();
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => set_colorscheme(e, null));
     document.getElementById("toggle").addEventListener("click", toggle_colorscheme);
-    set_colorscheme(null, window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    set_colorscheme(null, (localStorage.getItem("colorscheme") ? localStorage.getItem("colorscheme") == "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
 })
