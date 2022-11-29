@@ -5,26 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/resources/style.css">
-    <script src="/resources/tools.js"></script>
     <title>Portfolio</title>
 </head>
 
 <body>
-    <div class="container">
-        <h1><a href="https://github.com/mecaneer23/">mecaneer23.github.io</a></h1>
-        <div class="grid-container">
-            <div class="grid-item">
-                <div>
-                    <p>Stuff hosted at this url:</p>
-                    <ul>
-                        <li><a href="https://mecaneer23.github.io/BinarytoDecimal/">Binary to decimal</a></li>
-                        <li><a href="https://mecaneer23.github.io/guessing-game/">Guessing game</a></li>
-                        <li><a href="https://mecaneer23.github.io/tic-tac-toe/">Tic tac toe</a></li>
-                        <li><a href="https://mecaneer23.github.io/wordle/">Wordle solver</a></li>
-                    </ul>
-                </div>
-            </div class="grid-item">
+    <header class="header" w3-include-html="/resources/nav.html"></header>
+    <main>
+        <div class="container">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <div>
+                        <p>Stuff hosted at this url:</p>
+                        <ul>
+                            <li><a href="https://mecaneer23.github.io/BinarytoDecimal/">Binary to decimal</a></li>
+                            <li><a href="https://mecaneer23.github.io/guessing-game/">Guessing game</a></li>
+                            <li><a href="https://mecaneer23.github.io/tic-tac-toe/">Tic tac toe</a></li>
+                            <li><a href="https://mecaneer23.github.io/wordle/">Wordle solver</a></li>
+                        </ul>
+                    </div>
+                </div class="grid-item">
                 <div>
                     <p>Downloads:</p>
                     <ul>
@@ -36,18 +35,21 @@
                 </div>
             </div>
         </div>
-    </div>
-    <a id="pfp" href="https://github.com/mecaneer23">
-        <img src="/resources/gearsNoBackground.png">
-    </a>
-    <script>
-        document.body.addEventListener("keyup", function (event) {
-            if (event.keyCode === 190) { // "."
-                event.preventDefault();
-                window.location.href = "https://github.dev/mecaneer23/mecaneer23.github.io/";
-            }
-        });
-    </script>
+        </div>
+        <a id="pfp" href="https://github.com/mecaneer23">
+            <img src="/resources/gearsNoBackground.png">
+        </a>
+        <script>
+            document.body.addEventListener("keyup", function (event) {
+                if (event.keyCode === 190) { // "."
+                    event.preventDefault();
+                    window.location.href = "https://github.dev/mecaneer23/mecaneer23.github.io/";
+                }
+            });
+        </script>
+    </main>
+    <script src="/resources/nav.js"></script>
+    <script src="/resources/tools.js"></script>
 </body>
 
 </html>
