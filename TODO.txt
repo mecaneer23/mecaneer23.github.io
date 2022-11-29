@@ -1,4 +1,4 @@
 Hamburger menu:
     https://codepen.io/AlHakem/pen/pKoEYp
-
-    
+Make dark mode a switch (ask for advice if this is necessary):
+    https://codepen.io/ryomario/pen/PoaNbyZ
