@@ -16,6 +16,12 @@
     --header-font: "Futura";
 }
 
+@media (max-width: 850px) {
+    .nav-item {
+        visibility: hidden;
+    }
+}
+
 @media (max-width: 1050px) {
     #pfp {
         pointer-events: none;
