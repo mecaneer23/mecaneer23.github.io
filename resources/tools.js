@@ -12,15 +12,19 @@ function inner_navbar(item) {
     }
 }
 
+function inner_colorscheme(theme) {
+    document.body.setAttribute("data-theme", theme);
+}
+
 function set_colorscheme(event, theme) {
     if (theme !== null) {
-        document.body.setAttribute("data-theme", theme);
+        inner_colorscheme(theme);
         return;
     }
     if (event.matches) {
-        document.body.setAttribute("data-theme", "dark");
+        inner_colorscheme("dark");
     } else {
-        document.body.setAttribute("data-theme", "light");
+        inner_colorscheme("light");
     }
 }
 

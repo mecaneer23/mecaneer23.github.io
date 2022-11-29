@@ -1,25 +1,20 @@
 [data-theme="dark"] {
     --text-color: lightgray;
     --background: black;
+    --light-accent: lightgreen;
 }
 
 [data-theme="light"] {
     --text-color: black;
     --background: white;
+    --light-accent: rgb(0, 60, 0);
 }
 
 :root {
     --accent: green;
-    --light-accent: lightgreen;
     --text-font: "Bahnschrift", "Arial";
     --header-font: "Futura";
 }
-
-/* @media (prefers-color-scheme: light) {
-    #toggle {
-        background-color: var(--dark-mode-background) !important;
-    }
-} */
 
 @media (max-width: 1050px) {
     #pfp {
@@ -45,31 +40,14 @@
     width: 33.3vw;
 }
 
-#toggle {
-    background-color: #ff0000;
-    border: none;
-    border-radius: 50%;
-    width: 3vw;
-    height: 3vw;
-    display: inline-block;
-    cursor: pointer;
-    /* transform: translateY(25%); */
-}
-
-#header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#site-title a {
-    text-decoration: none;
-}
-
 .nav-item {
     display: inline-block;
     padding: 0 3vw;
     font-size: 1.25em;
+}
+
+.no-padding {
+    padding: 0;
 }
 
 .nav-item a {
@@ -113,4 +91,25 @@ body {
 
 .grid-item {
     padding-right: 15vh;
+}
+
+#toggle {
+    background-color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    width: 2vw;
+    height: 2vw;
+    display: inline-block;
+    cursor: pointer;
+    /* transform: translateY(25%); */
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#site-title a {
+    text-decoration: none;
 }
