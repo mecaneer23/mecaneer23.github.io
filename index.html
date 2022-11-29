@@ -6,45 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mecaneer23</title>
-    <link rel="stylesheet" href="/resources/style.css" />
-    <link rel="icon" href="/resources/gearsNoBackground.png" />
-    <script src="/resources/tools.js"></script>
-    <link href="https://fonts.cdnfonts.com/css/bahnschrift" rel="stylesheet">
 </head>
 
 <body>
-    <header id="header">
-        <h1 id="site-title" onclick="refresh_navbar()">
-            <a href="/">Mecaneer23</a>
-        </h1>
-        <nav>
-            <ul id="main-nav">
-                <li class="nav-item no-padding">
-                    <button title="Toggles light & dark theme" id="toggle"></button>
-                </li>
-                <li class="nav-item">
-                    <a href="/pages/about.html" onclick="refresh_navbar()">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/pages/rates.html" onclick="refresh_navbar()">Services & Rates</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/pages/portfolio.html" onclick="refresh_navbar()">Portfolio</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/pages/contact.html" onclick="refresh_navbar()">Contact</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <header class="header" w3-include-html="/resources/nav.html"></header>
     <main>
-        <!--
-            move file to pages,
-            rename to template.html,
-            copy into /index.html
-        -->
+
     </main>
-    <footer></footer>
+    <script src="/resources/nav.js"></script>
+    <script src="/resources/tools.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 function refresh_navbar() {
-    setTimeout(() => inner_navbar(document.getElementById("header").children[0]), 0.01);
+    setTimeout(() => inner_navbar(document.getElementsByClassName("header")[0].children[0]), 0.01);
     setTimeout(() => Array.from(document.getElementById("main-nav").children).forEach(item => inner_navbar(item)), 0.01);
 }
 
@@ -40,9 +40,13 @@ function toggle_colorscheme(event) {
     }
 }
 
-window.addEventListener("load", () => {
+function onload() {
     refresh_navbar();
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => set_colorscheme(e, null));
     document.getElementById("toggle").addEventListener("click", toggle_colorscheme);
     set_colorscheme(null, (localStorage.getItem("colorscheme") ? localStorage.getItem("colorscheme") == "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
-})
+}
+
+window.addEventListener("load", () => {
+    setTimeout(onload, 10);
+});
