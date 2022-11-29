@@ -1,25 +1,19 @@
 [data-theme="dark"] {
-    --text-color: #EAEFEA;
-    --background: #36393F;
-    --light-accent: #90EE90;
+    --text-color: lightgray;
+    --background: black;
+    --light-accent: lightgreen;
 }
 
 [data-theme="light"] {
-    --text-color: #36393F;
-    --background: #EAEFEA;
-    --light-accent: #005000;
+    --text-color: black;
+    --background: white;
+    --light-accent: rgb(0, 60, 0);
 }
 
 :root {
-    --accent: #008000;
-    --text-font: "Bahnschrift", sans-serif;
+    --accent: green;
+    --text-font: "Bahnschrift", "Arial";
     --header-font: "Futura";
-}
-
-@media (max-width: 850px) {
-    .nav-item {
-        visibility: hidden;
-    }
 }
 
 @media (max-width: 1050px) {
