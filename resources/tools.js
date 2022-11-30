@@ -12,6 +12,11 @@ function inner_navbar(item) {
     }
 }
 
+function show_menu() {
+    let item = document.getElementById("nav");
+    item.style.display = item.style.display === "block" ? "none" : "block";
+  }
+
 function inner_colorscheme(theme) {
     document.body.setAttribute("data-theme", theme);
     localStorage.setItem("colorscheme", theme);

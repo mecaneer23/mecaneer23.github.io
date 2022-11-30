@@ -1,2 +1,3 @@
 Hamburger menu:
-    https://codepen.io/AlHakem/pen/pKoEYp
+    https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp
+Add content to pages

@@ -1,26 +1,32 @@
 <h1 id="site-title" onclick="refresh_navbar()">
     <a href="/">Mecaneer23</a>
 </h1>
-<nav>
-    <ul id="main-nav">
-        <li class="nav-item no-padding">
-            <input id="checkbox" class="switch-input" type="checkbox" checked />
-            <label for="checkbox" class="switch" title="Toggles light & dark theme"></label>
-        </li>
-        <li class="nav-item">
-            <a href="/pages/about.html" onclick="refresh_navbar()">About</a>
-        </li>
-        <li class="nav-item">
-            <a href="/pages/rates.html" onclick="refresh_navbar()">Services & Rates</a>
-        </li>
-        <li class="nav-item">
-            <a href="/pages/portfolio.html" onclick="refresh_navbar()">Portfolio</a>
-        </li>
-        <li class="nav-item">
-            <a href="/pages/contact.html" onclick="refresh_navbar()">Contact</a>
-        </li>
-    </ul>
-</nav>
+<div id="burger-menu">
+    <a href="javascript:void(0);" id="hamburger" onclick="show_menu()">
+        <i class="fa fa-bars fa-2x"></i>
+    </a>
+    <nav id="nav">
+        <ul id="main-nav">
+            <li class="nav-item no-padding">
+                <input id="checkbox" class="switch-input" type="checkbox" checked />
+                <label for="checkbox" class="switch" title="Toggles light & dark theme"></label>
+            </li>
+            <li class="nav-item">
+                <a href="/pages/about.html" onclick="refresh_navbar()">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="/pages/rates.html" onclick="refresh_navbar()">Services & Rates</a>
+            </li>
+            <li class="nav-item">
+                <a href="/pages/portfolio.html" onclick="refresh_navbar()">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a href="/pages/contact.html" onclick="refresh_navbar()">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</div>
 <link rel="stylesheet" href="/resources/style.css" />
 <link rel="icon" href="/resources/gearsNoBackground.png" />
 <link href="https://fonts.cdnfonts.com/css/bahnschrift" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

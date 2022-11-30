@@ -14,8 +14,8 @@
 
 :root {
     --accent: #008000;
-    --text-font: "Bahnschrift", sans-serif;
-    --header-font: "Futura";
+    --text-font: "Bahnschrift", "Arial", sans-serif;
+    /* --header-font: "Futura"; */
     --switch-size: 3vw;
 }
 
@@ -27,8 +27,36 @@ body {
 }
 
 @media (max-width: 850px) {
+    #nav {
+        display: none;
+    }
+
+    #hamburger {
+        display: block;
+    }
+
     .nav-item {
-        visibility: hidden;
+        display: block;
+        padding: 0;
+    }
+
+    .no-padding {
+        display: table-footer-group;
+    }
+}
+
+@media (min-width: 851px) {
+    #nav {
+        display: block !important;
+    }
+
+    #hamburger {
+        display: none;
+    }
+
+    .nav-item {
+        display: inline-block;
+        padding: 0 3vw;
     }
 }
 
@@ -50,6 +78,11 @@ body {
     }
 }
 
+#main-nav {
+    display: table;
+    overflow: hidden;
+}
+
 .hr {
     background-color: var(--accent);
     height: 1px;
@@ -57,8 +90,6 @@ body {
 }
 
 .nav-item {
-    display: inline-block;
-    padding: 0 3vw;
     font-size: 1.25em;
 }
 
@@ -76,13 +107,13 @@ a.current {
     color: var(--second-accent);
 }
 
+a {
+    color: var(--accent);
+}
+
 .container {
     position: absolute;
     left: 5%;
-}
-
-a {
-    color: var(--accent);
 }
 
 #pfp {
@@ -159,4 +190,11 @@ a {
 
 #site-title a {
     text-decoration: none;
+}
+
+#burger-menu {
+    /* display: grid;
+    grid-template-rows: auto auto;
+    align-items: center; */
+    overflow: hidden;
 }
