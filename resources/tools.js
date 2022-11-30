@@ -48,5 +48,5 @@ function onload() {
 }
 
 window.addEventListener("load", () => {
-    setTimeout(onload, 15);
+    setTimeout(onload, 30);
 });
