@@ -13,9 +13,16 @@ function inner_navbar(item) {
 }
 
 function show_menu() {
-    let item = document.getElementById("nav");
-    item.style.display = item.style.display === "block" ? "none" : "block";
-  }
+    let nav = document.getElementById("nav");
+    nav.style.right = nav.style.right === "5vw" ? "-100vw" : "5vw";
+
+    let menu = document.getElementById("hamburger");
+    if (menu.classList.contains("open")) {
+        menu.classList.remove("open");
+    } else {
+        menu.classList.add("open");
+    }
+}
 
 function inner_colorscheme(theme) {
     document.body.setAttribute("data-theme", theme);
