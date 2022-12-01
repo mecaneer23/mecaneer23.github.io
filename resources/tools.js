@@ -12,11 +12,8 @@ function inner_navbar(item) {
     }
 }
 
-function show_menu() {
-    let nav = document.getElementById("nav");
-    nav.style.right = nav.style.right === "0px" ? "-100vw" : "0px";
-
-    let menu = document.getElementById("hamburger");
+function toggle_menu() {
+    let menu = document.getElementById("burger-menu");
     if (menu.classList.contains("open")) {
         menu.classList.remove("open");
     } else {
