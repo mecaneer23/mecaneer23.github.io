@@ -18,6 +18,7 @@
     /* --header-font: "Futura"; */
     --switch-size: 4vh;
     --hamburger-size: 5vh;
+    --sidebar-transition-duration: 0.75s;
 }
 
 body {
@@ -89,7 +90,11 @@ body {
 
 #nav {
     overflow: hidden;
-    right: -100vw;
+    right: -25vw;
+    -webkit-transition: var(--sidebar-transition-duration) ease-in-out;
+    -moz-transition: var(--sidebar-transition-duration) ease-in-out;
+    -o-transition: var(--sidebar-transition-duration) ease-in-out;
+    transition: var(--sidebar-transition-duration) ease-in-out;
 }
 
 .hr {
