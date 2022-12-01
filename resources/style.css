@@ -31,6 +31,9 @@ body {
     #nav {
         position: fixed;
         height: 100vh;
+        background-color: var(--background);
+        z-index: 100;
+        padding-right: 5vw;
     }
 
     #hamburger {
