@@ -5,7 +5,9 @@ function refresh_navbar() {
 
 function inner_navbar(item) {
     item = item.children[0];
-    if (item.href !== document.URL) {
+    if (item.href === undefined) return;
+    href = item.href.charAt(item.href.length -1) === "/" ? item.href : item.href + "/";
+    if (href !== document.URL) {
         item.classList.remove("current");
     } else {
         item.classList.add("current");
