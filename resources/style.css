@@ -25,6 +25,7 @@ body {
     background-color: var(--background);
     font-family: var(--text-font);
     margin: 0px 16px;
+    overflow: hidden;
 }
 
 @media (max-width: 850px) {
@@ -32,8 +33,9 @@ body {
         position: fixed;
         height: 100vh;
         background-color: var(--background);
-        z-index: 100;
-        padding-right: 5vw;
+        z-index: -1;
+        padding: 0 5vw;
+        border-left: 0.5vh solid var(--accent);
     }
 
     #hamburger {
@@ -78,13 +80,14 @@ body {
         background-color: var(--background);
     }
 
-    .hr {
+    .hr.third {
         width: 100%;
     }
 }
 
 #main-nav {
     display: table;
+    padding-inline-start: 0;
 }
 
 #nav {
@@ -96,6 +99,9 @@ body {
 .hr {
     background-color: var(--accent);
     height: 1px;
+}
+
+.hr.third {
     width: 33.3vw;
 }
 
@@ -131,7 +137,7 @@ a {
     left: 75%;
     top: 50%;
     transform: translate(-75%, -50%);
-    z-index: -1;
+    z-index: -100;
 }
 
 .grid-container {
@@ -140,7 +146,7 @@ a {
 }
 
 .grid-item {
-    padding-right: 15vh;
+    padding-right: 10vw;
 }
 
 .switch-input {
@@ -196,6 +202,17 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 0.5vh solid var(--accent);
+    background-color: var(--background);
+    z-index: 100;
+}
+
+main {
+    z-index: -1;
+}
+
+main div {
+    z-index: -2;
 }
 
 #site-title a {
