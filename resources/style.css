@@ -1,6 +1,7 @@
 [data-theme="dark"] {
     --text-color: #EAEFEA;
     --background: #36393F;
+    --navbar-background: #282A2F;
     --second-accent: #90EE90;
     --third-accent: #005000;
 }
@@ -8,6 +9,7 @@
 [data-theme="light"] {
     --text-color: #36393F;
     --background: #EAEFEA;
+    --navbar-background: #CDD1CD;
     --second-accent: #005000;
     --third-accent: #90EE90;
 }
@@ -24,18 +26,18 @@ body {
     color: var(--text-color);
     background-color: var(--background);
     font-family: var(--text-font);
-    margin: 0px 16px;
+    margin: 0px 1.5vw;
     overflow: hidden;
 }
 
 @media (max-width: 850px) {
     #nav {
-        position: fixed;
+        position: absolute;
         height: 100vh;
-        background-color: var(--background);
-        z-index: -1;
+        background-color: var(--navbar-background);
         padding: 0 5vw;
-        border-left: 0.5vh solid var(--accent);
+        /* border-left: 0.5vh solid var(--accent); */
+        z-index: -1;
     }
 
     #hamburger {
@@ -77,7 +79,6 @@ body {
 
     li a {
         color: var(--second-accent);
-        background-color: var(--background);
     }
 
     .hr.third {
@@ -125,6 +126,7 @@ a.current {
 
 a {
     color: var(--accent);
+    background-color: var(--background);
 }
 
 .container {
@@ -199,20 +201,20 @@ a {
 }
 
 .header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 0.5vh solid var(--accent);
-    background-color: var(--background);
+    /* border-bottom: 0.5vh solid var(--accent); */
+    background-color: var(--navbar-background);
+    transform-style: preserve-3d;
+    padding: 0 1.5vw;
+    margin: 0 -1.5vw;
     z-index: 100;
 }
 
-main {
-    z-index: -1;
-}
-
-main div {
-    z-index: -2;
+.header a {
+    background-color: transparent;
 }
 
 #site-title a {
