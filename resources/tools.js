@@ -51,13 +51,29 @@ function toggle_colorscheme(event) {
     }
 }
 
-function onload() {
-    refresh_navbar();
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => set_colorscheme(e, null));
-    document.getElementById("checkbox").addEventListener("click", toggle_colorscheme);
-    set_colorscheme(null, (localStorage.getItem("colorscheme") ? localStorage.getItem("colorscheme") == "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
+function load() {
+    try {
+        refresh_navbar();
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => set_colorscheme(e, null));
+        document.getElementById("checkbox").addEventListener("click", toggle_colorscheme);
+        set_colorscheme(null, (localStorage.getItem("colorscheme") ? localStorage.getItem("colorscheme") == "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
+        return document.body.hasAttribute("data-theme");
+    } catch (e) {
+        console.log(e);
+        return false;
+    }
+}
+
+function loader() {
+    let loaded = load();
+    if (!loaded) {
+        setTimeout(loader, 1);
+    } else {
+        load();
+        return true;
+    }
 }
 
 window.addEventListener("load", () => {
-    setTimeout(onload, 30);
+    loader();
 });
