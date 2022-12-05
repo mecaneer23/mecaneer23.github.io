@@ -1,0 +1,6 @@
+Ensure page always fully loads
+    (and minimize set delay because it makes other loaded pages take longer)
+
+make sidebar appear behind header so border accents work
+
+add content to pages
