@@ -27,7 +27,7 @@ body {
     background-color: var(--background);
     font-family: var(--text-font);
     margin: 0px 1.5vw;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 @media (max-width: 850px) {
@@ -83,6 +83,11 @@ body {
 
     .hr.third {
         width: 100%;
+    }
+
+    main p {
+        max-width: 90vw !important;
+        background-color: var(--background) !important;
     }
 }
 
@@ -313,4 +318,9 @@ a {
 
 #burger-menu.open #nav {
     right: 0px;
+}
+
+main p {
+    max-width: 45vw;
+    background-color: transparent;
 }
