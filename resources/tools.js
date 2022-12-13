@@ -51,12 +51,20 @@ function toggle_colorscheme(event) {
     }
 }
 
+function update_title() {
+    let titleEnding = window.location.host;
+    if (!document.title.endsWith(" | " + titleEnding)) {
+        document.title = document.title + " | " + titleEnding;
+    }
+}
+
 function load() {
     try {
         refresh_navbar();
         window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => set_colorscheme(e, null));
         document.getElementById("checkbox").addEventListener("click", toggle_colorscheme);
         set_colorscheme(null, (localStorage.getItem("colorscheme") ? localStorage.getItem("colorscheme") == "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
+        update_title();
         return document.body.hasAttribute("data-theme");
     } catch (e) {
         console.log(e);
