@@ -1,12 +1,12 @@
-function refresh_navbar() {
-    setTimeout(() => inner_navbar(document.getElementsByClassName("header")[0].children[0]), 0.01);
-    setTimeout(() => Array.from(document.getElementById("main-nav").children).forEach(item => inner_navbar(item)), 0.01);
+function refreshNavbar() {
+    setTimeout(() => innerNavbar(document.getElementsByClassName("header")[0].children[0]), 0.01);
+    setTimeout(() => Array.from(document.getElementById("main-nav").children).forEach(item => innerNavbar(item)), 0.01);
 }
 
-function inner_navbar(item) {
+function innerNavbar(item) {
     item = item.children[0];
     if (item.href === undefined) return;
-    href = item.href.charAt(item.href.length -1) === "/" ? item.href : item.href + "/";
+    href = item.href.charAt(item.href.length - 1) === "/" ? item.href : item.href + "/";
     if (href !== document.URL) {
         item.classList.remove("current");
     } else {
@@ -14,7 +14,7 @@ function inner_navbar(item) {
     }
 }
 
-function toggle_menu() {
+function toggleMenu() {
     let menu = document.getElementById("burger-menu");
     if (menu.classList.contains("open")) {
         menu.classList.remove("open");
@@ -23,35 +23,35 @@ function toggle_menu() {
     }
 }
 
-function inner_colorscheme(theme) {
+function innerColorscheme(theme) {
     document.body.setAttribute("data-theme", theme);
     localStorage.setItem("colorscheme", theme);
 }
 
-function set_colorscheme(event, theme) {
+function setColorscheme(event, theme) {
     if (theme !== null) {
-        inner_colorscheme(theme);
+        innerColorscheme(theme);
         return;
     }
     if (event.matches) {
-        inner_colorscheme("dark");
+        innerColorscheme("dark");
     } else {
-        inner_colorscheme("light");
+        innerColorscheme("light");
     }
 }
 
-function toggle_colorscheme(event) {
+function toggleColorscheme(event) {
     let theme = document.body.getAttribute("data-theme");
     if (theme == "dark") {
-        set_colorscheme(event, "light");
+        setColorscheme(event, "light");
     } else if (theme == "light") {
-        set_colorscheme(event, "dark");
+        setColorscheme(event, "dark");
     } else {
         console.log(theme);
     }
 }
 
-function update_title() {
+function updateTitle() {
     let titleEnding = window.location.host;
     if (!document.title.endsWith(" | " + titleEnding)) {
         document.title = document.title + " | " + titleEnding;
@@ -60,11 +60,11 @@ function update_title() {
 
 function load() {
     try {
-        refresh_navbar();
-        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => set_colorscheme(e, null));
-        document.getElementById("checkbox").addEventListener("click", toggle_colorscheme);
-        set_colorscheme(null, (localStorage.getItem("colorscheme") ? localStorage.getItem("colorscheme") == "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
-        update_title();
+        refreshNavbar();
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => setColorscheme(e, null));
+        document.getElementById("checkbox").addEventListener("click", toggleColorscheme);
+        setColorscheme(null, (localStorage.getItem("colorscheme") ? localStorage.getItem("colorscheme") == "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
+        updateTitle();
         return document.body.hasAttribute("data-theme");
     } catch (e) {
         console.log(e);
