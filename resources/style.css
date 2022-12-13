@@ -143,6 +143,15 @@ a {
     z-index: -100;
 }
 
+#profile {
+    position: absolute;
+    left: 60%;
+    top: 18%;
+    z-index: -100;
+    width: auto;
+    height: 75vh;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: auto auto;
@@ -325,9 +334,4 @@ main p, main li {
 
 main h2 {
     font-size: 1.5em;
-}
-
-#profile {
-    width: auto;
-    height: 75vh;
 }
