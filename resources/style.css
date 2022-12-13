@@ -30,7 +30,22 @@ body {
     overflow-x: hidden;
 }
 
-@media (max-width: 850px) {
+@media (min-width: 1051px) {
+    #nav {
+        display: block !important;
+    }
+
+    #hamburger {
+        display: none;
+    }
+
+    .nav-item {
+        display: inline-block;
+        padding: 0 3vw;
+    }
+}
+
+@media (max-width: 1050px) {
     #nav {
         position: absolute;
         height: 100vh;
@@ -52,24 +67,7 @@ body {
     .no-padding {
         display: table-footer-group;
     }
-}
 
-@media (min-width: 851px) {
-    #nav {
-        display: block !important;
-    }
-
-    #hamburger {
-        display: none;
-    }
-
-    .nav-item {
-        display: inline-block;
-        padding: 0 3vw;
-    }
-}
-
-@media (max-width: 1050px) {
     #pfp {
         pointer-events: none;
         left: 50%;
@@ -87,7 +85,6 @@ body {
 
     main p {
         max-width: 90vw !important;
-        background-color: var(--background) !important;
     }
 }
 
@@ -112,7 +109,7 @@ body {
 }
 
 .nav-item {
-    font-size: 1.25em;
+    font-size: 1.5em;
 }
 
 .no-padding {
@@ -136,7 +133,6 @@ a {
 
 .container {
     position: absolute;
-    left: 5%;
 }
 
 #pfp {
@@ -224,6 +220,7 @@ a {
 
 #site-title a {
     text-decoration: none;
+    font-size: 1.25em;
 }
 
 #burger-menu {
@@ -320,7 +317,12 @@ a {
     right: 0px;
 }
 
-main p {
+main p, main li {
     max-width: 45vw;
-    background-color: transparent;
+    background-color: var(--background);
+    font-size: 1.1em;
+}
+
+main h2 {
+    font-size: 1.5em;
 }
