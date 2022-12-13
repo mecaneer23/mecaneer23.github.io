@@ -326,3 +326,8 @@ main p, main li {
 main h2 {
     font-size: 1.5em;
 }
+
+#profile {
+    width: auto;
+    height: 75vh;
+}
