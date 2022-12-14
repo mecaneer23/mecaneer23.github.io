@@ -58,11 +58,24 @@ function updateTitle() {
     }
 }
 
+var keys = {}
+function handleKeyPress(event) {
+    let { keyCode, type } = event;
+    let isKeyDown = (type == 'keydown');
+    keys[keyCode] = isKeyDown;
+
+    if (isKeyDown && keys[69] && keys[71]) {
+        window.location.pathname = "/easter-egg";
+    }
+};
+
 function load() {
     try {
         refreshNavbar();
         window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => setColorscheme(e, null));
         document.getElementById("checkbox").addEventListener("click", toggleColorscheme);
+        window.addEventListener("keyup", handleKeyPress);
+        window.addEventListener("keydown", handleKeyPress);
         setColorscheme(null, (localStorage.getItem("colorscheme") ? localStorage.getItem("colorscheme") == "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
         updateTitle();
         return document.body.hasAttribute("data-theme");
