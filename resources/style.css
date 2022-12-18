@@ -1,4 +1,5 @@
 [data-theme="dark"] {
+    --accent: #008000;
     --text-color: #EAEFEA;
     --background: #36393F;
     --navbar-background: #282A2F;
@@ -7,6 +8,7 @@
 }
 
 [data-theme="light"] {
+    --accent: #008000;
     --text-color: #36393F;
     --background: #EAEFEA;
     --navbar-background: #CDD1CD;
@@ -15,7 +17,6 @@
 }
 
 :root {
-    --accent: #008000;
     --text-font: "Bahnschrift", "Arial", sans-serif;
     /* --header-font: "Futura"; */
     --switch-size: 4vh;
