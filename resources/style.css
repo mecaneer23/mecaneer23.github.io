@@ -51,6 +51,15 @@ header, main, footer {
         display: inline-block;
         padding: 0 3vw;
     }
+
+    #profile {
+        position: absolute;
+        left: 60%;
+        top: 18%;
+        z-index: -100;
+        width: auto;
+        height: 75vh;
+    }
 }
 
 @media (max-width: 1050px) {
@@ -93,6 +102,11 @@ header, main, footer {
 
     main p {
         max-width: 90vw !important;
+    }
+
+    #profile {
+        height: 50vh;
+        width: auto;
     }
 }
 
@@ -149,15 +163,6 @@ a {
     top: 50%;
     transform: translate(-75%, -50%);
     z-index: -100;
-}
-
-#profile {
-    position: absolute;
-    left: 60%;
-    top: 18%;
-    z-index: -100;
-    width: auto;
-    height: 75vh;
 }
 
 .grid-container {
