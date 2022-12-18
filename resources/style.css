@@ -22,12 +22,20 @@
     --hamburger-size: 5vh;
 }
 
-body {
+html, body {
     color: var(--text-color);
     background-color: var(--background);
     font-family: var(--text-font);
-    margin: 0px 1.5vw;
+    margin: 0;
+    padding: 0;
+    width: 100%;
     overflow-x: hidden;
+    position: relative;
+}
+
+header, main, footer {
+    margin: 0px 1.5vw;
+    width: 100%;
 }
 
 @media (min-width: 1051px) {
@@ -95,7 +103,7 @@ body {
 
 #nav {
     overflow: hidden;
-    right: -50vw;
+    right: -80vw;
     transition: right 0.75s ease-in-out;
 }
 
@@ -218,7 +226,7 @@ a {
     /* border-bottom: 0.5vh solid var(--accent); */
     background-color: var(--navbar-background);
     transform-style: preserve-3d;
-    padding: 0 1.5vw;
+    padding: 0 3vw;
     margin: 0 -1.5vw;
     z-index: 100;
 }
@@ -234,6 +242,7 @@ a {
 
 #burger-menu {
     overflow: hidden;
+    padding-right: 3vw;
 }
 
 #hamburger {
