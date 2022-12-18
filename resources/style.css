@@ -23,7 +23,7 @@
     --hamburger-size: 5vh;
 }
 
-body {
+html, body {
     color: var(--text-color);
     background-color: var(--background);
     font-family: var(--text-font);

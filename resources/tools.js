@@ -52,10 +52,16 @@ function toggleColorscheme(event) {
 }
 
 function updateTitle() {
-    let titleEnding = window.location.host;
-    if (!document.title.endsWith(" | " + titleEnding)) {
-        document.title = document.title + " | " + titleEnding;
+    if (!document.title.endsWith(" | " + window.location.host)) {
+        document.title = document.title + " | " + window.location.host;
     }
+    let link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.head.appendChild(link);
+    }
+    link.href = "/favicon.ico";
 }
 
 var keys = {}
@@ -80,7 +86,6 @@ function load() {
         updateTitle();
         return document.body.hasAttribute("data-theme");
     } catch (e) {
-        console.log(e);
         return false;
     }
 }
