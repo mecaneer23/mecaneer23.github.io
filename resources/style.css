@@ -22,7 +22,7 @@
     --hamburger-size: 5vh;
 }
 
-html, body {
+body {
     color: var(--text-color);
     background-color: var(--background);
     font-family: var(--text-font);
@@ -348,4 +348,8 @@ main p, main li {
 
 main h2 {
     font-size: 1.5em;
+}
+
+main {
+    height: 90vh;
 }
