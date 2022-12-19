@@ -24,7 +24,7 @@
 }
 
 html {
-    overflow-y: scroll !important;
+    overflow-y: auto !important;
     height: 100vh;
 }
 
@@ -37,7 +37,9 @@ body {
     width: 100%;
     overflow: hidden;
     position: relative;
-    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 @media (min-width: 1051px) {
@@ -88,10 +90,7 @@ body {
     }
 
     #pfp {
-        pointer-events: none;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        visibility: hidden;
     }
 
     li a {
@@ -108,7 +107,7 @@ body {
 
     #profile {
         height: 50vh;
-        width: auto;
+        width: 39.8vh;
     }
 }
 
@@ -156,7 +155,7 @@ a {
 }
 
 .container {
-    position: absolute;
+    flex: 1;
 }
 
 #pfp {
@@ -168,8 +167,7 @@ a {
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
 }
 
 .grid-item {
@@ -328,20 +326,25 @@ main h2 {
 }
 
 main {
-    height: 100%;
-    min-height: 50vh;
     width: 100%;
-    margin: 0 1.5vw 25vh;
+    /* height: 100%; */
+    /* margin: 0 1.5vw 25vh; */
+    margin: 0 1.5vw;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 footer {
     height: 20vh;
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
+    /* background: linear-gradient(90deg, var(--navbar-background) 40%, transparent 90%); */
     background-color: var(--navbar-background);
+    text-align: center;
+    padding-left: 1.5vw;
     width: 100%;
-    margin: 5vh 0 0 0;
-    padding: 0 1.5vw;
+    /* flex: 1; */
 }
 
 .contact-form {
