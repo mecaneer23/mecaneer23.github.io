@@ -160,9 +160,9 @@ a {
 
 #pfp {
     position: absolute;
-    left: 75%;
-    top: 50%;
-    transform: translate(-75%, -50%);
+    left: 85%;
+    top: 40%;
+    transform: translate(-85%, -40%);
     z-index: -100;
 }
 
@@ -347,9 +347,36 @@ footer {
     /* flex: 1; */
 }
 
-.contact-form {
+#contact-form {
     border: 0.5vh solid var(--accent);
-    width: 25vw;
-    margin-top: 5vh;
+    width: min-content;
     padding: 0.5vw;
+    margin-bottom: 5vh;
+}
+
+#contact-form p {
+    background-color: transparent;
+}
+
+#contact-form input {
+    border: 0.25vh solid var(--accent);
+}
+
+#contact-message {
+    width: 45vh;
+    max-width: 85vw;
+    height: 30vh;
+}
+
+#contact-submit {
+    background-color: var(--accent);
+    color: var(--text-color);
+    padding: 0.5vh 0.75vw;
+    border: none;
+    border-radius: 0.75vh;
+    cursor: pointer;
+}
+
+span.asterisk {
+    color: red;
 }
