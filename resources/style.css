@@ -23,6 +23,10 @@
     --hamburger-size: 5vh;
 }
 
+html {
+    overflow: hidden;
+}
+
 html, body {
     color: var(--text-color);
     background-color: var(--background);
