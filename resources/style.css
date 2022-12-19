@@ -23,11 +23,12 @@
     --hamburger-size: 5vh;
 }
 
-body {
+html {
     overflow-y: scroll !important;
+    height: 100vh;
 }
 
-html, body {
+body {
     color: var(--text-color);
     background-color: var(--background);
     font-family: var(--text-font);
@@ -36,12 +37,7 @@ html, body {
     width: 100%;
     overflow: hidden;
     position: relative;
-    height: 100%;
-}
-
-header, main, footer {
-    margin: 0px 1.5vw;
-    width: 100%;
+    min-height: 100%;
 }
 
 @media (min-width: 1051px) {
@@ -240,6 +236,7 @@ a {
     padding: 0 3vw;
     margin: 0 -1.5vw;
     z-index: 100;
+    width: 100%;
 }
 
 .header a {
@@ -319,7 +316,8 @@ a {
     right: 0px;
 }
 
-main p, main li {
+main p,
+main li {
     max-width: 45vw;
     background-color: var(--background);
     font-size: 1.1em;
@@ -330,10 +328,18 @@ main h2 {
 }
 
 main {
-    height: fit-content;
+    height: 100%;
     min-height: 50vh;
+    width: 100%;
+    margin: 0 1.5vw 25vh;
 }
 
 footer {
     height: 20vh;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--navbar-background);
+    width: 100%;
+    margin: 5vh 0 0 0;
+    padding: 0 1.5vw;
 }
