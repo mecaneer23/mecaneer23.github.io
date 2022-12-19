@@ -358,8 +358,9 @@ footer {
     background-color: transparent;
 }
 
-#contact-form input {
+#contact-form input, #contact-form textarea {
     border: 0.25vh solid var(--accent);
+    font-family: var(--text-font);
 }
 
 #contact-message {
@@ -369,6 +370,7 @@ footer {
 }
 
 #contact-submit {
+    font-family: var(--text-font);
     background-color: var(--accent);
     color: var(--text-color);
     padding: 0.5vh 0.75vw;
