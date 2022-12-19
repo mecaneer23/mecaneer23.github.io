@@ -327,9 +327,7 @@ main h2 {
 
 main {
     width: 100%;
-    /* height: 100%; */
-    /* margin: 0 1.5vw 25vh; */
-    margin: 0 1.5vw;
+    margin: 0 1.5vw 10vh;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -337,14 +335,10 @@ main {
 
 footer {
     height: 20vh;
-    /* position: absolute;
-    bottom: 0; */
-    /* background: linear-gradient(90deg, var(--navbar-background) 40%, transparent 90%); */
     background-color: var(--navbar-background);
     text-align: center;
     padding-left: 1.5vw;
     width: 100%;
-    /* flex: 1; */
 }
 
 #contact-form {
