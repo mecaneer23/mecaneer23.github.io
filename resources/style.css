@@ -239,7 +239,7 @@ a {
     width: 100%;
 }
 
-.header a {
+.header a, footer a {
     background-color: transparent;
 }
 
