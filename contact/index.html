@@ -11,14 +11,17 @@
 <body>
     <header class="header" w3-include-html="/resources/nav.html"></header>
     <main>
-        <h2>Contact</h2>
-        <ul style="
-            list-style-type: none;
-            padding: 0;
-        ">
-            <li>(847) 275-2470</li>
-            <li><a href="mailto:gnatenshon@gmail.com">gnatenshon@gmail.com</a></li>
-        </ul>
+        <form action="https://formspree.io/f/mnqyadvv" method="POST" class="contact-form">
+            <p>
+                Your email:
+                <input type="email" name="email">
+            </p>
+            <p>
+                Your message:
+                <textarea name="message"></textarea>
+            </p>
+            <button type="submit">Send</button>
+        </form>
         <a id="pfp" href="https://github.com/mecaneer23">
             <img src="/resources/gearsNoBackground.png">
         </a>

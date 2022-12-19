@@ -343,3 +343,10 @@ footer {
     margin: 5vh 0 0 0;
     padding: 0 1.5vw;
 }
+
+.contact-form {
+    border: 0.5vh solid var(--accent);
+    width: 25vw;
+    margin-top: 5vh;
+    padding: 0.5vw;
+}
