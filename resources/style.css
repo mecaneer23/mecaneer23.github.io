@@ -23,8 +23,8 @@
     --hamburger-size: 5vh;
 }
 
-html {
-    overflow: hidden;
+body {
+    overflow-y: scroll !important;
 }
 
 html, body {
@@ -34,14 +34,14 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
     position: relative;
+    height: 100%;
 }
 
 header, main, footer {
     margin: 0px 1.5vw;
     width: 100%;
-    height: auto;
 }
 
 @media (min-width: 1051px) {
@@ -261,13 +261,7 @@ a {
     height: calc(var(--hamburger-size) * .75);
     position: relative;
     margin: calc(var(--hamburger-size) * .83) auto;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: .5s ease-in-out;
-    -moz-transition: .5s ease-in-out;
-    -o-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
     cursor: pointer;
 }
@@ -281,13 +275,7 @@ a {
     border-radius: calc(var(--hamburger-size) * .15);
     opacity: 1;
     left: 0;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: .25s ease-in-out;
-    -moz-transition: .25s ease-in-out;
-    -o-transition: .25s ease-in-out;
     transition: .25s ease-in-out;
 }
 
@@ -297,32 +285,20 @@ a {
 
 #hamburger span:nth-child(1) {
     top: 0;
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
     transform-origin: left center;
 }
 
 #hamburger span:nth-child(2) {
     top: calc(var(--hamburger-size) * .3);
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
     transform-origin: left center;
 }
 
 #hamburger span:nth-child(3) {
     top: calc(var(--hamburger-size) * .6);
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
     transform-origin: left center;
 }
 
 #burger-menu.open #hamburger span:nth-child(1) {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
     transform: rotate(45deg);
     top: calc(var(--hamburger-size) * -.05);
     left: calc(var(--hamburger-size) * .13);
@@ -334,9 +310,6 @@ a {
 }
 
 #burger-menu.open #hamburger span:nth-child(3) {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
     top: calc(var(--hamburger-size) * .65);
     left: calc(var(--hamburger-size) * .13);
@@ -357,5 +330,10 @@ main h2 {
 }
 
 main {
-    height: 90vh;
+    height: fit-content;
+    min-height: 50vh;
+}
+
+footer {
+    height: 20vh;
 }
