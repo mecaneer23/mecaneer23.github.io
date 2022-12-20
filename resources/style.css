@@ -137,7 +137,7 @@ body {
 }
 
 .nav-item {
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 
 .no-padding {
@@ -249,7 +249,7 @@ footer a {
 }
 
 #site-title a {
-    font-size: 1.25em;
+    font-size: 1.25rem;
 }
 
 #burger-menu {
@@ -323,11 +323,11 @@ main p,
 main li {
     max-width: 45vw;
     background-color: var(--background);
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }
 
-main h2 {
-    font-size: 1.5em;
+main h2, footer h2 {
+    font-size: 1.5rem;
 }
 
 main {
@@ -346,12 +346,8 @@ footer {
     width: 100%;
 }
 
-footer h2 {
-    font-size: 2em;
-}
-
 footer li {
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }
 
 #contact-form {
