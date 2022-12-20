@@ -330,6 +330,11 @@ main h2, footer h2 {
     font-size: 1.5rem;
 }
 
+.h2-link {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
 main {
     width: 100%;
     margin: 2vh 1.5vw 10vh 3vw;
