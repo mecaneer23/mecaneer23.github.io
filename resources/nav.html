@@ -1,6 +1,6 @@
-<h1 id="site-title" onclick="refreshNavbar()">
-    <a href="/">Mecaneer23</a>
-</h1>
+<a href="/">
+    <h1 id="site-title" onclick="refreshNavbar()">Mecaneer23</h1>
+</a>
 <div id="burger-menu">
     <a href="javascript:void(0);" id="hamburger" onclick="toggleMenu()">
         <span></span>
@@ -9,22 +9,14 @@
     </a>
     <nav id="nav">
         <ul id="main-nav">
-            <li class="nav-item no-padding">
+            <a href="javascript:void(0);" class="nav-item no-padding">
                 <input id="checkbox" class="switch-input" type="checkbox" checked />
                 <label for="checkbox" class="switch" title="Toggles light & dark theme"></label>
-            </li>
-            <li class="nav-item">
-                <a href="/about" onclick="refreshNavbar()">About</a>
-            </li>
-            <li class="nav-item">
-                <a href="/rates" onclick="refreshNavbar()">Services & Rates</a>
-            </li>
-            <li class="nav-item">
-                <a href="/portfolio" onclick="refreshNavbar()">Portfolio</a>
-            </li>
-            <li class="nav-item">
-                <a href="/contact" onclick="refreshNavbar()">Contact</a>
-            </li>
+            </a>
+            <a href="/about" onclick="refreshNavbar()" class="nav-item">About</a>
+            <a href="/rates" onclick="refreshNavbar()" class="nav-item">Services & Rates</a>
+            <a href="/portfolio" onclick="refreshNavbar()" class="nav-item">Portfolio</a>
+            <a href="/contact" onclick="refreshNavbar()" class="nav-item">Contact</a>
         </ul>
     </nav>
 </div>
