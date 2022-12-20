@@ -1,3 +1,5 @@
+var root = document.getElementsByTagName('html')[0];
+
 function refreshNavbar() {
     setTimeout(() => innerNavbar(document.getElementsByClassName("header")[0].children[0]), 0.01);
     setTimeout(() => Array.from(document.getElementById("main-nav").children).forEach(item => innerNavbar(item)), 0.01);
@@ -28,7 +30,6 @@ function toggleMenu() {
 }
 
 function innerColorscheme(theme) {
-    let root = document.getElementsByTagName( 'html' )[0];
     root.classList.remove(theme == "light" ? "dark" : "light")
     root.classList.add(theme);
     localStorage.setItem("colorscheme", theme);
@@ -47,7 +48,6 @@ function setColorscheme(event, theme) {
 }
 
 function toggleColorscheme(event) {
-    let root = document.getElementsByTagName( 'html' )[0];
     if (root.classList.contains("dark")) {
         setColorscheme(event, "light");
     } else if (root.classList.contains("light")) {
@@ -74,8 +74,11 @@ function handleKeyPress(event) {
     let isKeyDown = (type == 'keydown');
     keys[keyCode] = isKeyDown;
 
-    if (isKeyDown && keys[69] && keys[71]) {
+    if (isKeyDown && keys[69] && keys[71]) { // e + g = easter egg page
         window.location.pathname = "/easter-egg";
+    } else if (isKeyDown && keys[66] && keys[82]) { // b + r = do a barrel roll
+        root.classList.add('spinner');
+        setTimeout(() => root.classList.remove('spinner'), 3500);
     }
 };
 

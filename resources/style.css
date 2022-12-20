@@ -391,3 +391,8 @@ footer li {
 span.asterisk {
     color: red;
 }
+
+.spinner {
+    transform: rotate(360deg);
+    transition: transform 3s;
+}
