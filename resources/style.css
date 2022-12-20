@@ -1,19 +1,21 @@
-[data-theme="light"] {
+.light {
     --accent: #008000;
     --text-color: #36393F;
     --background: #EAEFEA;
     --navbar-background: #CDD1CD;
     --second-accent: #005000;
     --third-accent: #90EE90;
+    color-scheme: light;
 }
 
-[data-theme="dark"] {
+.dark {
     --accent: #008000;
     --text-color: #EAEFEA;
     --background: #36393F;
     --navbar-background: #282A2F;
     --second-accent: #90EE90;
     --third-accent: #005000;
+    color-scheme: dark;
 }
 
 :root {

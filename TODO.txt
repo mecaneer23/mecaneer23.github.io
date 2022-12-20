@@ -1,5 +1,3 @@
 make sidebar appear behind header so border accents work
 
 add content to pages
-
-make scroll bar color update live

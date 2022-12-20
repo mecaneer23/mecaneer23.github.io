@@ -5,7 +5,11 @@ function refreshNavbar() {
 
 function innerNavbar(item) {
     item = item.children[0];
-    if (item.href === undefined) return;
+    try {
+        if (item.href === undefined) return;
+    } catch (e) {
+        return;
+    }
     href = item.href.charAt(item.href.length - 1) === "/" ? item.href : item.href + "/";
     if (href !== document.URL) {
         item.classList.remove("current");
@@ -24,7 +28,9 @@ function toggleMenu() {
 }
 
 function innerColorscheme(theme) {
-    document.body.setAttribute("data-theme", theme);
+    let root = document.getElementsByTagName( 'html' )[0];
+    root.classList.remove(theme == "light" ? "dark" : "light")
+    root.classList.add(theme);
     localStorage.setItem("colorscheme", theme);
 }
 
@@ -41,13 +47,11 @@ function setColorscheme(event, theme) {
 }
 
 function toggleColorscheme(event) {
-    let theme = document.body.getAttribute("data-theme");
-    if (theme == "dark") {
+    let root = document.getElementsByTagName( 'html' )[0];
+    if (root.classList.contains("dark")) {
         setColorscheme(event, "light");
-    } else if (theme == "light") {
+    } else if (root.classList.contains("light")) {
         setColorscheme(event, "dark");
-    } else {
-        console.log(theme);
     }
 }
 
