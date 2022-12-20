@@ -171,7 +171,7 @@ a {
 }
 
 .grid-item {
-    padding-right: 10vw;
+    padding-right: 8vw;
 }
 
 .switch-input {
@@ -327,7 +327,7 @@ main h2 {
 
 main {
     width: 100%;
-    margin: 0 1.5vw 10vh;
+    margin: 2vh 1.5vw 10vh 3vw;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -345,7 +345,6 @@ footer {
     border: 0.5vh solid var(--accent);
     width: min-content;
     padding: 0.5vw;
-    margin-bottom: 5vh;
 }
 
 #contact-form p {
@@ -359,7 +358,7 @@ footer {
 
 #contact-message {
     width: 45vh;
-    max-width: 85vw;
+    max-width: 85%;
     height: 30vh;
 }
 
