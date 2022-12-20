@@ -1,3 +1,7 @@
 make sidebar appear behind header so border accents work
 
 add content to pages
+
+
+
+rewrite resources/index
