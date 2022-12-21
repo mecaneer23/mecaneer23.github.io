@@ -6,7 +6,6 @@ function refreshNavbar() {
 }
 
 function innerNavbar(item) {
-    item = item.children[0];
     try {
         if (item.href === undefined) return;
     } catch (e) {
