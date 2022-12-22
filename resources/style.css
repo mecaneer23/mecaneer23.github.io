@@ -62,7 +62,7 @@ body {
         position: absolute;
         left: 60%;
         top: 18%;
-        z-index: -100;
+        z-index: 10;
         width: auto;
         height: 75vh;
     }
@@ -93,10 +93,6 @@ body {
 
     #pfp {
         visibility: hidden;
-    }
-
-    li a {
-        color: var(--second-accent);
     }
 
     .hr.third {
@@ -156,16 +152,12 @@ a {
     background-color: var(--background);
 }
 
-.container {
-    flex: 1;
-}
-
 #pfp {
     position: absolute;
     left: 85%;
     top: 40%;
     transform: translate(-85%, -40%);
-    z-index: -100;
+    z-index: -5;
 }
 
 .grid-container {
@@ -326,10 +318,12 @@ main li {
     max-width: 45vw;
     background-color: var(--background);
     font-size: 1.1rem;
+    z-index: 50;
 }
 
 main h2, footer h2 {
     font-size: 1.5rem;
+    z-index: 60;
 }
 
 .h2-link {
