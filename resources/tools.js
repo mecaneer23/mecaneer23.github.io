@@ -73,13 +73,21 @@ function handleKeyPress(event) {
     let isKeyDown = (type == 'keydown');
     keys[keyCode] = isKeyDown;
 
-    if (isKeyDown && keys[69] && keys[71]) { // e + g = easter egg page
-        window.location.pathname = "/easter-egg";
-    } else if (isKeyDown && keys[66] && keys[82]) { // b + r = do a barrel roll
-        root.classList.add('spinner');
-        setTimeout(() => root.classList.remove('spinner'), 3500);
+    if (isKeyDown && keys[69] && keys[71]) { // e + g
+        goToSecretPage();
+    } else if (isKeyDown && keys[66] && keys[82]) { // b + r
+        doABarrelRoll();
     }
 };
+
+function goToSecretPage() {
+    window.location.pathname = "/easter-egg";
+}
+
+function doABarrelRoll() {
+    root.classList.add('spinner');
+    setTimeout(() => root.classList.remove('spinner'), 3500);
+}
 
 function load() {
     try {
