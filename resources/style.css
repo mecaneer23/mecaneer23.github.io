@@ -382,6 +382,10 @@ footer li {
     cursor: pointer;
 }
 
+#contact-submit:hover {
+    background-color: var(--background);
+}
+
 span.asterisk {
     color: red;
 }
