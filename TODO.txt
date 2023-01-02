@@ -4,4 +4,4 @@ add content to pages
 
 make sidebar full height on mobile
 
-make pages in portrolio use color scheme, incorporate navigation
+make pages in portfolio use color scheme, incorporate navigation
