@@ -71,7 +71,7 @@ body {
 @media (max-width: 1050px) {
     #nav {
         position: absolute;
-        height: 100vh;
+        min-height: 100vh;
         background-color: var(--navbar-background);
         padding: 0 5vw;
         /* border-left: 0.5vh solid var(--accent); */

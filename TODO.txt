@@ -2,6 +2,6 @@ make sidebar appear behind header so border accents work
 
 add content to pages
 
-make sidebar full height on mobile
+make sidebar full height on mobile (requires javascript... is this worth it?)
 
 make pages in portfolio use color scheme, incorporate navigation
