@@ -5,3 +5,6 @@ add content to pages
 make sidebar full height on mobile (requires javascript... is this worth it?)
 
 make pages in portfolio use color scheme, incorporate navigation
+
+footer:
+    add copyright to footer
