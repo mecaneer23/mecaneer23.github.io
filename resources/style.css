@@ -45,6 +45,8 @@ body {
 }
 
 @media (min-width: 1051px) {
+
+    /* generally large screens */
     #nav {
         display: block !important;
     }
@@ -58,17 +60,20 @@ body {
         padding: 4vh 1.5vw;
     }
 
-    #profile {
-        position: absolute;
-        left: 60%;
-        top: 18%;
-        z-index: 10;
-        width: auto;
+    .about-container {
+        width: 94vw;
+    }
+
+    .about-container .right {
+        float: right;
         height: 75vh;
+        padding-right: 5vw;
     }
 }
 
 @media (max-width: 1050px) {
+
+    /* generally small screens */
     #nav {
         position: absolute;
         min-height: 100vh;
@@ -160,11 +165,11 @@ a {
     z-index: -5;
 }
 
-.grid-container {
+.flex {
     display: flex;
 }
 
-.grid-item {
+.flex-item {
     padding-right: 8vw;
 }
 
@@ -321,7 +326,8 @@ main li {
     z-index: 50;
 }
 
-main h2, footer h2 {
+main h2,
+footer h2 {
     font-size: 1.5rem;
     z-index: 60;
 }
@@ -371,7 +377,8 @@ footer li {
     background-color: transparent;
 }
 
-#contact-form input, #contact-form textarea {
+#contact-form input,
+#contact-form textarea {
     border: 0.25vh solid var(--accent);
     font-family: var(--text-font);
 }
