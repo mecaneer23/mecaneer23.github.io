@@ -354,6 +354,7 @@ footer {
 .footer-child.right {
     display: flex;
     flex-direction: column-reverse;
+    justify-content: center;
 }
 
 footer li {
