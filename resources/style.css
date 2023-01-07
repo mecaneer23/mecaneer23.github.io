@@ -342,9 +342,18 @@ main {
 footer {
     height: 20vh;
     background-color: var(--navbar-background);
-    text-align: center;
-    padding-left: 1.5vw;
     width: 100%;
+    display: flex;
+}
+
+.footer-child {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-child.right {
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 footer li {
