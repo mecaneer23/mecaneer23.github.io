@@ -346,7 +346,8 @@ main {
 }
 
 footer {
-    height: 20vh;
+    min-height: 20vh;
+    height: fit-content;
     background-color: var(--navbar-background);
     width: 100%;
     display: flex;
