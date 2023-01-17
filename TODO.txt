@@ -5,5 +5,3 @@ add content to pages
 make sidebar full height on mobile (requires javascript... is this worth it?)
 
 make minigames use color scheme, incorporate navigation
-
-update readme
