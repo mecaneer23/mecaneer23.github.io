@@ -99,7 +99,6 @@ function updateSideNavHeight(specificHeight) {
     let main = window.getComputedStyle(document.getElementsByTagName("main")[0]);
     let height = specificHeight === undefined ? "calc(" + (parseFloat(main.marginTop, 10) + parseFloat(main.marginBottom, 10) + parseFloat(main.height, 10)) + "px + 1vh)" : specificHeight;
     document.getElementById("nav").style.height = height;
-    console.log(height);
 }
 
 function load() {
