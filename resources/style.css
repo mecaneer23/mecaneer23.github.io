@@ -55,6 +55,7 @@ body {
     /* generally large screens */
     #nav {
         display: block !important;
+        height: auto !important;
     }
 
     #hamburger {
@@ -82,7 +83,6 @@ body {
     /* generally small screens */
     #nav {
         position: absolute;
-        min-height: 100vh;
         background-color: var(--navbar-background);
         padding: 0 5vw;
         /* border-left: 0.5vh solid var(--accent); */

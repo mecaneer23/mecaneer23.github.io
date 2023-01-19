@@ -23,8 +23,14 @@ function toggleMenu() {
     let menu = document.getElementById("burger-menu");
     if (menu.classList.contains("open")) {
         menu.classList.remove("open");
+        setTimeout(() => {
+            if (!menu.classList.contains("open")) {
+                updateSideNavHeight("auto");
+            }
+        }, 1000);
     } else {
         menu.classList.add("open");
+        updateSideNavHeight();
     }
 }
 
@@ -87,6 +93,13 @@ function goToSecretPage() {
 function doABarrelRoll() {
     root.classList.add('spinner');
     setTimeout(() => root.classList.remove('spinner'), 3500);
+}
+
+function updateSideNavHeight(specificHeight) {
+    let main = window.getComputedStyle(document.getElementsByTagName("main")[0]);
+    let height = specificHeight === undefined ? (parseFloat(main.marginTop, 10) + parseFloat(main.marginBottom, 10) + parseFloat(main.height, 10) + 1) + "px" : specificHeight;
+    document.getElementById("nav").style.height = height;
+    console.log(height);
 }
 
 function load() {
