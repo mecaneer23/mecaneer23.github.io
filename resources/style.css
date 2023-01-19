@@ -2,7 +2,7 @@
     --accent: #008000;
     --text-color: #36393F;
     --background: #EAEFEA;
-    --navbar-background: #CDD1CD;
+    --navbar-background: #C1D0C1;
     --second-accent: #005000;
     --third-accent: #90EE90;
     color-scheme: light;
@@ -153,8 +153,11 @@ body {
     padding: 0;
 }
 
-a:hover,
-a.current {
+a:hover {
+    color: var(--second-accent);
+}
+
+header a:hover, footer a:hover, a.current {
     color: var(--second-accent);
 }
 
