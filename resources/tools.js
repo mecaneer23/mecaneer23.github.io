@@ -1,4 +1,5 @@
 var root = document.getElementsByTagName('html')[0];
+var weirdTheme = false;
 
 function refreshNavbar() {
     setTimeout(() => innerNavbar(document.getElementsByClassName("header")[0].children[0]), 0.01);
@@ -53,11 +54,20 @@ function setColorscheme(event, theme) {
 }
 
 function toggleColorscheme(event) {
+    if (root.classList.contains("weird")) {
+        root.classList.remove("weird");
+        root.classList.add("dark");
+        localStorage.setItem("colorscheme", "dark");
+    }
     if (root.classList.contains("dark")) {
         setColorscheme(event, "light");
     } else if (root.classList.contains("light")) {
         setColorscheme(event, "dark");
     }
+}
+
+function toggleWeirdColorscheme(event) {
+    root.classList.add("weird");
 }
 
 function updateTitle() {
@@ -101,11 +111,26 @@ function updateSideNavHeight(specificHeight) {
     document.getElementById("nav").style.height = height;
 }
 
+function weirdThemeHandler(event) {
+    weirdTheme = true;
+    setTimeout(() => {
+        if (weirdTheme) {
+            toggleWeirdColorscheme();
+        }
+    }, 2000);
+}
+
+function weirdThemeHandlerSetFalse(event) {
+    weirdTheme = false;
+}
+
 function load() {
     try {
         refreshNavbar();
         window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => setColorscheme(e, null));
         document.getElementById("checkbox").addEventListener("click", toggleColorscheme);
+        document.getElementsByClassName("no-padding")[0].addEventListener("mouseover", weirdThemeHandler);
+        document.getElementsByClassName("no-padding")[0].addEventListener("mouseout", weirdThemeHandlerSetFalse);
         window.addEventListener("keyup", handleKeyPress);
         window.addEventListener("keydown", handleKeyPress);
         setColorscheme(null, (localStorage.getItem("colorscheme") ? localStorage.getItem("colorscheme") == "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");

@@ -1,3 +1,16 @@
+.weird {
+    --accent: #FF0000 !important;
+    --text-color: #FF00FF !important;
+    --background: #0000FF !important;
+    --navbar-background: #00FF00 !important;
+    --second-accent: #00FFFF !important;
+    --third-accent: #FFFF00 !important;
+    color-scheme: light !important;
+    --discord-color: #FF8800 !important;
+    --github-color: #8888FF !important;
+    --youtube-color: #FF0088 !important;
+}
+
 .light {
     --accent: #008000;
     --text-color: #36393F;
