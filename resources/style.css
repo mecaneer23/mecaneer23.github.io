@@ -268,7 +268,7 @@ footer a {
     width: var(--hamburger-size);
     height: calc(var(--hamburger-size) * .75);
     position: relative;
-    margin: calc(var(--hamburger-size) * .83) auto;
+    margin: calc(var(--hamburger-size) * .9) auto;
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     cursor: pointer;
