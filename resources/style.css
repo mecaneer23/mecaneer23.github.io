@@ -465,3 +465,15 @@ span.asterisk {
     transform: rotate(360deg);
     transition: transform 3s;
 }
+
+div.giant {
+    font-size: 10em;
+    display: flex;
+}
+
+.big-red-button {
+    width: 22vh;
+    height: 22vh;
+    border: none;
+    border-radius: 30%;
+}
