@@ -117,7 +117,7 @@ function weirdThemeHandler(event) {
         if (weirdTheme) {
             toggleWeirdColorscheme();
         }
-    }, 2000);
+    }, 3500);
 }
 
 function weirdThemeHandlerSetFalse(event) {
