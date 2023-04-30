@@ -1,0 +1,4 @@
+-7 make sidebar appear behind header so border accents work
+-7 add content to pages
+-7 make minigames use color scheme, incorporate navigation
+-7 make logo an SVG
