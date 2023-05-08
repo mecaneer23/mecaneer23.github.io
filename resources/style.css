@@ -89,6 +89,10 @@ body {
         height: 75vh;
         padding-right: 5vw;
     }
+
+    table {
+        width: 45vw;
+    }
 }
 
 @media (max-width: 1050px) {
@@ -135,6 +139,10 @@ body {
     #burger-menu {
         padding-right: 3vw;
     }
+
+    table {
+        width: 94vw;
+    }
 }
 
 #main-nav {
@@ -170,7 +178,9 @@ a:hover {
     color: var(--second-accent);
 }
 
-header a:hover, footer a:hover, a.current {
+header a:hover,
+footer a:hover,
+a.current {
     color: var(--second-accent);
 }
 
@@ -342,7 +352,6 @@ footer a {
 
 main p,
 main li {
-    max-width: 45vw;
     background-color: var(--background);
     font-size: 1.1rem;
     z-index: 50;
@@ -476,4 +485,27 @@ div.giant {
     height: 22vh;
     border: none;
     border-radius: 30%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 0.5vh solid var(--accent);
+    text-align: left;
+    padding: 1vh;
+}
+
+th {
+    color: var(--accent)
+}
+
+td {
+    color: var(--text-color)
+}
+
+tr:nth-child(even) {
+    background-color: var(--navbar-background);
 }
