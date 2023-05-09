@@ -99,6 +99,7 @@ function weirdThemeHandler(event) {
             toggleWeirdColorscheme();
         }
     }, 3500);
+    weirdTheme = false;
 }
 
 function weirdThemeHandlerSetFalse(event) {
@@ -107,22 +108,14 @@ function weirdThemeHandlerSetFalse(event) {
 
 function refreshNavbar() {
     links = Array.from(document.getElementById("main-nav").children);
-    links.push(document.getElementById("site-title"));
-    navBarLinks(links);
-}
-
-function navBarLinks(links) {
-    if (links.length) {
-        links.forEach((link) => {
-            link.addEventListener('click', (e) => {
-                links.forEach((link) => {
-                    link.classList.remove('current');
-                });
-                link.classList.add('current');
-            });
-        });
-    }
-}
+    links.push(document.getElementById("title-link"));
+    links.forEach((link) => {
+        if (link.pathname.split("/")[1] === document.location.pathname.split("/")[1]) {
+            link.classList.add('current');
+        } else {
+            link.classList.remove('current');
+        }
+    });}
 
 function load() {
     try {
