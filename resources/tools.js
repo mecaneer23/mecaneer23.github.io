@@ -1,25 +1,6 @@
 var root = document.getElementsByTagName('html')[0];
 var weirdTheme = false;
 
-function refreshNavbar() {
-    setTimeout(() => innerNavbar(document.getElementsByClassName("header")[0].children[0]), 0.01);
-    setTimeout(() => Array.from(document.getElementById("main-nav").children).forEach(item => innerNavbar(item)), 0.01);
-}
-
-function innerNavbar(item) {
-    try {
-        if (item.href === undefined) return;
-    } catch (e) {
-        return;
-    }
-    href = item.href.charAt(item.href.length - 1) === "/" ? item.href : item.href + "/";
-    if (href !== document.URL) {
-        item.classList.remove("current");
-    } else {
-        item.classList.add("current");
-    }
-}
-
 function toggleMenu() {
     let menu = document.getElementById("burger-menu");
     if (menu.classList.contains("open")) {
@@ -124,9 +105,27 @@ function weirdThemeHandlerSetFalse(event) {
     weirdTheme = false;
 }
 
+function handleNavBar() {
+    links = Array.from(document.getElementById("main-nav").children);
+    links.push(document.getElementById("site-title"));
+    navBarLinks(links);
+}
+
+function navBarLinks(links) {
+    if (links.length) {
+        links.forEach((link) => {
+            link.addEventListener('click', (e) => {
+                links.forEach((link) => {
+                    link.classList.remove('current');
+                });
+                link.classList.add('current');
+            });
+        });
+    }
+}
+
 function load() {
     try {
-        refreshNavbar();
         window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => setColorscheme(e, null));
         document.getElementById("checkbox").addEventListener("click", toggleColorscheme);
         document.getElementsByClassName("no-padding")[0].addEventListener("mouseover", weirdThemeHandler);
@@ -135,6 +134,7 @@ function load() {
         window.addEventListener("keydown", handleKeyPress);
         setColorscheme(null, (localStorage.getItem("colorscheme") ? localStorage.getItem("colorscheme") == "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
         updateTitle();
+        handleNavBar();
         return document.body.hasAttribute("data-theme");
     } catch (e) {
         return false;

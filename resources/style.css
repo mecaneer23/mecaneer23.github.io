@@ -12,11 +12,19 @@
 }
 
 .light {
-    --accent: #008000;
+    /* --accent: #008000;
     --text-color: #36393F;
     --background: #EAEFEA;
     --navbar-background: #C1D0C1;
     --second-accent: #005000;
+    --third-accent: #90EE90; */
+
+    --text-color: #000000;
+    --background: #F5F5F5;
+    --navbar-background: #FFFFFF;
+    --accent: #FFA500;
+    --second-accent: #FFFF00;
+
     --third-accent: #90EE90;
     color-scheme: light;
     --discord-color: #5865f2;
@@ -181,7 +189,7 @@ a:hover {
 
 header a:hover,
 footer a:hover,
-a.current {
+.current {
     color: var(--second-accent);
 }
 
@@ -357,6 +365,7 @@ main li {
     background-color: var(--background);
     font-size: 1.1rem;
     z-index: 50;
+    line-height: 1.75;
 }
 
 main h2,
