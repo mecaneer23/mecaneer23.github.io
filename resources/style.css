@@ -4,7 +4,6 @@
     --background: #0000FF !important;
     --navbar-background: #00FF00 !important;
     --second-accent: #00FFFF !important;
-    --third-accent: #FFFF00 !important;
     color-scheme: light !important;
     --discord-color: #FF8800 !important;
     --github-color: #8888FF !important;
@@ -24,13 +23,6 @@
     --accent: #4CAF50;
     --second-accent: #005000;
 
-    /* --text-color: #212121;
-    --background: #FFFFFF;
-    --navbar-background: #EEEEEE;
-    --accent: #2196F3;
-    --second-accent: #FFC107; */
-
-    --third-accent: #90EE90;
     color-scheme: light;
     --discord-color: #5865f2;
     --github-color: #24292F;
@@ -50,7 +42,6 @@
     --accent: #008000;
     --second-accent: #90EE90;
 
-    --third-accent: #005000;
     color-scheme: dark;
     --discord-color: #FFFFFF;
     --github-color: #FFFFFF;
@@ -251,7 +242,7 @@ a {
 
 .switch::before {
     content: '';
-    background-color: var(--third-accent);
+    background-color: var(--accent);
     height: var(--switch-thumb-size);
     width: var(--switch-thumb-size);
     border-radius: var(--switch-thumb-size);
