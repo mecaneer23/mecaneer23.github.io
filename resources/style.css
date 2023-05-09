@@ -127,7 +127,8 @@ body {
         width: 100%;
     }
 
-    main p {
+    main p,
+    main li {
         max-width: 90vw !important;
     }
 
@@ -352,13 +353,10 @@ footer a {
 
 main p,
 main li {
+    max-width: 45vw;
     background-color: var(--background);
     font-size: 1.1rem;
     z-index: 50;
-}
-
-main p {
-    max-width: 45vw;
 }
 
 main h2,
