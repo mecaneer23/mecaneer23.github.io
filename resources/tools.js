@@ -72,7 +72,7 @@ function toggleWeirdColorscheme(event) {
 
 function updateTitle() {
     if (!document.title.endsWith(" | " + window.location.host)) {
-        document.title = document.title + " | " + window.location.host;
+        document.title = document.title + " | Gabriel Natenshon | " + window.location.host;
     }
     let link = document.querySelector("link[rel~='icon']");
     if (!link) {
