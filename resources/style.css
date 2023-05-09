@@ -357,6 +357,10 @@ main li {
     z-index: 50;
 }
 
+main p {
+    max-width: 45vw;
+}
+
 main h2,
 footer h2 {
     font-size: 1.5rem;
