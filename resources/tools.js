@@ -105,7 +105,7 @@ function weirdThemeHandlerSetFalse(event) {
     weirdTheme = false;
 }
 
-function handleNavBar() {
+function refreshNavbar() {
     links = Array.from(document.getElementById("main-nav").children);
     links.push(document.getElementById("site-title"));
     navBarLinks(links);
@@ -134,7 +134,7 @@ function load() {
         window.addEventListener("keydown", handleKeyPress);
         setColorscheme(null, (localStorage.getItem("colorscheme") ? localStorage.getItem("colorscheme") == "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
         updateTitle();
-        handleNavBar();
+        refreshNavbar();
         return document.body.hasAttribute("data-theme");
     } catch (e) {
         return false;

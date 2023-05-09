@@ -143,11 +143,6 @@ body {
         max-width: 90vw !important;
     }
 
-    #profile {
-        height: 50vh;
-        width: 39.8vh;
-    }
-
     #burger-menu {
         padding-right: 3vw;
     }
@@ -172,6 +167,11 @@ body {
 .hr {
     background-color: var(--accent);
     height: 1px;
+}
+
+#profile {
+    height: 50vh;
+    width: 39.8vh;
 }
 
 .hr.third {
