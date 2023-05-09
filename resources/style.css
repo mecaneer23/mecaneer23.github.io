@@ -209,6 +209,11 @@ a {
     z-index: -5;
 }
 
+#picturesque {
+    height: 75vh;
+    width: 75vh;
+}
+
 .flex {
     display: flex;
 }
@@ -275,7 +280,7 @@ a {
     background-color: var(--navbar-background);
     transform-style: preserve-3d;
     z-index: 100;
-    /* background-image: url("tech-banner.png");
+    /* background-image: url("pictureque.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; */
