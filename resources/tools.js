@@ -108,7 +108,7 @@ function weirdThemeHandlerSetFalse(event) {
 
 function refreshNavbar() {
     links = Array.from(document.getElementById("main-nav").children);
-    links.push(document.getElementById("title-link"));
+    // links.push(document.getElementById("title-link"));
     links.forEach((link) => {
         if (link.pathname.split("/")[1] === document.location.pathname.split("/")[1]) {
             link.classList.add('current');
