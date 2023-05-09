@@ -12,12 +12,17 @@
 } */
 
 .light {
-    --accent: #008000;
+    /* --accent: #008000;
     --text-color: #36393F;
     --background: #EAEFEA;
     --navbar-background: #C1D0C1;
+    --second-accent: #005000; */
+
+    --text-color: #333333;
+    --background: #FFFFFF;
+    --navbar-background: #E5E5E5;
+    --accent: #4CAF50;
     --second-accent: #005000;
-    --third-accent: #90EE90;
 
     /* --text-color: #212121;
     --background: #FFFFFF;
