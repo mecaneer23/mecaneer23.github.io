@@ -568,3 +568,7 @@ img.portfolio {
     background-color: transparent;
     font-weight: thin;
 }
+
+h2.not-far {
+    margin-bottom: 0;
+}
