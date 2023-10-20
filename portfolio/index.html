@@ -11,40 +11,47 @@
 <body>
     <header class="header" w3-include-html="/resources/nav.html"></header>
     <main>
-        <div class="container">
-            <div class="flex">
-                <div class="flex-item">
-                    <div>
-                        <h2>Links</h2>
-                        <ul>
-                            <li><a href="https://mecaneer23.github.io/big-red-button/">Big red button</a></li>
-                            <li><a href="https://mecaneer23.github.io/BinarytoDecimal/">Binary to decimal</a></li>
-                            <li><a href="https://mecaneer23.github.io/guessing-game/">Guessing game</a></li>
-                            <li><a href="https://mecaneer23.github.io/slide-puzzle/">Slide puzzle</a></li>
-                            <li><a href="https://mecaneer23.github.io/tic-tac-toe/">Tic tac toe</a></li>
-                            <li><a href="https://mecaneer23.github.io/wordle/">Wordle solver</a></li>
-                            <br />
-                            <li><a href="https://github.com/mecaneer23/mecaneer23.github.io/">Website source code</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="flex-item">
-                    <div>
-                        <h2>Downloads</h2>
-                        <ul>
-                            <li><a href="/downloads/sl-linux.html">SL for Linux</a></li>
-                            <li><a href="/downloads/sl-macos.html">SL for MacOS</a></li>
-                            <li><a href="/downloads/sl-python.html">SL in Python</a></li>
-                            <!-- <li><a href="/downloads/sl-windows.html">SL for Windows</a></li> -->
-                            <li><a href="/downloads/driver-station.html">FtcDriverStation v9.0.1</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <h2>Projects</h2>
+        <div class="portfolio-container">
+            <a href="https://mecaneer23.github.io/big-red-button/" class="portfolio-card">
+                <img src="thumbnails/BigRedButton.png" class="portfolio">
+                <h2>Big red button</h2>
+                <p>It's just a big red button!</p>
+            </a>
+            <a href="https://mecaneer23.github.io/BinarytoDecimal/" class="portfolio-card">
+                <img src="thumbnails/BinarytoDecimal.png" class="portfolio">
+                <h2>Binary to decimal</h2>
+                <p>Binary to decimal converters in many languages!</p>
+            </a>
+            <a href="https://mecaneer23.github.io/guessing-game/" class="portfolio-card">
+                <img src="thumbnails/GuessingGame.png" class="portfolio">
+                <h2>Guessing game</h2>
+                <p>A simple number guessing game!</p>
+            </a>
+            <a href="https://mecaneer23.github.io/slide-puzzle/" class="portfolio-card">
+                <img src="thumbnails/SlidePuzzle.png" class="portfolio">
+                <h2>Slide puzzle</h2>
+                <p>Move tiles around to solve the puzzle! See if you can beat 50 moves!</p>
+            </a>
+            <a href="https://mecaneer23.github.io/tic-tac-toe/" class="portfolio-card">
+                <img src="thumbnails/TicTacToe.png" class="portfolio">
+                <h2>Tic tac toe</h2>
+                <p>The classic two-player game! Challenge your friends!</p>
+            </a>
+            <a href="https://mecaneer23.github.io/wordle/" class="portfolio-card">
+                <img src="thumbnails/WordleSolver.png" class="portfolio">
+                <h2>Wordle solver</h2>
+                <p>Get help solving Wordle with this handy tool!</p>
+            </a>
         </div>
-        <a id="pfp" href="https://github.com/mecaneer23">
-            <img src="/resources/gearsNoBackground.png">
-        </a>
+        <h2>Helpful Downloads</h2>
+        <ul>
+            <li><a href="downloads/sl-linux.html">SL for Linux</a></li>
+            <li><a href="downloads/sl-macos.html">SL for MacOS</a></li>
+            <li><a href="downloads/sl-python.html">SL in Python</a></li>
+            <li><a href="downloads/driver-station.html">FtcDriverStation v9.0.1</a></li>
+        </ul>
+        <a href="https://github.com/mecaneer23/mecaneer23.github.io/">Website source code</a>
         <script>
             document.body.addEventListener("keyup", function (event) {
                 if (event.keyCode === 190) { // "."
