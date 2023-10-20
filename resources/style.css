@@ -188,6 +188,7 @@ body {
 
 a:hover {
     color: var(--second-accent);
+    transition-duration: 0.3s;
 }
 
 header a:hover,
