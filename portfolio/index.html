@@ -11,6 +11,9 @@
 <body>
     <header class="header" w3-include-html="/resources/nav.html"></header>
     <main>
+        <div id="modal">
+            <img src="" id="modal-image" onmouseout="closeModal()">
+        </div>
         <h2>Web Projects</h2>
         <div class="portfolio-container">
             <a href="https://mecaneer23.github.io/big-red-button/" class="portfolio-card">
@@ -114,7 +117,7 @@
         <script>
             document.body.addEventListener("keyup", function (event) {
                 if (event.keyCode === 190) { // "."
-                event.preventDefault();
+                    event.preventDefault();
                     window.location.href = "https://github.dev/mecaneer23/mecaneer23.github.io/";
                 }
             });

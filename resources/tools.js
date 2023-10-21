@@ -1,6 +1,19 @@
 var root = document.getElementsByTagName('html')[0];
 var weirdTheme = false;
 
+function modal(event) {
+    modalElement = document.getElementById("modal");
+    if (modalElement.style.display == "none") {
+        event.preventDefault();
+    }
+    modalElement.style.display = "block";
+    document.getElementById("modal-image").src = event.srcElement.src;
+}
+
+function closeModal(event) {
+    document.getElementById("modal").style.display = "none";
+}
+
 function toggleMenu() {
     let menu = document.getElementById("burger-menu");
     if (menu.classList.contains("open")) {
@@ -74,6 +87,8 @@ function handleKeyPress(event) {
         goToSecretPage();
     } else if (isKeyDown && keys[66] && keys[82]) { // b + r
         doABarrelRoll();
+    } else {
+        closeModal();
     }
 };
 
@@ -123,6 +138,8 @@ function load() {
         document.getElementById("checkbox").addEventListener("click", toggleColorscheme);
         document.getElementsByClassName("no-padding")[0].addEventListener("mouseover", weirdThemeHandler);
         document.getElementsByClassName("no-padding")[0].addEventListener("mouseout", weirdThemeHandlerSetFalse);
+        Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("contextmenu", modal))
+        window.addEventListener("click", closeModal);
         window.addEventListener("keyup", handleKeyPress);
         window.addEventListener("keydown", handleKeyPress);
         setColorscheme(null, (localStorage.getItem("colorscheme") ? localStorage.getItem("colorscheme") == "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");

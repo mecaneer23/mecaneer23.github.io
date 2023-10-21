@@ -1,4 +1,3 @@
-
 .portfolio-container {
     width: 94vw;
     overflow-x: auto;
@@ -45,17 +44,53 @@
         align-items: center;
         width: 100%;
     }
+
     .portfolio-card img {
         width: 80vw;
         height: auto;
     }
+
     main {
         margin: 2vh 0;
     }
-    h2, h3 {
+
+    h2,
+    h3 {
         margin: 0.83em 3vw;
     }
+
     .portfolio-card h2 {
         margin-left: 0;
     }
+}
+
+/* .blown-up {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    width: 80vw !important;
+    height: auto !important;
+    z-index: 1000;
+} */
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#modal-image {
+    max-width: 95vw;
+    max-height: 95vh;
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
 }
