@@ -1,7 +1,7 @@
 
 .portfolio-container {
     width: 94vw;
-    overflow-x: scroll;
+    overflow-x: auto;
     display: flex;
     flex-direction: row;
     margin-bottom: 7vh;
@@ -42,7 +42,6 @@
 @media (max-width: 850px) {
     .portfolio-container {
         flex-direction: column;
-        overflow-x: hidden;
         align-items: center;
         width: 100%;
     }
