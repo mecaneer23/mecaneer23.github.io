@@ -64,16 +64,6 @@
     }
 }
 
-/* .blown-up {
-    position: absolute;
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-    width: 80vw !important;
-    height: auto !important;
-    z-index: 1000;
-} */
-
 #modal {
     display: none;
     position: fixed;
