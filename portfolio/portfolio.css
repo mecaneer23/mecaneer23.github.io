@@ -76,9 +76,9 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-#modal-image {
-    max-width: 95vw;
-    max-height: 95vh;
+#modal-content {
+    width: 75vw;
+    height: 75vh;
     position: absolute;
     top: 50vh;
     left: 50vw;

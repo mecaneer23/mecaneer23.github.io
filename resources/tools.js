@@ -7,7 +7,7 @@ function modal(event) {
         event.preventDefault();
     }
     modalElement.style.display = "block";
-    document.getElementById("modal-image").src = event.srcElement.src;
+    document.getElementById("modal-content").src = event.srcElement.parentElement.href;
 }
 
 function closeModal(event) {
