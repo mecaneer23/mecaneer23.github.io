@@ -77,10 +77,14 @@
 }
 
 #modal-content {
-    width: 75vw;
+    width: auto;
     height: 75vh;
     position: absolute;
     top: 50vh;
     left: 50vw;
     transform: translate(-50%, -50%);
+}
+
+iframe#modal-content {
+    width: 75vw;
 }

@@ -7,7 +7,18 @@ function modal(event) {
         event.preventDefault();
     }
     modalElement.style.display = "block";
-    document.getElementById("modal-content").src = event.srcElement.parentElement.href;
+    try {
+        document.getElementById("modal-content").src = event.srcElement.parentElement.href;
+    } catch (err) {
+        if (document.getElementById("modal-content").nodeName != "IMG") {
+            modalElement.removeChild(modalElement.childNodes[1])
+            const newElem = document.createElement("img");
+            newElem.id = "modal-content";
+            newElem.src = event.srcElement.src;
+            newElem.addEventListener("mouseout", closeModal);
+            modalElement.appendChild(newElem);
+        }
+    }
 }
 
 function closeModal(event) {
