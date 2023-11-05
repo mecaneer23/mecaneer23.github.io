@@ -97,7 +97,7 @@ body {
         width: 94vw;
     }
 
-    .about-container .right {
+    .profile {
         float: right;
         height: 75vh;
         padding-right: 5vw;
@@ -152,6 +152,11 @@ body {
     table {
         width: 94vw;
     }
+
+    .profile-container {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 #main-nav {
@@ -171,7 +176,7 @@ body {
     height: 1px;
 }
 
-#profile {
+.profile {
     height: 50vh;
     width: 39.8vh;
 }
