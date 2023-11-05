@@ -27,6 +27,7 @@
     --discord-color: #5865f2;
     --github-color: #24292F;
     --youtube-color: #FF0000;
+    --linkedin-color: #007EBB;
 }
 
 .dark {
@@ -46,6 +47,7 @@
     --discord-color: #FFFFFF;
     --github-color: #FFFFFF;
     --youtube-color: #FFFFFF;
+    --linkedin-color: #FFFFFF;
 }
 
 :root {
@@ -452,6 +454,10 @@ footer ul {
 
 .youtube-logo {
     fill: var(--youtube-color);
+}
+
+.linkedin-logo {
+    fill: var(--linkedin-color);
 }
 
 #contact-form {
