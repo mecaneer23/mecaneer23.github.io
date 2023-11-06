@@ -7,17 +7,19 @@ function modal(event) {
         event.preventDefault();
     }
     modalElement.style.display = "block";
-    try {
-        document.getElementById("modal-content").src = event.srcElement.parentElement.href;
-    } catch (err) {
-        if (document.getElementById("modal-content").nodeName != "IMG") {
-            modalElement.removeChild(modalElement.childNodes[1])
-            const newElem = document.createElement("img");
-            newElem.id = "modal-content";
-            newElem.src = event.srcElement.src;
-            newElem.addEventListener("mouseout", closeModal);
-            modalElement.appendChild(newElem);
-        }
+    if (window.location.pathname.replaceAll("/", "") == "portfolio") {
+        try {
+            document.getElementById("modal-content").src = event.srcElement.parentElement.href;
+            return;
+        } catch (err) {}
+    }
+    if (document.getElementById("modal-content").nodeName != "IMG") {
+        modalElement.removeChild(modalElement.childNodes[1])
+        const newElem = document.createElement("img");
+        newElem.id = "modal-content";
+        newElem.src = event.srcElement.src;
+        newElem.addEventListener("mouseout", closeModal);
+        modalElement.appendChild(newElem);
     }
 }
 

@@ -12,42 +12,44 @@
 
 .light {
     /* --accent: #008000;
-    --text-color: #36393F;
-    --background: #EAEFEA;
-    --navbar-background: #C1D0C1;
+    --text-color: #36393f;
+    --background: #eaefea;
+    --navbar-background: #c1d0c1;
     --second-accent: #005000; */
 
     --text-color: #333333;
-    --background: #FFFFFF;
-    --navbar-background: #E5E5E5;
-    --accent: #4CAF50;
+    --background: #ffffff;
+    --navbar-background: #e5e5e5;
+    --accent: #4caf50;
     --second-accent: #005000;
+    --gray: #666666;
 
     color-scheme: light;
     --discord-color: #5865f2;
-    --github-color: #24292F;
-    --youtube-color: #FF0000;
-    --linkedin-color: #007EBB;
+    --github-color: #24292f;
+    --youtube-color: #ff0000;
+    --linkedin-color: #007ebb;
 }
 
 .dark {
-    /* --text-color: #FFFFFF;
+    /* --text-color: #ffffff;
     --background: #212121;
     --navbar-background: #424242;
-    --accent: #FF9800;
-    --second-accent: #03A9F4; */
+    --accent: #ff9800;
+    --second-accent: #03a9f4; */
 
-    --text-color: #EAEFEA;
-    --background: #36393F;
-    --navbar-background: #282A2F;
+    --text-color: #eaefea;
+    --background: #36393f;
+    --navbar-background: #282a2f;
     --accent: #008000;
-    --second-accent: #90EE90;
+    --second-accent: #90ee90;
+    --gray: #888888;
 
     color-scheme: dark;
-    --discord-color: #FFFFFF;
-    --github-color: #FFFFFF;
-    --youtube-color: #FFFFFF;
-    --linkedin-color: #FFFFFF;
+    --discord-color: #ffffff;
+    --github-color: #ffffff;
+    --youtube-color: #ffffff;
+    --linkedin-color: #ffffff;
 }
 
 :root {
@@ -174,9 +176,9 @@ body {
 .hr {
     background-color: var(--accent);
     height: 1px;
-    width: 94%;
+    width: 92vw;
     display: inline-block;
-    margin: 4vh 0;
+    margin-top: 4vh;
 }
 
 .profile {
@@ -554,4 +556,64 @@ td {
 
 tr:nth-child(even) {
     background-color: var(--navbar-background);
+}
+
+.resume-card {
+    padding: 2vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 1vh;
+    width: 90vw;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.resume-portfolio * {
+    background-color: var(--navbar-background)
+}
+
+.resume-card img {
+    box-sizing: border-box;
+    border-radius: 1vh;
+    width: 25vw;
+    margin: 0 3vw;
+}
+
+.resume-portfolio:nth-child(even) img {
+    display: absolute;
+    right: 0;
+}
+
+.resume-portfolio:nth-child(odd) img {
+    display: absolute;
+    left: 0;
+}
+
+.resume-subtext {
+    color: var(--gray);
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#modal-content {
+    width: auto;
+    height: 75vh;
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+}
+
+iframe#modal-content {
+    width: 75vw;
 }
