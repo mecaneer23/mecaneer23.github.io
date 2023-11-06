@@ -568,7 +568,7 @@ tr:nth-child(even) {
     text-decoration: none;
 }
 
-.resume-portfolio * {
+.resume-container * {
     background-color: var(--navbar-background)
 }
 
@@ -579,12 +579,12 @@ tr:nth-child(even) {
     margin: 0 3vw;
 }
 
-.resume-portfolio:nth-child(even) img {
+.resume-container:nth-child(even) img {
     display: absolute;
     right: 0;
 }
 
-.resume-portfolio:nth-child(odd) img {
+.resume-container:nth-child(odd) img {
     display: absolute;
     left: 0;
 }
