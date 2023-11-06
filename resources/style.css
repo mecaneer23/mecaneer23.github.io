@@ -100,7 +100,6 @@ body {
 
     .profile {
         float: right;
-        height: 75vh;
         padding-right: 5vw;
     }
 
@@ -175,7 +174,9 @@ body {
 .hr {
     background-color: var(--accent);
     height: 1px;
-    width: 50%;
+    width: 94%;
+    display: inline-block;
+    margin: 4vh 0;
 }
 
 .profile {
