@@ -580,7 +580,7 @@ tr:nth-child(even) {
 
 .resume-header {
     padding: 1vw;
-    margin-right: 2vw;
+    width: 90vw;
     background-color: var(--accent);
     border-radius: 1vh;
 }
@@ -613,7 +613,7 @@ tr:nth-child(even) {
     margin-bottom: 5vh;
 }
 
-.resume-nav a {
+.resume-nav a, .button {
     text-decoration: none;
     background-color: var(--accent);
     color: var(--text-color);
@@ -621,9 +621,16 @@ tr:nth-child(even) {
     border-radius: 1vh;
 }
 
-.resume-nav a:hover {
+.resume-nav a:hover, .button:hover {
     color: var(--background);
     background-color: var(--second-accent);
+}
+
+.justify-apart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 92vw;
 }
 
 #modal {
