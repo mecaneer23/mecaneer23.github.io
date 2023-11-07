@@ -1,6 +1,17 @@
 var root = document.getElementsByTagName('html')[0];
 var weirdTheme = false;
 
+function set_modal_content(modalElement, type, src) {
+    Array.from(modalElement.childNodes).forEach((child) => {
+        modalElement.removeChild(child)
+    });
+    const newElem = document.createElement(type);
+    newElem.id = "modal-content";
+    newElem.src = src;
+    newElem.addEventListener("mouseout", closeModal);
+    modalElement.appendChild(newElem);
+}
+
 function modal(event) {
     modalElement = document.getElementById("modal");
     if (modalElement.style.display == "none") {
@@ -12,20 +23,13 @@ function modal(event) {
         && event.srcElement.parentElement.href.indexOf("github.com") == -1
     ) {
         try {
-            document.getElementById("modal-content").src = event.srcElement.parentElement.href;
+            set_modal_content(modalElement, "iframe", event.srcElement.parentElement.href)
             return;
-        } catch (err) { }
+        } catch (err) {
+            console.error("threw error " + err + " while trying to construct modal iframe");
+        }
     }
-    if (document.getElementById("modal-content").nodeName != "IMG") {
-        modalElement.removeChild(modalElement.childNodes[1])
-        const newElem = document.createElement("img");
-        newElem.id = "modal-content";
-        newElem.src = event.srcElement.src;
-        newElem.addEventListener("mouseout", closeModal);
-        modalElement.appendChild(newElem);
-    } else {
-        document.getElementById("modal-content").src = event.srcElement.src;
-    }
+    set_modal_content(modalElement, "img", event.srcElement.src)
 }
 
 function closeModal(event) {
