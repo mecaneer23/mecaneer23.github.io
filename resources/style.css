@@ -614,6 +614,7 @@ tr:nth-child(even) {
 }
 
 .resume-nav a, .button {
+    width: fit-content;
     text-decoration: none;
     background-color: var(--accent);
     color: var(--text-color);
@@ -656,4 +657,23 @@ tr:nth-child(even) {
 
 iframe#modal-content {
     width: 75vw;
+}
+
+#back-to-top {
+    position: fixed;
+    right: 3vw;
+    bottom: 3vh;
+    border-radius: 50%;
+    display: none;
+    width: 10vh;
+    height: 10vh;
+    text-align: center;
+    align-items: center;
+    background-color: var(--accent);
+    border: medium solid var(--background);
+}
+
+#back-to-top:hover {
+    background-color: var(--second-accent);
+    color: var(--background);
 }

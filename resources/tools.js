@@ -1,6 +1,28 @@
 var root = document.getElementsByTagName('html')[0];
 var weirdTheme = false;
 
+function toTop(event) {
+    root.scrollTop = 0;
+}
+
+function initBackToTop() {
+    backToTopButton = document.getElementById("back-to-top");
+    if (backToTopButton == null) return;
+    backToTopButton.addEventListener("click", toTop);
+}
+
+function backToTop(event) {
+    offset = 300
+    backToTopButton = document.getElementById("back-to-top");
+    if (backToTopButton == null) return;
+    if (root.scrollTop > offset) {
+        backToTopButton.style.display = "flex";
+        backToTopButton.style.transform = 'rotate('+(root.scrollTop - offset) % 360+'deg)';
+    } else {
+        backToTopButton.style.display = "none";
+    }
+}
+
 function set_modal_content(modalElement, type, src) {
     Array.from(modalElement.childNodes).forEach((child) => {
         modalElement.removeChild(child)
@@ -165,6 +187,8 @@ function load() {
         window.addEventListener("click", closeModal);
         window.addEventListener("keyup", handleKeyPress);
         window.addEventListener("keydown", handleKeyPress);
+        initBackToTop();
+        window.addEventListener("scroll", backToTop);
         setColorscheme(null, (localStorage.getItem("colorscheme") ? localStorage.getItem("colorscheme") == "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
         updateTitle();
         refreshNavbar();

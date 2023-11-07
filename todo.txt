@@ -1,3 +1,2 @@
 - change pictures on each page (contact is handshake, home is something else)
 - bulk out resume
-- add back to top buttons on all pages that scroll (at least about page)
