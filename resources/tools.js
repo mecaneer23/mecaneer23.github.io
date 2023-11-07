@@ -7,11 +7,14 @@ function modal(event) {
         event.preventDefault();
     }
     modalElement.style.display = "block";
-    if (window.location.pathname.replaceAll("/", "") == "portfolio") {
+    if (
+        window.location.pathname.replaceAll("/", "") == "portfolio"
+        && event.srcElement.parentElement.href.indexOf("github.com") == -1
+    ) {
         try {
             document.getElementById("modal-content").src = event.srcElement.parentElement.href;
             return;
-        } catch (err) {}
+        } catch (err) { }
     }
     if (document.getElementById("modal-content").nodeName != "IMG") {
         modalElement.removeChild(modalElement.childNodes[1])
@@ -20,6 +23,8 @@ function modal(event) {
         newElem.src = event.srcElement.src;
         newElem.addEventListener("mouseout", closeModal);
         modalElement.appendChild(newElem);
+    } else {
+        document.getElementById("modal-content").src = event.srcElement.src;
     }
 }
 
@@ -143,7 +148,8 @@ function refreshNavbar() {
         } else {
             link.classList.remove('current');
         }
-    });}
+    });
+}
 
 function load() {
     try {
