@@ -673,13 +673,13 @@ iframe#modal-content {
 
 #back-to-top {
     position: fixed;
-    right: 3vw;
+    right: 2vw;
     bottom: 3vh;
     border-radius: 50%;
     display: none;
     width: 10vh;
     height: 10vh;
-    text-align: center;
+    justify-content: center;
     align-items: center;
     background-color: var(--accent);
     border: medium solid var(--background);
