@@ -701,6 +701,7 @@ iframe#modal-content {
     display: none;
     width: 10vh;
     height: 10vh;
+    font-size: small;
     justify-content: center;
     align-items: center;
     background-color: var(--accent);
