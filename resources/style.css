@@ -167,7 +167,7 @@ body {
     }
 
     .resume-card img {
-        max-height: min-content !important;
+        width: auto !important;
     }
 }
 
@@ -585,7 +585,8 @@ tr:nth-child(even) {
 .resume-card img {
     box-sizing: border-box;
     border-radius: 1vh;
-    max-height: 50vh;
+    height: min-content;
+    width: 20vw;
 }
 
 .resume-header {
@@ -615,7 +616,7 @@ tr:nth-child(even) {
 }
 
 .resume-card p {
-    max-width: 45vw;
+    max-width: 40vw;
     background-color: var(--navbar-background);
 }
 
