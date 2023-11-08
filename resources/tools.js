@@ -1,6 +1,10 @@
 var root = document.getElementsByTagName('html')[0];
 var weirdTheme = false;
 
+function pageIs(name) {
+    return window.location.pathname.indexOf(name) > -1
+}
+
 function toTop(event) {
     root.scrollTop = 0;
 }
@@ -41,7 +45,7 @@ function modal(event) {
     }
     modalElement.style.display = "block";
     if (
-        window.location.pathname.replaceAll("/", "") == "portfolio"
+        pageIs("portfolio")
         && event.srcElement.parentElement.href.indexOf("github.com") == -1
     ) {
         try {
@@ -183,11 +187,12 @@ function load() {
         document.getElementById("checkbox").addEventListener("click", toggleColorscheme);
         document.getElementsByClassName("no-padding")[0].addEventListener("mouseover", weirdThemeHandler);
         document.getElementsByClassName("no-padding")[0].addEventListener("mouseout", weirdThemeHandlerSetFalse);
-        if (window.location.pathname.replaceAll("/", "") == "portfolio") {
-            Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("contextmenu", modal))
+        if (pageIs("portfolio")) {
+            Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("contextmenu", modal));
             window.addEventListener("click", closeModal);
-        } else if (window.location.pathname.replaceAll("/", "") == "about") {
-            Array.from(document.querySelectorAll(".resume-card img")).forEach((img) => img.addEventListener("click", modal))
+        } else if (pageIs("about")) {
+            Array.from(document.querySelectorAll(".resume-card img")).forEach((img) => img.addEventListener("click", modal));
+            document.getElementById("modal").addEventListener("click", closeModal);
         }
         window.addEventListener("keyup", handleKeyPress);
         window.addEventListener("keydown", handleKeyPress);
