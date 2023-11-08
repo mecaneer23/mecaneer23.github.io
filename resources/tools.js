@@ -183,8 +183,12 @@ function load() {
         document.getElementById("checkbox").addEventListener("click", toggleColorscheme);
         document.getElementsByClassName("no-padding")[0].addEventListener("mouseover", weirdThemeHandler);
         document.getElementsByClassName("no-padding")[0].addEventListener("mouseout", weirdThemeHandlerSetFalse);
-        Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("contextmenu", modal))
-        window.addEventListener("click", closeModal);
+        if (window.location.pathname.replaceAll("/", "") == "portfolio") {
+            Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("contextmenu", modal))
+            window.addEventListener("click", closeModal);
+        } else if (window.location.pathname.replaceAll("/", "") == "about") {
+            Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("click", modal))
+        }
         window.addEventListener("keyup", handleKeyPress);
         window.addEventListener("keydown", handleKeyPress);
         initBackToTop();
