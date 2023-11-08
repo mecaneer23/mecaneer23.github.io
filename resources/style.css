@@ -587,6 +587,7 @@ tr:nth-child(even) {
     border-radius: 1vh;
     height: min-content;
     width: 20vw;
+    cursor: zoom-in;
 }
 
 .resume-header {

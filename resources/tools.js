@@ -187,7 +187,7 @@ function load() {
             Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("contextmenu", modal))
             window.addEventListener("click", closeModal);
         } else if (window.location.pathname.replaceAll("/", "") == "about") {
-            Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("click", modal))
+            Array.from(document.querySelectorAll(".resume-card img")).forEach((img) => img.addEventListener("click", modal))
         }
         window.addEventListener("keyup", handleKeyPress);
         window.addEventListener("keydown", handleKeyPress);
