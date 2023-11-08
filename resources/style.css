@@ -707,6 +707,7 @@ iframe#modal-content {
     align-items: center;
     background-color: var(--accent);
     border: medium solid var(--background);
+    cursor: pointer;
 }
 
 #back-to-top:hover {
