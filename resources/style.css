@@ -622,7 +622,7 @@ tr:nth-child(even) {
 
 .resume-nav {
     text-align: center;
-    margin-bottom: 5vh;
+    margin: 3vh 0 5vh;
     width: 92vw;
 }
 
@@ -645,6 +645,27 @@ tr:nth-child(even) {
     justify-content: space-between;
     align-items: center;
     width: 92vw;
+}
+
+.resume-skills {
+    display: flex;
+    justify-content: center;
+}
+
+.resume-skills div {
+    max-width: 78vw;
+    text-align: center;
+}
+
+.resume-skills p {
+    width: fit-content;
+    text-decoration: none;
+    background-color: var(--accent);
+    color: var(--text-color);
+    padding: 0.5vh 1.5vh;
+    border-radius: 1vh;
+    display: inline-block;
+    margin: 1vh 0;
 }
 
 #modal {
@@ -689,4 +710,8 @@ iframe#modal-content {
 #back-to-top:hover {
     background-color: var(--second-accent);
     color: var(--background);
+}
+
+.motto {
+    font-size: 4vh;
 }
