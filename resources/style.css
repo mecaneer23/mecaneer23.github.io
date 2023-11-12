@@ -694,6 +694,10 @@ iframe#modal-content {
     width: 75vw;
 }
 
+img#modal-content {
+    cursor: zoom-out;
+}
+
 #back-to-top {
     position: fixed;
     right: 2vw;
