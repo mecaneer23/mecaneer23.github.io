@@ -144,7 +144,8 @@ function goToSecretPage() {
     window.location.pathname = "/easter-egg";
 }
 
-function doABarrelRoll() {
+function doABarrelRoll(event) {
+    event.preventDefault()
     root.classList.add('spinner');
     setTimeout(() => root.classList.remove('spinner'), 3500);
 }
@@ -191,9 +192,9 @@ function load() {
             Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("contextmenu", modal));
             window.addEventListener("click", closeModal);
         } else if (pageIs("about")) {
-            Array.from(document.querySelectorAll(".resume-card img")).forEach((img) => img.addEventListener("click", modal));
+            Array.from(document.querySelectorAll("img")).forEach((img) => img.addEventListener("click", modal));
             document.getElementById("modal").addEventListener("click", closeModal);
-            document.querySelector("img.profile").addEventListener("contextmenu", modal);
+            document.querySelector("img.profile").addEventListener("contextmenu", doABarrelRoll);
         }
         window.addEventListener("keyup", handleKeyPress);
         window.addEventListener("keydown", handleKeyPress);
