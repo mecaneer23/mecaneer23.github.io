@@ -591,6 +591,15 @@ tr:nth-child(even) {
     cursor: zoom-in;
 }
 
+.multiple-images {
+    display: flex;
+    flex-direction: column;
+}
+
+.multiple-images :not(:last-child) {
+    margin-bottom: 4vh;
+}
+
 .resume-header {
     padding: 1vw;
     width: 90vw;
