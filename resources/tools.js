@@ -21,7 +21,7 @@ function backToTop(event) {
     if (backToTopButton == null) return;
     if (root.scrollTop > offset) {
         backToTopButton.style.display = "flex";
-        backToTopButton.style.transform = 'rotate('+(root.scrollTop - offset) % 360+'deg)';
+        backToTopButton.style.transform = 'rotate(' + (root.scrollTop - offset) % 360 + 'deg)';
     } else {
         backToTopButton.style.display = "none";
     }
@@ -193,6 +193,7 @@ function load() {
         } else if (pageIs("about")) {
             Array.from(document.querySelectorAll(".resume-card img")).forEach((img) => img.addEventListener("click", modal));
             document.getElementById("modal").addEventListener("click", closeModal);
+            document.querySelector("img.profile").addEventListener("contextmenu", modal);
         }
         window.addEventListener("keyup", handleKeyPress);
         window.addEventListener("keydown", handleKeyPress);
