@@ -707,9 +707,11 @@ tr:nth-child(even) {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.7);
+    user-select: none;
 }
 
 #modal-content {
+    user-select: none;
     width: auto;
     height: 75vh;
     position: absolute;
