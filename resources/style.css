@@ -655,7 +655,8 @@ tr:nth-child(even) {
     width: 92vw;
 }
 
-.resume-nav a, .button {
+.resume-nav a,
+.button {
     width: fit-content;
     text-decoration: none;
     background-color: var(--accent);
@@ -664,7 +665,8 @@ tr:nth-child(even) {
     border-radius: 1vh;
 }
 
-.resume-nav a:hover, .button:hover {
+.resume-nav a:hover,
+.button:hover {
     color: var(--background);
     background-color: var(--second-accent);
 }
