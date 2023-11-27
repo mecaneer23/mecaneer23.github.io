@@ -1,0 +1,41 @@
+.gallery {
+    width: 94vw;
+    margin: 0 -3vw;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    margin: 1vw 2vw;
+    cursor: zoom-in;
+}
+
+@media (min-width: 1201px) {
+    .gallery {
+        column-count: 5;
+    }
+}
+
+@media (max-width: 1200px) {
+    .gallery {
+        column-count: 4;
+    }
+}
+
+@media (max-width: 1000px) {
+    .gallery {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 800px) {
+    .gallery {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 400px) {
+    .gallery {
+        column-count: 1;
+    }
+}

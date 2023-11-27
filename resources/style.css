@@ -591,6 +591,24 @@ tr:nth-child(even) {
     cursor: zoom-in;
 }
 
+.see-more-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.see-more-wrapper.right {
+    align-items: end;
+}
+
+.see-more-wrapper.left {
+    align-items: start;
+}
+
+.see-more {
+    margin-top: 4vh;
+}
+
 .multiple-images {
     display: flex;
     flex-direction: column;

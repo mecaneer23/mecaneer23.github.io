@@ -77,6 +77,16 @@ function toggleMenu() {
     }
 }
 
+function ensureATheme() {
+    if (
+        !root.classList.contains("dark")
+        && !root.classList.contains("light")
+    ) {
+        root.classList.add("light");
+        innerColorscheme("light");
+    }
+}
+
 function innerColorscheme(theme) {
     root.classList.remove(theme == "light" ? "dark" : "light")
     root.classList.add(theme);
@@ -185,13 +195,14 @@ function refreshNavbar() {
 function load() {
     try {
         window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => setColorscheme(e, null));
+        setColorscheme(null, (localStorage.getItem("colorscheme") ? localStorage.getItem("colorscheme") == "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
         document.getElementById("checkbox").addEventListener("click", toggleColorscheme);
         document.getElementsByClassName("no-padding")[0].addEventListener("mouseover", weirdThemeHandler);
         document.getElementsByClassName("no-padding")[0].addEventListener("mouseout", weirdThemeHandlerSetFalse);
         if (pageIs("portfolio")) {
             Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("contextmenu", modal));
             window.addEventListener("click", closeModal);
-        } else if (pageIs("about")) {
+        } else if (pageIs("about") || pageIs("gallery")) {
             Array.from(document.querySelectorAll("img")).forEach((img) => img.addEventListener("click", modal));
             document.getElementById("modal").addEventListener("click", closeModal);
             document.querySelector("img.profile").addEventListener("contextmenu", doABarrelRoll);
@@ -200,7 +211,6 @@ function load() {
         window.addEventListener("keydown", handleKeyPress);
         initBackToTop();
         window.addEventListener("scroll", backToTop);
-        setColorscheme(null, (localStorage.getItem("colorscheme") ? localStorage.getItem("colorscheme") == "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
         updateTitle();
         refreshNavbar();
         return document.body.hasAttribute("data-theme");
