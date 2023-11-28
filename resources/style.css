@@ -719,7 +719,7 @@ tr:nth-child(even) {
 #modal-content {
     user-select: none;
     width: auto;
-    height: 75vh;
+    height: 90vh;
     position: absolute;
     top: 50vh;
     left: 50vw;
@@ -727,7 +727,7 @@ tr:nth-child(even) {
 }
 
 iframe#modal-content {
-    width: 75vw;
+    width: 90vw;
 }
 
 img#modal-content {
