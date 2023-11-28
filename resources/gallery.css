@@ -6,7 +6,7 @@
 .gallery img {
     width: 100%;
     height: auto;
-    margin: 1vw 2vw;
+    margin: 0.5vw 2vw;
     cursor: zoom-in;
 }
 
