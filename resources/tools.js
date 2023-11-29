@@ -202,11 +202,11 @@ function load() {
         if (pageIs("portfolio")) {
             Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("contextmenu", modal));
             window.addEventListener("click", closeModal);
-        } else if (pageIs("about") || pageIs("gallery")) {
-            Array.from(document.querySelectorAll("img")).forEach((img) => img.addEventListener("click", modal));
-            document.getElementById("modal").addEventListener("click", closeModal);
+        } else if (pageIs("about")) {
             document.querySelector("img.profile").addEventListener("contextmenu", doABarrelRoll);
         }
+        Array.from(document.querySelectorAll("img")).forEach((img) => img.addEventListener("click", modal));
+        document.getElementById("modal").addEventListener("click", closeModal);
         window.addEventListener("keyup", handleKeyPress);
         window.addEventListener("keydown", handleKeyPress);
         initBackToTop();
