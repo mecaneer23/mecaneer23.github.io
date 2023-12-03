@@ -173,6 +173,10 @@ body {
     .resume-card img {
         width: 60vw !important;
     }
+
+    .see-more-wrapper.left {
+        align-items: end !important;
+    }
 }
 
 #main-nav {

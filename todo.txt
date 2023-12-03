@@ -5,4 +5,3 @@
 - change site color?
 
 - fix resume header overflow on small screens
-- fix see more buttons on small screens
