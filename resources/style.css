@@ -106,7 +106,7 @@ body {
 
     .profile {
         float: right;
-        padding-right: 5vw;
+        margin-right: 5vw;
     }
 
     table {
@@ -207,6 +207,7 @@ body {
     height: 50vh;
     width: 39.8vh;
     cursor: zoom-in;
+    border-radius: 1vw;
 }
 
 .hr.third {
