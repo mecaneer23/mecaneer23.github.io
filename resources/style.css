@@ -667,12 +667,20 @@ tr:nth-child(even) {
     color: var(--text-color);
     padding: 1vh;
     border-radius: 1vh;
+    cursor: pointer;
 }
 
 .resume-nav a:hover,
 .button:hover {
     color: var(--background);
     background-color: var(--second-accent);
+}
+
+.button.disabled {
+    cursor: not-allowed;
+    pointer-events: all;
+    background-color: lightgray;
+    color: var(--background);
 }
 
 .justify-apart {
