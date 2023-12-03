@@ -177,6 +177,10 @@ body {
     .see-more-wrapper.left {
         align-items: end !important;
     }
+
+    .justify-apart :not(:first-child) {
+        display: none;
+    }
 }
 
 #main-nav {

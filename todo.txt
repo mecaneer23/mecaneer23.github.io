@@ -3,5 +3,3 @@
 - make activity descriptions better
 - make print to pdf button work
 - change site color?
-
-- fix resume header overflow on small screens
