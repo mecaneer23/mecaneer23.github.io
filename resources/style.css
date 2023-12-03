@@ -600,7 +600,7 @@ tr:nth-child(even) {
     box-sizing: border-box;
     border-radius: 1vh;
     height: min-content;
-    width: 20vw;
+    width: 25vw;
     cursor: zoom-in;
 }
 
@@ -645,21 +645,29 @@ tr:nth-child(even) {
 
 .resume-card:nth-child(odd) {
     flex-direction: row;
-    text-align: left;
 }
 
 .resume-card:nth-child(even) {
     flex-direction: row-reverse;
-    text-align: right;
 }
 
 .resume-subtext {
     color: var(--gray);
 }
 
-.resume-card p {
-    max-width: 40vw;
+.resume-card:nth-child(even) div:first-child:not(.multiple-images) {
+    margin-left: 3vw;
+}
+
+.resume-card p,
+.resume-card ul,
+.resume-card li {
     background-color: var(--navbar-background);
+    list-style-position: inside;
+}
+
+.resume-card ul {
+    padding-left: 2vw;
 }
 
 .resume-nav {
