@@ -661,6 +661,7 @@ tr:nth-child(even) {
     text-align: center;
     margin: 3vh 0 5vh;
     width: 92vw;
+    line-height: 2.5;
 }
 
 .resume-nav a,
