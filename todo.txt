@@ -3,3 +3,7 @@
 - make activity descriptions better
 - make print to pdf button work
 - change site color?
+
+- switch activities and education sections
+- fix resume header overflow on small screens
+- fix see more buttons on small screens
