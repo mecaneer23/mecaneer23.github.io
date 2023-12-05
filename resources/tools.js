@@ -192,20 +192,36 @@ function refreshNavbar() {
     });
 }
 
-async function convertHTMLtoPDF(caller, filename, queryToConvert) {
+function convertHTMLtoPDF(caller, filename, queryToConvert) {
     const { jsPDF } = window.jspdf;
     let div = document.querySelector(queryToConvert);
-    setTimeout(() => {
+    let css;
+    setTimeout(function () {
+        css = document.createElement("link");
+        css.rel = "stylesheet";
+        css.href = "/about/pdf.css";
+        document.body.appendChild(css);
         caller.classList.add("disabled");
     }, 10);
-    let doc = new jsPDF('p', "pt", [1000, 1920]);
-    await doc.html(div, {
-        callback: function (doc) {
-            let bloburl = doc.output('bloburl', {filename: filename});
-            window.open(bloburl, '_blank');
-        },
-    });
-    caller.classList.remove("disabled");
+    setTimeout(function () {
+        let doc = new jsPDF({
+            orientation: "portrait",
+            format: [1000, 1920],
+            unit: "px",
+            hotfixes: ["px_scaling"],
+            putOnlyUsedFonts: true,
+        });
+        doc.html(div, {
+            callback: function (doc) {
+                let bloburl = doc.output('bloburl', {filename: filename});
+                window.open(bloburl, '_blank');
+            },
+        });
+    }, 11);
+    setTimeout(function () {
+        document.body.removeChild(css);
+        caller.classList.remove("disabled");
+    }, 12);
 }
 
 function load() {
