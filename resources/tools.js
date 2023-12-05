@@ -192,19 +192,19 @@ function refreshNavbar() {
     });
 }
 
-function convertHTMLtoPDF(caller, filename, queryToConvert) {
+async function convertHTMLtoPDF(caller, filename, queryToConvert) {
     const { jsPDF } = window.jspdf;
-    // const { html2canvas } = window.html2canvas;
-    let doc = new jsPDF('p', "pt", [1000, 1920]);
     let div = document.querySelector(queryToConvert);
-
-    caller.classList.add("disabled")
-    doc.html(div, {
+    setTimeout(() => {
+        caller.classList.add("disabled");
+    }, 10);
+    let doc = new jsPDF('p', "pt", [1000, 1920]);
+    await doc.html(div, {
         callback: function (doc) {
-            doc.save(filename);
+            let bloburl = doc.output('bloburl', {filename: filename});
+            window.open(bloburl, '_blank');
         },
     });
-    console.log(caller);
     caller.classList.remove("disabled");
 }
 
