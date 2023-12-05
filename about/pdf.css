@@ -1,0 +1,47 @@
+:root {
+    --text-color: #333333;
+    --background: #ffffff;
+    --navbar-background: #e5e5e5;
+    --accent: #4caf50;
+    --second-accent: #005000;
+    --gray: #666666;
+}
+
+.profile {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    object-position: 0 35%;
+    float: none;
+    margin: 0;
+}
+
+.about-me p,
+.hr,
+.justify-apart,
+.resume-nav,
+.resume-container img,
+.see-more-wrapper,
+#back-to-top {
+    display: none !important;
+}
+
+.resume-card {
+    background-color: var(--background);
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+.resume-card li,
+.resume-card ul,
+.resume-card div,
+.resume-card p {
+    background-color: var(--background);
+    margin-left: 0 !important;
+}
+
+.resume-card:nth-child(even) {
+    flex-direction: row;
+}
