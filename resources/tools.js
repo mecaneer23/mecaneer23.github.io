@@ -192,10 +192,31 @@ function refreshNavbar() {
     });
 }
 
+function getImageXHR(imageUrl, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', imageUrl, true);
+    xhr.responseType = 'blob';
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            var reader = new FileReader();
+            reader.onloadend = function () {
+                var dataUrl = reader.result;
+                callback(dataUrl);
+            };
+
+            reader.readAsDataURL(xhr.response);
+        }
+    };
+
+    xhr.send();
+}
+
 function convertHTMLtoPDF(caller, filename, queryToConvert) {
-    const { jsPDF } = window.jspdf;
     let div = document.querySelector(queryToConvert);
     let css;
+    setTimeout(function () {
+    }, 10);
     setTimeout(function () {
         css = document.createElement("link");
         css.rel = "stylesheet";
@@ -204,24 +225,21 @@ function convertHTMLtoPDF(caller, filename, queryToConvert) {
         caller.classList.add("disabled");
     }, 10);
     setTimeout(function () {
-        let doc = new jsPDF({
-            orientation: "portrait",
-            format: [1000, 1920],
-            unit: "px",
-            hotfixes: ["px_scaling"],
-            putOnlyUsedFonts: true,
-        });
-        doc.html(div, {
-            callback: function (doc) {
-                let bloburl = doc.output('bloburl', {filename: filename});
-                window.open(bloburl, '_blank');
+        html2pdf().set({
+            filename: filename,
+            image: {
+                type: "jpeg",
+                quality: 1,
             },
+            html2canvas: { scale: 1, scrollY: 0 },
+        }).from(div).outputPdf("bloburl", { filename: filename }).then((bloburl) => {
+            window.open(bloburl);
         });
-    }, 11);
+    }, 20);
     setTimeout(function () {
         document.body.removeChild(css);
         caller.classList.remove("disabled");
-    }, 12);
+    }, 30);
 }
 
 function load() {
