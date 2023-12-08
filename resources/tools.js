@@ -231,7 +231,7 @@ function convertHTMLtoPDF(caller, filename, queryToConvert) {
                 type: "jpeg",
                 quality: 1,
             },
-            html2canvas: { scale: 1, scrollY: 0 },
+            html2canvas: { scale: 1, scrollY: 0, dpi: 192 },
         }).from(div).outputPdf("bloburl", { filename: filename }).then((bloburl) => {
             window.open(bloburl);
         });
