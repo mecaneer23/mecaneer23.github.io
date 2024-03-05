@@ -60,3 +60,19 @@ iframe,
 .resume-card:nth-child(even) {
     flex-direction: row;
 }
+
+.pdf-sidebar {
+    display: block;
+    width: 25vw;
+    height: 100vh;
+    margin: -2vh -3vw;
+}
+
+.about-container {
+    flex-direction: row;
+}
+
+.resume-container {
+    max-width: min-content;
+    flex-direction: row;
+}
