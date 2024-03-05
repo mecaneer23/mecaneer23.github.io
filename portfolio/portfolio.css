@@ -35,6 +35,10 @@
     font-weight: thin;
 }
 
+#most-recent-project {
+    width: calc(25vw + 2vh);
+}
+
 .not-far {
     margin-bottom: 0;
 }
@@ -46,7 +50,8 @@
         width: 100%;
     }
 
-    .portfolio-card img {
+    .portfolio-card img,
+    #most-recent-project {
         width: 60vw;
         height: auto;
     }
@@ -63,4 +68,20 @@
     .portfolio-card h2 {
         margin-left: 0;
     }
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.lang-color {
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+}
+
+.no-margin {
+    margin: 0;
 }
