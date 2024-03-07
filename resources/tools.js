@@ -274,6 +274,7 @@ function load() {
         refreshNavbar();
         return document.body.hasAttribute("data-theme");
     } catch (e) {
+        console.log(e);
         return false;
     }
 }
