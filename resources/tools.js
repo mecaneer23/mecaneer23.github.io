@@ -21,7 +21,7 @@ function backToTop(event) {
     if (backToTopButton == null) return;
     if (root.scrollTop > offset) {
         backToTopButton.style.display = "flex";
-        backToTopButton.style.transform = 'rotate(' + (root.scrollTop - offset) % 360 + 'deg)';
+        backToTopButton.style.transform = 'rotate(' + (root.scrollTop / 4 - offset) % 360 + 'deg)';
     } else {
         backToTopButton.style.display = "none";
     }
