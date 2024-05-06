@@ -783,4 +783,8 @@ img#modal-content {
 
 .motto {
     font-size: 4vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
