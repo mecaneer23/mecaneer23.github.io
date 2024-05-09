@@ -39,7 +39,7 @@
                     })
                     .catch(error => console.log('There was a problem with the fetch operation: ' + error.message));
             }
-            async function get_lang_color(lang) {
+            async function getLangColor(lang) {
                 const url = "https://raw.githubusercontent.com/ozh/github-colors/master/colors.json";
                 return fetch(url)
                     .then(response => {
@@ -58,7 +58,7 @@
                 document.querySelector("#most-recent-project h2").innerHTML = data.repo;
                 document.querySelector("#most-recent-project p").innerHTML = data.desc;
                 document.querySelector(".lang").innerHTML = data.lang;
-                document.querySelector(".lang-color").style.backgroundColor = await get_lang_color(data.lang);
+                document.querySelector(".lang-color").style.backgroundColor = await getLangColor(data.lang);
             })();
         </script>
         <div class="portfolio-container">
