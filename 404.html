@@ -13,9 +13,9 @@
     <main>
         <script>
             let url = window.location.pathname;
-            let reponame = url.replace("/github/", "");
-            if (url.startsWith("/github/") || (await fetch(`https://api.github.com/repos/mecaneer23/${reponame}`)).status != 404) {
-                window.location.href = `https://github.com/mecaneer23/${reponame}`;
+            let reponame = url.replace("/github", "");
+            if (url.startsWith("/github/") || (await fetch(`https://api.github.com/repos/mecaneer23${reponame}`)).status != 404) {
+                window.location.href = `https://github.com/mecaneer23${reponame}`;
             }
         </script>
         <h2>404: File not found</h2>
