@@ -265,7 +265,9 @@ function load() {
         if (pageIs("about") || pageIs("gallery")) {
             Array.from(document.querySelectorAll("img")).forEach((img) => img.addEventListener("click", modal));
         }
-        document.getElementById("modal").addEventListener("click", closeModal);
+        if (document.querySelector("#modal") != null) {
+            document.getElementById("modal").addEventListener("click", closeModal);
+        }
         window.addEventListener("keyup", handleKeyPress);
         window.addEventListener("keydown", handleKeyPress);
         initBackToTop();
