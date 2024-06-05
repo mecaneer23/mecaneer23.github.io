@@ -262,7 +262,7 @@ function load() {
         if (pageIs("about")) {
             document.querySelector("img.profile").addEventListener("contextmenu", doABarrelRoll);
         }
-        if (pageIs("about") || pageIs("gallery")) {
+        if (pageIs("about") || pageIs("gallery") || pageIs("chilling")) {
             Array.from(document.querySelectorAll("img")).forEach((img) => img.addEventListener("click", modal));
         }
         if (document.querySelector("#modal") != null) {
