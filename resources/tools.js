@@ -91,6 +91,8 @@ function innerColorscheme(theme) {
     root.classList.remove(theme == "light" ? "dark" : "light")
     root.classList.add(theme);
     localStorage.setItem("colorscheme", theme);
+    document.getElementById(theme == "light" ? "moon" : "sun").style.display = "block";
+    document.getElementById(theme == "dark" ? "moon" : "sun").style.display = "none";
 }
 
 function setColorscheme(event, theme) {

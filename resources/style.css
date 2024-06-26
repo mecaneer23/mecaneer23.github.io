@@ -269,7 +269,9 @@ a {
     --switch-border: calc(var(--switch-height) / 10);
     --switch-thumb-size: calc(var(--switch-height) - var(--switch-border) * 2);
     --switch-width-inside: calc(var(--switch-width) - var(--switch-border) * 2);
-    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     box-sizing: border-box;
     width: var(--switch-width);
     height: var(--switch-height);
@@ -278,7 +280,6 @@ a {
     background-color: var(--text-color);
     cursor: pointer;
     margin: var(--switch-margin) 0;
-    transition: 300ms 100ms;
     position: relative;
 }
 
@@ -288,24 +289,25 @@ a {
     height: var(--switch-thumb-size);
     width: var(--switch-thumb-size);
     border-radius: var(--switch-thumb-size);
-    position: absolute;
-    top: 0;
-    left: 0;
     transition: 300ms, width 600ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle svg {
+    width: 80%;
+    height: 80%;
 }
 
 .switch-input:checked+.switch {
     background-color: var(--text-color);
     border-color: var(--text-color);
+    flex-direction: row-reverse;
 }
 
 .switch:active .toggle {
     width: 80%;
-}
-
-.switch-input:checked+.switch .toggle {
-    left: 100%;
-    transform: translateX(-100%);
 }
 
 .header {
