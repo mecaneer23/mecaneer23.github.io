@@ -298,6 +298,7 @@ a {
 .toggle svg {
     width: 80%;
     height: 80%;
+    fill: var(--text-color);
 }
 
 .switch-input:checked+.switch {
