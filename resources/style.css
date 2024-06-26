@@ -282,7 +282,7 @@ a {
     position: relative;
 }
 
-.switch::before {
+.toggle {
     content: '';
     background-color: var(--accent);
     height: var(--switch-thumb-size);
@@ -299,11 +299,11 @@ a {
     border-color: var(--text-color);
 }
 
-.switch:active::before {
+.switch:active .toggle {
     width: 80%;
 }
 
-.switch-input:checked+.switch::before {
+.switch-input:checked+.switch .toggle {
     left: 100%;
     transform: translateX(-100%);
 }
