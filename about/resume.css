@@ -1,0 +1,163 @@
+@media (max-width: 1050px) {
+    .resume-card {
+        flex-direction: column-reverse !important;
+        text-align: left !important;
+        width: 60vw !important;
+    }
+
+    .resume-card img {
+        width: 60vw !important;
+    }
+
+    .see-more-wrapper.left {
+        align-items: end !important;
+    }
+
+}
+
+.resume-card {
+    margin: 3vh auto;
+    padding: 2vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 1vh;
+    width: 78vw;
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--navbar-background);
+}
+
+.resume-card img {
+    box-sizing: border-box;
+    border-radius: 1vh;
+    height: min-content;
+    width: 25vw;
+    cursor: zoom-in;
+}
+
+.resume-header {
+    padding: 1vw;
+    width: 90vw;
+    background-color: var(--accent);
+    border-radius: 1vh;
+}
+
+.resume-container {
+    background-color: var(--background);
+    width: 92vw;
+}
+
+.resume-card:nth-child(odd) {
+    flex-direction: row;
+}
+
+.resume-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.resume-subtext {
+    color: var(--gray);
+}
+
+.resume-card:nth-child(even) div:first-child:not(.multiple-images) {
+    margin-left: 3vw;
+}
+
+.resume-card p,
+.resume-card ul,
+.resume-card li {
+    background-color: var(--navbar-background);
+    list-style-position: inside;
+}
+
+.resume-card ul {
+    padding-left: 1vw;
+}
+
+.resume-nav {
+    text-align: center;
+    margin: 3vh 0 5vh;
+    width: 92vw;
+    line-height: 2.5;
+}
+
+.resume-nav a,
+.button {
+    width: fit-content;
+    text-decoration: none;
+    background-color: var(--accent);
+    color: var(--text-color);
+    padding: 1vh;
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+.resume-nav a:hover,
+.button:hover {
+    color: var(--background);
+    background-color: var(--second-accent);
+}
+
+.button.disabled {
+    cursor: not-allowed;
+    pointer-events: all;
+    background-color: lightgray;
+    color: var(--background);
+}
+
+.resume-skills {
+    display: flex;
+    justify-content: center;
+}
+
+.resume-skills div {
+    max-width: 78vw;
+    text-align: center;
+}
+
+.resume-skills p {
+    width: fit-content;
+    text-decoration: none;
+    background-color: var(--accent);
+    color: var(--text-color);
+    padding: 0.5vh 1.5vh;
+    border-radius: 1vh;
+    display: inline-block;
+    margin: 1vh 0;
+}
+
+.see-more-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.see-more-wrapper.right {
+    align-items: end;
+}
+
+.see-more-wrapper.left {
+    align-items: start;
+}
+
+.see-more {
+    margin-top: 4vh;
+}
+
+.multiple-images {
+    display: flex;
+    flex-direction: column;
+}
+
+.multiple-images :not(:last-child) {
+    margin-bottom: 4vh;
+}
+
+.justify-apart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 92vw;
+}
