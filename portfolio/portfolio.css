@@ -33,6 +33,7 @@
 .portfolio-card p {
     background-color: transparent;
     font-weight: thin;
+    text-wrap: wrap;
 }
 
 #most-recent-project {
