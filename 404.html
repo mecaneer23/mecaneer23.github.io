@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, user-scalable=0">
+    <meta name="viewport" content="width=device-width, user-scalable=0">
     <title>Page not found</title>
 </head>
 
@@ -15,7 +15,7 @@
             async function redirectToGithubRepo() {
                 try {
                     const url = window.location.pathname;
-                    const reponame = url.replace("/github", "").replace("/g", "");
+                    const reponame = url.replace("/github", "").replace("/g", "").replace(/\/$/, "");
                     const new_location = `https://github.com/mecaneer23${reponame}`
                     const response = await fetch(`https://api.github.com/repos/mecaneer23${reponame}`);
                     if (url.startsWith("/github/")) {
