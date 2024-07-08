@@ -183,15 +183,14 @@ function weirdThemeHandlerSetFalse(event) {
 }
 
 function refreshNavbar() {
-    links = Array.from(document.getElementById("main-nav").children);
-    // links.push(document.getElementById("title-link"));
-    links.forEach((link) => {
-        if (link.pathname.split("/")[1] === document.location.pathname.split("/")[1]) {
-            link.classList.add('current');
-        } else {
-            link.classList.remove('current');
-        }
-    });
+    Array.from(document.getElementById("main-nav").children)
+        .forEach((link) => {
+            if (link.pathname.split("/")[1] === document.location.pathname.split("/")[1]) {
+                link.classList.add('current');
+            } else {
+                link.classList.remove('current');
+            }
+        });
 }
 
 function getImageXHR(imageUrl, callback) {
