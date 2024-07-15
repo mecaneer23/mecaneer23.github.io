@@ -12,7 +12,7 @@
     padding: 2vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    border-radius: 1vh;
+    border-radius: 3vh;
     width: min-content;
     color: var(--text-color);
     text-decoration: none;
@@ -26,7 +26,7 @@
 
 .portfolio-card img {
     box-sizing: border-box;
-    border-radius: 1vh 1vh 0 0;
+    border-radius: 1vh;
     width: 25vw;
 }
 
