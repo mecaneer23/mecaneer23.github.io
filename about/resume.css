@@ -32,7 +32,6 @@
 .resume-card img {
     box-sizing: border-box;
     border-radius: 1vh;
-    height: min-content;
     width: 25vw;
     cursor: zoom-in;
 }
