@@ -111,12 +111,15 @@
     justify-content: center;
 }
 
-.resume-skills div {
+.resume-skills ul {
+    margin: 0;
+    padding: 0;
     max-width: 78vw;
     text-align: center;
+    list-style-type: none;
 }
 
-.resume-skills p {
+.resume-skills li {
     width: fit-content;
     text-decoration: none;
     background-color: var(--accent);
