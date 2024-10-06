@@ -39,8 +39,25 @@ function setModalContent(event, type, src) {
     const newElem = document.createElement(type);
     newElem.id = "modal-content";
     newElem.src = src;
-    newElem.addEventListener("mouseout", closeModal);
+
+    const triggerRect = event.target.getBoundingClientRect();
+    newElem.style.position = "absolute";
+    newElem.style.userSelect = "none";
+    newElem.style.top = `${triggerRect.top}px`;
+    newElem.style.left = `${triggerRect.left}px`;
+    newElem.style.width = `${triggerRect.width}px`;
+    newElem.style.height = `${triggerRect.height}px`;
+    newElem.style.transition = "all 0.4s ease-in-out";
+
     modalElement.appendChild(newElem);
+
+    setTimeout(() => {
+        newElem.style.top = "50vh";
+        newElem.style.left = "50vw";
+        newElem.style.width = type == "iframe" ? "90vw" : "auto";
+        newElem.style.height = "90vh";
+        newElem.style.transform = "translate(-50%, -50%)";
+    }, 10);
 }
 
 function modal(event) {

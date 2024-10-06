@@ -583,20 +583,6 @@ tr:nth-child(even) {
     user-select: none;
 }
 
-#modal-content {
-    user-select: none;
-    width: auto;
-    height: 90vh;
-    position: absolute;
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-}
-
-iframe#modal-content {
-    width: 90vw;
-}
-
 img#modal-content {
     cursor: zoom-out;
 }
