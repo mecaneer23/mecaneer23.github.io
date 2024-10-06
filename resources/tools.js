@@ -27,7 +27,7 @@ function backToTop(event) {
     }
 }
 
-function set_modal_content(modalElement, type, src) {
+function setModalContent(modalElement, type, src) {
     Array.from(modalElement.childNodes).forEach((child) => {
         modalElement.removeChild(child)
     });
@@ -49,13 +49,13 @@ function modal(event) {
         && event.srcElement.parentElement.href.indexOf("github.com") == -1
     ) {
         try {
-            set_modal_content(modalElement, "iframe", event.srcElement.parentElement.href)
+            setModalContent(modalElement, "iframe", event.srcElement.parentElement.href)
             return;
         } catch (err) {
             console.error("threw error " + err + " while trying to construct modal iframe");
         }
     }
-    set_modal_content(modalElement, "img", event.srcElement.src)
+    setModalContent(modalElement, "img", event.srcElement.src)
 }
 
 function closeModal(event) {
