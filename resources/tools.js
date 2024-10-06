@@ -27,7 +27,12 @@ function backToTop(event) {
     }
 }
 
-function setModalContent(modalElement, type, src) {
+function setModalContent(event, type, src) {
+    modalElement = document.getElementById("modal");
+    if (modalElement.style.display == "none") {
+        event.preventDefault();
+    }
+    modalElement.style.display = "block";
     Array.from(modalElement.childNodes).forEach((child) => {
         modalElement.removeChild(child)
     });
@@ -39,23 +44,18 @@ function setModalContent(modalElement, type, src) {
 }
 
 function modal(event) {
-    modalElement = document.getElementById("modal");
-    if (modalElement.style.display == "none") {
-        event.preventDefault();
-    }
-    modalElement.style.display = "block";
     if (
         pageIs("portfolio")
         && event.srcElement.parentElement.href.indexOf("github.com") == -1
     ) {
         try {
-            setModalContent(modalElement, "iframe", event.srcElement.parentElement.href)
+            setModalContent(event, "iframe", event.srcElement.parentElement.href)
             return;
         } catch (err) {
             console.error("threw error " + err + " while trying to construct modal iframe");
         }
     }
-    setModalContent(modalElement, "img", event.srcElement.src)
+    setModalContent(event, "img", event.srcElement.src)
 }
 
 function closeModal(event) {
