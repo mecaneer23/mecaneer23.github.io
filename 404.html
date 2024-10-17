@@ -16,16 +16,16 @@
                 try {
                     const url = window.location.pathname;
                     const redirectUrl = url.replace(/\/$/, "");
-                    if (redirectUrl == "/g") {
+                    if (["/g", "/github"].includes(redirectUrl)) {
                         window.location.href = "https://github.com/mecaneer23";
                         return;
-                    } else if (redirectUrl == "/l") {
+                    } else if (["/l", "/linkedin"].includes(redirectUrl)) {
                         window.location.href = "https://www.linkedin.com/in/gabriel-natenshon/";
                         return;
-                    } else if (redirectUrl == "/y") {
+                    } else if (["/y", "/youtube"].includes(redirectUrl)) {
                         window.location.href = "https://youtube.com/@mecaneer23";
                         return;
-                    } else if (redirectUrl == "/d") {
+                    } else if (["/d", "/discord"].includes(redirectUrl)) {
                         window.location.href = "https://discord.com/invite/kFFhNsAsRC";
                         return;
                     }
