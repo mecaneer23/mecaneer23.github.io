@@ -1,14 +1,16 @@
 var root = document.getElementsByTagName('html')[0];
 var weirdTheme = false;
 var modalData = {
-    isOpen: false
+    isOpen: false,
+    scrolled: false
 };
+const MODAL_ANIMATION_DELAY = 400;
 
 function pageIs(name) {
     return window.location.pathname.indexOf(name) > -1
 }
 
-function toTop(event) {
+function toTop(_) {
     root.scrollTop = 0;
 }
 
@@ -18,7 +20,7 @@ function initBackToTop() {
     backToTopButton.addEventListener("click", toTop);
 }
 
-function backToTop(event) {
+function handleScroll(_) {
     offset = 300
     backToTopButton = document.getElementById("back-to-top");
     if (backToTopButton == null) return;
@@ -27,6 +29,10 @@ function backToTop(event) {
         backToTopButton.style.transform = 'rotate(' + (root.scrollTop / 4 - offset) % 360 + 'deg)';
     } else {
         backToTopButton.style.display = "none";
+    }
+
+    if (modalData.isOpen) {
+        modalData.scrolled = true;
     }
 }
 
@@ -59,7 +65,7 @@ function setModalContent(event, type, src) {
     newElem.style.left = `${triggerRect.left}px`;
     newElem.style.width = `${triggerRect.width}px`;
     newElem.style.height = `${triggerRect.height}px`;
-    newElem.style.transition = "all 400ms ease-in-out";
+    newElem.style.transition = `all ${MODAL_ANIMATION_DELAY}ms ease-in-out`;
 
     modalElement.appendChild(newElem);
 
@@ -108,23 +114,27 @@ function modal(event) {
 function closeModal(_) {
     const modalElement = document.getElementById("modal");
     const contentElement = document.getElementById("modal-content");
-    const triggerRect = modalData.triggerRect;
-    modalData.triggerRect = null;
 
-    contentElement.style.top = `${triggerRect.top}px`;
-    contentElement.style.left = `${triggerRect.left}px`;
-    contentElement.style.width = `${triggerRect.width}px`;
-    contentElement.style.height = `${triggerRect.height}px`;
-    contentElement.style.transition = "all 400ms ease-in-out";
+    if (modalData.scrolled) {
+        contentElement.style.top = "50vh";
+        contentElement.style.left = "50vw";
+        contentElement.style.width = 0;
+        contentElement.style.height = 0;
+    } else {
+        const triggerRect = modalData.triggerRect;
+        contentElement.style.top = `${triggerRect.top}px`;
+        contentElement.style.left = `${triggerRect.left}px`;
+        contentElement.style.width = `${triggerRect.width}px`;
+        contentElement.style.height = `${triggerRect.height}px`;
+    }
+    contentElement.style.transition = `all ${MODAL_ANIMATION_DELAY}ms ease-in-out`;
 
-    contentElement.addEventListener(
-        "transitionend",
-        () => {
-            modalElement.style.display = "none";
-            modalElement.removeChild(contentElement);
-        },
-        { once: true }
-    );
+    setTimeout(() => {
+        modalElement.style.display = "none";
+        modalElement.removeChild(contentElement);
+    }, MODAL_ANIMATION_DELAY);
+
+    modalData.scrolled = false;
     modalData.isOpen = false;
 }
 
@@ -338,7 +348,7 @@ function load() {
         window.addEventListener("keyup", handleKeyPress);
         window.addEventListener("keydown", handleKeyPress);
         initBackToTop();
-        window.addEventListener("scroll", backToTop);
+        window.addEventListener("scroll", handleScroll);
         updateTitle();
         refreshNavbar();
         return document.body.hasAttribute("data-theme");
