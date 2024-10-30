@@ -213,7 +213,7 @@ function handleKeyPress(event) {
         goToSecretPage();
     } else if (isKeyDown && keys[66] && keys[82]) { // b + r
         doABarrelRoll();
-    } else {
+    } else if (modalData.isOpen) {
         closeModal();
     }
 };
