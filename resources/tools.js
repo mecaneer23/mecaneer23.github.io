@@ -334,7 +334,6 @@ function load() {
         document.getElementsByClassName("no-padding")[0].addEventListener("mouseout", weirdThemeHandlerSetFalse);
         if (pageIs("portfolio")) {
             Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("contextmenu", modal));
-            window.addEventListener("click", closeModal);
         }
         if (pageIs("about")) {
             document.querySelector("img.profile").addEventListener("contextmenu", doABarrelRoll);
