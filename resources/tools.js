@@ -1,5 +1,8 @@
 var root = document.getElementsByTagName('html')[0];
 var weirdTheme = false;
+var modalData = {
+    isOpen: false
+};
 
 function pageIs(name) {
     return window.location.pathname.indexOf(name) > -1
@@ -28,36 +31,63 @@ function backToTop(event) {
 }
 
 function setModalContent(event, type, src) {
-    modalElement = document.getElementById("modal");
-    if (modalElement.style.display == "none") {
+    if (modalData.isOpen) {
+        return;
+    }
+    const modalElement = document.getElementById("modal");
+
+    if (modalElement.style.display === "none") {
         event.preventDefault();
     }
+
     modalElement.style.display = "block";
     Array.from(modalElement.childNodes).forEach((child) => {
-        modalElement.removeChild(child)
+        modalElement.removeChild(child);
     });
+
     const newElem = document.createElement(type);
     newElem.id = "modal-content";
     newElem.src = src;
 
     const triggerRect = event.target.getBoundingClientRect();
+    if (!modalData.isOpen) {
+        modalData.triggerRect = triggerRect;
+    }
     newElem.style.position = "absolute";
     newElem.style.userSelect = "none";
     newElem.style.top = `${triggerRect.top}px`;
     newElem.style.left = `${triggerRect.left}px`;
     newElem.style.width = `${triggerRect.width}px`;
     newElem.style.height = `${triggerRect.height}px`;
-    newElem.style.transition = "all 0.4s ease-in-out";
+    newElem.style.transition = "all 400ms ease-in-out";
 
     modalElement.appendChild(newElem);
 
-    setTimeout(() => {
-        newElem.style.top = "50vh";
-        newElem.style.left = "50vw";
-        newElem.style.width = type == "iframe" ? "90vw" : "auto";
-        newElem.style.height = "90vh";
-        newElem.style.transform = "translate(-50%, -50%)";
-    }, 10);
+    const adjustSizeAndPosition = () => {
+        const aspectRatio = newElem.naturalWidth / newElem.naturalHeight;
+
+        const maxHeight = window.innerHeight * 0.9;
+        const maxWidth = window.innerWidth * 0.9;
+
+        let finalWidth, finalHeight;
+
+        if (maxWidth / maxHeight > aspectRatio) {
+            finalHeight = maxHeight;
+            finalWidth = finalHeight * aspectRatio;
+        } else {
+            finalWidth = maxWidth;
+            finalHeight = finalWidth / aspectRatio;
+        }
+
+        newElem.style.width = `${finalWidth}px`;
+        newElem.style.height = `${finalHeight}px`;
+
+        newElem.style.top = `calc(50% - ${finalHeight / 2}px)`;
+        newElem.style.left = `calc(50% - ${finalWidth / 2}px)`;
+    };
+
+    newElem.onload = adjustSizeAndPosition;
+    modalData.isOpen = true;
 }
 
 function modal(event) {
@@ -75,8 +105,27 @@ function modal(event) {
     setModalContent(event, "img", event.srcElement.src)
 }
 
-function closeModal(event) {
-    document.getElementById("modal").style.display = "none";
+function closeModal(_) {
+    const modalElement = document.getElementById("modal");
+    const contentElement = document.getElementById("modal-content");
+    const triggerRect = modalData.triggerRect;
+    modalData.triggerRect = null;
+
+    contentElement.style.top = `${triggerRect.top}px`;
+    contentElement.style.left = `${triggerRect.left}px`;
+    contentElement.style.width = `${triggerRect.width}px`;
+    contentElement.style.height = `${triggerRect.height}px`;
+    contentElement.style.transition = "all 400ms ease-in-out";
+
+    contentElement.addEventListener(
+        "transitionend",
+        () => {
+            modalElement.style.display = "none";
+            modalElement.removeChild(contentElement);
+        },
+        { once: true }
+    );
+    modalData.isOpen = false;
 }
 
 function toggleMenu() {
