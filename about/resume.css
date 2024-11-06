@@ -9,8 +9,9 @@
         width: 60vw !important;
     }
 
-    .see-more-wrapper.left {
-        align-items: end !important;
+    .see-more-wrapper.left,
+    .see-more-wrapper.right {
+        align-items: center !important;
     }
 
 }
