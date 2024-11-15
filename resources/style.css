@@ -585,6 +585,7 @@ tr:nth-child(even) {
 
 img#modal-content {
     cursor: zoom-out;
+    border-radius: 1vh;
 }
 
 #back-to-top {
