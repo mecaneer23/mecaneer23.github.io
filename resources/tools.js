@@ -22,6 +22,9 @@ function initBackToTop() {
 
 function handleScroll(_) {
     offset = 300
+    if (document.getElementById("burger-menu").classList.contains("open")) {
+        toggleMenu();
+    }
     backToTopButton = document.getElementById("back-to-top");
     if (backToTopButton == null) return;
     if (root.scrollTop > offset) {
