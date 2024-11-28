@@ -6,42 +6,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, user-scalable=0">
     <title>Page not found</title>
+    <script type="text/javascript" src="/resources/typo/typo.js"></script>
 </head>
 
 <body>
     <header class="header" w3-include-html="/resources/nav.html"></header>
     <main>
         <script>
-            async function redirectToGithubRepo() {
-                try {
-                    const url = window.location.pathname;
-                    const redirectUrl = url.replace(/\/$/, "");
-                    if (["/g", "/github"].includes(redirectUrl)) {
-                        window.location.href = "https://github.com/mecaneer23";
-                        return;
-                    } else if (["/l", "/linkedin"].includes(redirectUrl)) {
-                        window.location.href = "https://www.linkedin.com/in/gabriel-natenshon/";
-                        return;
-                    } else if (["/y", "/youtube"].includes(redirectUrl)) {
-                        window.location.href = "https://youtube.com/@mecaneer23";
-                        return;
-                    } else if (["/d", "/discord"].includes(redirectUrl)) {
-                        window.location.href = "https://discord.com/invite/kFFhNsAsRC";
-                        return;
+            var dictionary;
+
+            async function load() {
+                fetch("/resources/typo/en_US.aff")
+                    .then(response => response.text())
+                    .then(affData => {
+                        fetch("/resources/typo/en_US.dic")
+                            .then(response => response.text())
+                            .then(wordsData => {
+                                dictionary = new Typo('en_US', affData, wordsData);
+                            });
+                    });
+            }
+
+            async function redirectToGithubRepo(url, tried) {
+                load();
+                tried = tried || false;
+                url = url || window.location.pathname.toLowerCase();
+                const redirectUrl = url.replace(/\/$/, "");
+                if (["/g", "/github"].includes(redirectUrl)) {
+                    window.location.href = "https://github.com/mecaneer23";
+                    return;
+                } else if (["/l", "/linkedin"].includes(redirectUrl)) {
+                    window.location.href = "https://www.linkedin.com/in/gabriel-natenshon/";
+                    return;
+                } else if (["/y", "/youtube"].includes(redirectUrl)) {
+                    window.location.href = "https://youtube.com/@mecaneer23";
+                    return;
+                } else if (["/d", "/discord"].includes(redirectUrl)) {
+                    window.location.href = "https://discord.com/invite/kFFhNsAsRC";
+                    return;
+                }
+                const reponame = url.replace("/github", "").replace("/g", "").replace(/\/$/, "");
+                const new_location = `https://github.com/mecaneer23${reponame}`;
+                const response = await fetch(`https://api.github.com/repos/mecaneer23${reponame}`);
+                if (response.status === 200) {
+                    window.location.href = new_location;
+                    return;
+                }
+                if (response.status === 404 && !tried) {
+                    console.log(url)
+                    let newUrl = new Array();
+                    for (let group of url.split("/")) {
+                        let words = new Array();
+                        for (let word of group.split("-")) {
+                            let newWord = !dictionary.check(word) ? dictionary.suggest(word)[0] : word;
+                            words.push(newWord);
+                        }
+                        newUrl.push(words.join("-"));
                     }
-                    const reponame = url.replace("/github", "").replace("/g", "").replace(/\/$/, "");
-                    const new_location = `https://github.com/mecaneer23${reponame}`;
-                    const response = await fetch(`https://api.github.com/repos/mecaneer23${reponame}`);
-                    if (url.startsWith("/github/")) {
-                        window.location.href = new_location;
-                        return;
-                    }
-                    if (response.status !== 404) {
-                        window.location.href = new_location;
-                        return;
-                    }
-                } catch (error) {
-                    console.error("Failed to fetch GitHub repo:", error);
+                    console.log(newUrl);
+                    redirectToGithubRepo(newUrl.join("/"), tried = true);
                 }
             }
 
