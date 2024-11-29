@@ -176,7 +176,6 @@ body {
 }
 
 #nav {
-    overflow: hidden;
     right: -80vw;
     transition: right 0.75s ease-in-out;
 }
@@ -296,6 +295,37 @@ a {
     width: 80%;
 }
 
+.switch:hover .tooltip {
+    display: block;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 3vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2vh;
+    width: max-content;
+    margin-top: 0.5vh;
+    padding: 0.5vh;
+    color: var(--text-color);
+    background-color: var(--accent);
+    border-radius: 1vh;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 1vh;
+    border-style: solid;
+    border-color: transparent transparent var(--accent) transparent;
+}
+
 .header {
     position: relative;
     display: flex;
@@ -327,10 +357,6 @@ footer a {
 
 #site-title a {
     font-size: 1.25rem;
-}
-
-#burger-menu {
-    overflow: hidden;
 }
 
 #hamburger {
