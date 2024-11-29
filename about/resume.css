@@ -114,21 +114,21 @@
 
 .resume-skills ul {
     margin: 0;
-    padding: 0;
     max-width: 78vw;
     text-align: center;
     list-style-type: none;
+    background-color: var(--navbar-background);
+    border-radius: 1vh;
+    padding-inline-start: 0;
+    padding: 1vh;
 }
 
 .resume-skills li {
     width: fit-content;
     text-decoration: none;
-    background-color: var(--accent);
-    color: var(--text-color);
-    padding: 0.5vh 1.5vh;
-    border-radius: 1vh;
+    background-color: transparent;
     display: inline-block;
-    margin: 1vh 0;
+    margin: 0 0.5vh 0 0;
 }
 
 .see-more-wrapper {
