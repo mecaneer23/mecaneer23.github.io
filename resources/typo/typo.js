@@ -6,6 +6,8 @@
 /**
  * Typo is a JavaScript implementation of a spellchecker using hunspell-style
  * dictionaries.
+ *
+ * Credit: cfinke (https://github.com/cfinke/Typo.js/tree/master/typo)
  */
 var Typo;
 (function () {
