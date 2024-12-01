@@ -95,7 +95,14 @@ function setModalContent(event, type, src) {
         newElem.style.left = `calc(50% - ${finalWidth / 2}px)`;
     };
 
-    newElem.onload = adjustSizeAndPosition;
+    const setSize = () => {
+        newElem.style.width = "90vw";
+        newElem.style.height = "90vh";
+        newElem.style.top = "5vh";
+        newElem.style.left = "5vw";
+    };
+
+    newElem.onload = type === "img" ? adjustSizeAndPosition : setSize;
     modalData.isOpen = true;
 }
 
