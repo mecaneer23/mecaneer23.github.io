@@ -13,22 +13,21 @@
     <header class="header" w3-include-html="/resources/nav.html"></header>
     <main>
         <script>
-            var dictionary;
-
-            async function load() {
-                fetch("/resources/typo/en_US.aff")
+            async function initializeDictionary() {
+                return await fetch("/resources/typo/en_US.aff")
                     .then(response => response.text())
-                    .then(affData => {
-                        fetch("/resources/typo/en_US.dic")
+                    .then(async affData => {
+                        return await fetch("/resources/typo/en_US.dic")
                             .then(response => response.text())
                             .then(wordsData => {
                                 dictionary = new Typo('en_US', affData, wordsData);
+                                return dictionary;
                             });
                     });
             }
 
             async function redirectToGithubRepo(url, tried) {
-                load();
+                dictionary = await initializeDictionary();
                 tried = tried || false;
                 url = url || window.location.pathname.toLowerCase();
                 const redirectUrl = url.replace(/\/$/, "");
@@ -53,18 +52,21 @@
                     return;
                 }
                 if (response.status === 404 && !tried) {
-                    console.log(url)
-                    let newUrl = new Array();
+                    let urlBuilder = new Array();
                     for (let group of url.split("/")) {
                         let words = new Array();
                         for (let word of group.split("-")) {
                             let newWord = !dictionary.check(word) ? dictionary.suggest(word)[0] : word;
                             words.push(newWord);
                         }
-                        newUrl.push(words.join("-"));
+                        urlBuilder.push(words.join("-"));
                     }
-                    console.log(newUrl);
-                    redirectToGithubRepo(newUrl.join("/"), tried = true);
+                    let newUrl = urlBuilder.join("/");
+                    if ((await fetch(newUrl)).status === 200) {
+                        window.location.href = newUrl;
+                        return;
+                    }
+                    redirectToGithubRepo(newUrl, tried = true);
                 }
             }
 
