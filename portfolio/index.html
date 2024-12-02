@@ -16,7 +16,6 @@
         <div id="modal">
             <div id="modal-content" onmouseout="closeModal()"></div>
         </div>
-        <h2>Most Recent Project</h2>
         <script>
             async function getMostRecentRepo(user) {
                 const url = `https://api.github.com/users/${user}/repos?per_page=100`;
@@ -54,6 +53,14 @@
             }
             (async function () {
                 const data = await getMostRecentRepo("mecaneer23");
+                if (!data) {
+                    return;
+                }
+                const header = document.createElement("h2");
+                header.innerHTML = "Most Recent Project";
+                const mostRecentProjectContainer = document.getElementById("most-recent-project-container");
+                document.querySelector("main").insertBefore(header, mostRecentProjectContainer);
+                mostRecentProjectContainer.style = "";
                 document.getElementById("most-recent-project").href = data.url;
                 document.querySelector("#most-recent-project h2").innerHTML = data.repo;
                 document.querySelector("#most-recent-project p").innerHTML = data.desc;
@@ -61,7 +68,7 @@
                 document.querySelector(".lang-color").style.backgroundColor = await getLangColor(data.lang);
             })();
         </script>
-        <div class="portfolio-container">
+        <div id="most-recent-project-container" class="portfolio-container" style="display: none;">
             <a href="" class="portfolio-card" id="most-recent-project">
                 <h2></h2>
                 <p class="no-margin"></p>
