@@ -1,5 +1,0 @@
-- change contact picture to a handshake?
-- add more pictures
-- make activity descriptions better
-- make print to pdf button work
-- change site color?
