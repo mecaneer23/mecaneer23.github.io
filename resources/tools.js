@@ -6,7 +6,7 @@ var modalData = {
 };
 const MODAL_ANIMATION_DELAY = 400;
 
-function pageIs(name) {
+function pageNameIncludes(name) {
     return window.location.pathname.indexOf(name) > -1
 }
 
@@ -37,6 +37,36 @@ function handleScroll(_) {
     if (modalData.isOpen) {
         modalData.scrolled = true;
     }
+}
+
+function cycleModalImage() {
+    if (!modalData.isOpen) {
+        return;
+    }
+
+    modalData.scrolled = true;
+    const modalElement = document.getElementById("modal");
+    const container = document.querySelector(".gallery");
+    const splitCurrentSrc = modalElement.childNodes[0].src.split("/");
+    const nextElm = container
+        .querySelector(`img[src$="${splitCurrentSrc[splitCurrentSrc.length - 1]}"]`)
+        .nextElementSibling;
+    Array.from(modalElement.childNodes).forEach((child) => {
+        modalElement.removeChild(child);
+    });
+
+    const newElem = document.createElement("img");
+    newElem.id = "modal-content";
+    newElem.src = nextElm ? nextElm.src : container.children[0].src;
+    newElem.style.userSelect = "none";
+    newElem.style.width = "auto";
+    newElem.style.height = "90vh";
+    newElem.style.position = "absolute";
+    newElem.style.top = "50vh";
+    newElem.style.left = "50vw";
+    newElem.style.transform = "translate(-50%, -50%)";
+
+    modalElement.appendChild(newElem);
 }
 
 function setModalContent(event, type, src) {
@@ -108,7 +138,7 @@ function setModalContent(event, type, src) {
 
 function modal(event) {
     if (
-        pageIs("portfolio")
+        pageNameIncludes("portfolio")
         && event.srcElement.parentElement.href.indexOf("github.com") == -1
     ) {
         try {
@@ -342,13 +372,13 @@ function load() {
         document.getElementById("checkbox").addEventListener("click", toggleColorscheme);
         document.getElementsByClassName("no-padding")[0].addEventListener("mouseover", weirdThemeHandler);
         document.getElementsByClassName("no-padding")[0].addEventListener("mouseout", weirdThemeHandlerSetFalse);
-        if (pageIs("portfolio")) {
+        if (pageNameIncludes("portfolio")) {
             Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("contextmenu", modal));
         }
-        if (pageIs("about")) {
+        if (pageNameIncludes("about")) {
             document.querySelector("img.profile").addEventListener("contextmenu", doABarrelRoll);
         }
-        if (pageIs("about") || pageIs("gallery") || pageIs("chilling")) {
+        if (pageNameIncludes("about") || pageNameIncludes("gallery") || pageNameIncludes("chilling")) {
             Array.from(document.querySelectorAll("img")).forEach((img) => img.addEventListener("click", modal));
         }
         if (document.querySelector("#modal") != null) {
