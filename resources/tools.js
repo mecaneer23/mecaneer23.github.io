@@ -259,11 +259,19 @@ function handleKeyPress(event) {
     let isKeyDown = (type == 'keydown');
     keys[keyCode] = isKeyDown;
 
+    if (pageNameIncludes("gallery") && isKeyDown) {
+        if (keys[39]) { // right arrow
+            cycleModalImage();
+        } else if (keys[37]) { // left arrow
+            console.error("cycling backwards not yet supported");
+        }
+    }
+
     if (isKeyDown && keys[69] && keys[71]) { // e + g
         goToSecretPage();
     } else if (isKeyDown && keys[66] && keys[82]) { // b + r
         doABarrelRoll();
-    } else if (modalData.isOpen) {
+    } else if (modalData.isOpen && !pageNameIncludes("gallery")) {
         closeModal();
     }
 };
