@@ -39,7 +39,7 @@ function handleScroll(_) {
     }
 }
 
-function cycleModalImage() {
+function cycleModalImage(backward) {
     if (!modalData.isOpen) {
         return;
     }
@@ -47,17 +47,18 @@ function cycleModalImage() {
     modalData.scrolled = true;
     const modalElement = document.getElementById("modal");
     const container = document.querySelector(".gallery");
+    const overflowIndex = backward ? container.children.length - 1 : 0;
     const splitCurrentSrc = modalElement.childNodes[0].src.split("/");
-    const nextElm = container
-        .querySelector(`img[src$="${splitCurrentSrc[splitCurrentSrc.length - 1]}"]`)
-        .nextElementSibling;
+    const currentElem = container
+        .querySelector(`img[src$="${splitCurrentSrc[splitCurrentSrc.length - 1]}"]`);
+    const adjacentElem = backward ? currentElem.previousElementSibling : currentElem.nextElementSibling;
     Array.from(modalElement.childNodes).forEach((child) => {
         modalElement.removeChild(child);
     });
 
     const newElem = document.createElement("img");
     newElem.id = "modal-content";
-    newElem.src = nextElm ? nextElm.src : container.children[0].src;
+    newElem.src = adjacentElem ? adjacentElem.src : container.children[overflowIndex].src;
     newElem.style.userSelect = "none";
     newElem.style.width = "auto";
     newElem.style.height = "90vh";
@@ -152,6 +153,10 @@ function modal(event) {
 }
 
 function closeModal(_) {
+    if (!modalData.isOpen) {
+        return;
+    }
+
     const modalElement = document.getElementById("modal");
     const contentElement = document.getElementById("modal-content");
 
@@ -263,7 +268,9 @@ function handleKeyPress(event) {
         if (keys[39]) { // right arrow
             cycleModalImage();
         } else if (keys[37]) { // left arrow
-            console.error("cycling backwards not yet supported");
+            cycleModalImage(true);
+        } else {
+            closeModal();
         }
     }
 
@@ -271,7 +278,7 @@ function handleKeyPress(event) {
         goToSecretPage();
     } else if (isKeyDown && keys[66] && keys[82]) { // b + r
         doABarrelRoll();
-    } else if (modalData.isOpen && !pageNameIncludes("gallery")) {
+    } else if (!pageNameIncludes("gallery")) {
         closeModal();
     }
 };
