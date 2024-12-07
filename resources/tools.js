@@ -52,20 +52,8 @@ function cycleModalImage(backward) {
     const currentElem = container
         .querySelector(`img[src$="${splitCurrentSrc[splitCurrentSrc.length - 1]}"]`);
     const adjacentElem = backward ? currentElem.previousElementSibling : currentElem.nextElementSibling;
-    Array.from(modalElement.childNodes).forEach((child) => {
-        modalElement.removeChild(child);
-    });
 
-    const newElem = document.createElement("img");
-    newElem.id = "modal-content";
-    newElem.src = adjacentElem ? adjacentElem.src : container.children[overflowIndex].src;
-    newElem.style.userSelect = "none";
-    newElem.style.width = "auto";
-    newElem.style.height = "90vh";
-    newElem.style.position = "absolute";
-    newElem.style.top = "50vh";
-    newElem.style.left = "50vw";
-    newElem.style.transform = "translate(-50%, -50%)";
+    document.getElementById("modal-content").src = adjacentElem ? adjacentElem.src : container.children[overflowIndex].src;
 
     modalElement.appendChild(newElem);
 }
@@ -172,7 +160,6 @@ function closeModal(_) {
         contentElement.style.width = `${triggerRect.width}px`;
         contentElement.style.height = `${triggerRect.height}px`;
     }
-    contentElement.style.transition = `all ${MODAL_ANIMATION_DELAY}ms ease-in-out`;
 
     setTimeout(() => {
         modalElement.style.display = "none";
