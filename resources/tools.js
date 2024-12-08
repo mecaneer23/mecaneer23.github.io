@@ -54,8 +54,6 @@ function cycleModalImage(backward) {
     const adjacentElem = backward ? currentElem.previousElementSibling : currentElem.nextElementSibling;
 
     document.getElementById("modal-content").src = adjacentElem ? adjacentElem.src : container.children[overflowIndex].src;
-
-    modalElement.appendChild(newElem);
 }
 
 function setModalContent(event, type, src) {
