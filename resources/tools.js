@@ -251,6 +251,11 @@ function handleKeyPress(event) {
     let isKeyDown = (type == 'keydown');
     keys[keyCode] = isKeyDown;
 
+    // Don't scroll when pressing space to close modal
+    if (isKeyDown && keys[32] && event.target == document.body && modalData.isOpen) { // space
+        event.preventDefault();
+    }
+
     if (pageNameIncludes("gallery") && isKeyDown) {
         if (keys[39]) { // right arrow
             cycleModalImage();
