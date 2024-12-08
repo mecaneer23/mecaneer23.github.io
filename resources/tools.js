@@ -280,7 +280,7 @@ function goToSecretPage() {
 }
 
 function doABarrelRoll(event) {
-    event.preventDefault()
+    if (event) event.preventDefault();
     root.classList.add('spinner');
     setTimeout(() => root.classList.remove('spinner'), 3500);
 }
