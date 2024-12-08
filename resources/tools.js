@@ -250,14 +250,14 @@ function handleKeyPress(event) {
     keys[keyCode] = isKeyDown;
 
     // Don't scroll when pressing space to close modal
-    if (isKeyDown && keys[32] && event.target == document.body && modalData.isOpen) { // space
+    if (isKeyDown && (keys[32] || keys[38] || keys[40]) && event.target == document.body && modalData.isOpen) { // space
         event.preventDefault();
     }
 
     if (pageNameIncludes("gallery") && isKeyDown) {
-        if (keys[39]) { // right arrow
+        if (keys[39] || keys[40]) { // right arrow || down arrow
             cycleModalImage();
-        } else if (keys[37]) { // left arrow
+        } else if (keys[37] || keys[38]) { // left arrow || up arrow
             cycleModalImage(true);
         } else {
             closeModal();
