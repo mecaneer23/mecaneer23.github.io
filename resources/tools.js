@@ -228,7 +228,7 @@ function toggleColorscheme(event) {
     }
 }
 
-function toggleWeirdColorscheme(event) {
+function toggleWeirdColorscheme(_) {
     root.classList.add("weird");
 }
 
@@ -286,7 +286,7 @@ function updateSideNavHeight(specificHeight) {
     document.getElementById("nav").style.height = height;
 }
 
-function weirdThemeHandler(event) {
+function weirdThemeHandler(_) {
     weirdTheme = true;
     setTimeout(() => {
         if (weirdTheme) {
@@ -296,7 +296,7 @@ function weirdThemeHandler(event) {
     weirdTheme = false;
 }
 
-function weirdThemeHandlerSetFalse(event) {
+function weirdThemeHandlerSetFalse(_) {
     weirdTheme = false;
 }
 
