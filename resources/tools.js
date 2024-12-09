@@ -48,7 +48,7 @@ function cycleModalImage(backward) {
     const modalElement = document.getElementById("modal");
     const container = document.querySelector(".gallery");
     const overflowIndex = backward ? container.children.length - 1 : 0;
-    const splitCurrentSrc = modalElement.childNodes[0].src.split("/");
+    const splitCurrentSrc = modalElement.querySelector("#modal-content").src.split("/");
     const currentElem = container
         .querySelector(`img[src$="${splitCurrentSrc[splitCurrentSrc.length - 1]}"]`);
     const adjacentElem = backward ? currentElem.previousElementSibling : currentElem.nextElementSibling;
@@ -67,9 +67,8 @@ function setModalContent(event, type, src) {
     }
 
     modalElement.style.display = "block";
-    Array.from(modalElement.childNodes).forEach((child) => {
-        modalElement.removeChild(child);
-    });
+    const modalContent = modalElement.querySelector("#modal-content");
+    if (modalContent) modalElement.removeChild(modalContent);
 
     const newElem = document.createElement(type);
     newElem.id = "modal-content";
