@@ -39,3 +39,45 @@
         column-count: 1;
     }
 }
+
+.arrow {
+    position: absolute;
+    top: 40%;
+    color: white;
+    font-size: 10vh;
+    z-index: 1;
+    cursor: pointer;
+    transition: transform .25s linear;
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.left-arrow:hover {
+    transform: translateX(-1vw);
+}
+
+.right-arrow {
+    right: 0;
+}
+
+.right-arrow:hover {
+    transform: translateX(1vw);
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 5vh;
+    right: 6vh;
+    font-size: 12vh;
+    font-weight: lighter;
+    color: white;
+    text-decoration: none;
+    transition: transform .25s linear;
+    transform: rotate(0);
+}
+
+.modal-close-button:hover {
+    transform: rotate(90deg);
+}

@@ -385,7 +385,7 @@ function load() {
         if (pageNameIncludes("about") || pageNameIncludes("gallery") || pageNameIncludes("chilling")) {
             Array.from(document.querySelectorAll("img")).forEach((img) => img.addEventListener("click", modal));
         }
-        if (document.querySelector("#modal") != null) {
+        if (document.querySelector("#modal") != null && !pageNameIncludes("gallery")) {
             document.getElementById("modal").addEventListener("click", closeModal);
         }
         window.addEventListener("keyup", handleKeyPress);
