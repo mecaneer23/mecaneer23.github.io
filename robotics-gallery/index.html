@@ -10,8 +10,12 @@
     <main>
         <div id="modal">
             <div class="modal-close-button" onclick="closeModal()">&times;</div>
-            <div class="left-arrow arrow" onclick="cycleModalImage(true)">〈</div>
-            <div class="right-arrow arrow" onclick="cycleModalImage()">〉</div>
+            <div class="left-arrow-container arrow-container" onclick="cycleModalImage(true)">
+                <div class="left-arrow arrow">〈</div>
+            </div>
+            <div class="right-arrow-container arrow-container" onclick="cycleModalImage()">
+                <div class="right-arrow arrow">〉</div>
+            </div>
         </div>
         <h2>Robotics Gallery</h2>
         <div class="gallery-wrapper">
