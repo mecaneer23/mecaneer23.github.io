@@ -46,7 +46,15 @@
                 }
                 const reponame = url.replace("/github", "").replace("/g", "").replace(/\/$/, "");
                 const new_location = `https://github.com/mecaneer23${reponame}`;
-                const response = await fetch(`https://api.github.com/repos/mecaneer23${reponame}`);
+                let response;
+                try {
+                    response = await fetch(
+                        `https://api.github.com/repos/mecaneer23${reponame}`,
+                        { signal: AbortSignal.timeout(3000) }
+                    );
+                } catch { // github unreachable
+                    response = { status: 404 };
+                }
                 if (response.status === 200) {
                     window.location.href = new_location;
                     return;
