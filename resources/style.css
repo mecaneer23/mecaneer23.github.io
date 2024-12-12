@@ -516,46 +516,6 @@ footer ul {
     fill: var(--linkedin-color);
 }
 
-#contact-form {
-    border: 0.5vh solid var(--accent);
-    width: min-content;
-    padding: 0.5vw;
-}
-
-#contact-form p {
-    background-color: transparent;
-}
-
-#contact-form input,
-#contact-form textarea {
-    border: 0.25vh solid var(--accent);
-    font-family: var(--text-font);
-}
-
-#contact-message {
-    width: 45vh;
-    max-width: 85%;
-    height: 30vh;
-}
-
-#contact-submit {
-    font-family: var(--text-font);
-    background-color: var(--accent);
-    color: var(--text-color);
-    padding: 0.5vh 0.75vw;
-    border: none;
-    border-radius: 0.75vh;
-    cursor: pointer;
-}
-
-#contact-submit:hover {
-    background-color: var(--background);
-}
-
-span.asterisk {
-    color: red;
-}
-
 .spinner {
     transform: rotate(360deg);
     transition: transform 3s;

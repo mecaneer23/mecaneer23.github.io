@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
     <title>Contact</title>
 </head>
 
@@ -13,25 +14,31 @@
     <main>
         <h2>Contact Me</h2>
         <form action="https://formspree.io/f/mnqyadvv" method="POST" accept-charset="utf-8" id="contact-form">
-            <p>
-                <label for="contact-name">Full Name <span class="asterisk">*</span></label><br>
-                <input type="text" name="name" id="contact-name" required="">
-            </p>
-            <p>
-                <label for="contact-email">Email Address <span class="asterisk">*</span></label><br>
-                <input type="email" name="_replyto" id="contact-email" required="">
-            </p>
-            <p>
-                <label for="email-subject">Subject</label><br>
-                <input name="_subject" id="contact-subject" value="Contact Form Submission">
-            </p>
-            <p>
+            <div class="flex-row">
+                <div>
+                    <label for="contact-name">Full Name <span class="asterisk">*</span></label><br>
+                    <input type="text" name="name" id="contact-name" required="">
+                </div>
+                <div>
+                    <label for="contact-email">Email Address <span class="asterisk">*</span></label><br>
+                    <input type="email" name="_replyto" id="contact-email" required="">
+                </div>
+                <div>
+                    <label for="email-subject">Subject</label><br>
+                    <input name="_subject" id="contact-subject" value="Contact Form Submission">
+                </div>
+            </div>
+            <div>
                 <label for="contact-message">Message <span class="asterisk">*</span></label><br>
                 <textarea rows="5" name="message" id="contact-message" required=""></textarea>
-            </p>
-            <input type="submit" value="Submit" id="contact-submit">
+            </div>
+            <div class="flex-row">
+                <div></div>
+                <input type="submit" value="Submit" id="contact-submit">
+                <div></div>
+            </div>
         </form>
-        <a id="pfp" href="https://github.com/mecaneer23">
+        <a class="background-image" href="https://github.com/mecaneer23">
             <img src="/resources/gearsNoBackground.png">
         </a>
     </main>
