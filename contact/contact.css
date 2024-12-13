@@ -52,6 +52,7 @@ form {
     background-color: transparent;
     width: 18vw;
     box-sizing: border-box;
+    backdrop-filter: blur(1vh);
 }
 
 #contact-message {
