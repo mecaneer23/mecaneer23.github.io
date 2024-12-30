@@ -305,7 +305,8 @@ function weirdThemeHandlerSetFalse(_) {
 
 function refreshNavbar() {
     Array.from(document.getElementById("main-nav").children)
-        .forEach((link) => {
+        .forEach((elem) => {
+            let link = elem.querySelector("a");
             if (link.pathname.split("/")[1] === document.location.pathname.split("/")[1]) {
                 link.classList.add('current');
             } else {

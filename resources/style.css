@@ -173,6 +173,7 @@ body {
     display: table;
     padding-inline-start: 0;
     margin: 0;
+    list-style-type: none;
 }
 
 #nav {
@@ -591,4 +592,8 @@ img#modal-content {
     left: 0;
     right: 0;
     text-align: center;
+}
+
+.inline {
+    display: inline;
 }
