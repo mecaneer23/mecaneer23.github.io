@@ -9,9 +9,8 @@
     </a>
     <nav id="nav">
         <ul id="main-nav">
-            <a href="javascript:void(0);" onclick="document.getElementById('checkbox').click();" class="nav-item no-padding" aria-label="Toggle light & dark theme">
-                <input id="checkbox" onclick="toggleColorscheme()" class="switch-input" type="checkbox" checked />
-                <label for="checkbox" class="switch">
+            <a href="javascript:void(0);" onclick="toggleColorscheme()" class="nav-item no-padding" aria-label="Toggle light & dark theme">
+                <div class="switch">
                     <div class="toggle">
                         <svg id="sun" style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.917 52.917"
                             xml:space="preserve">
@@ -31,7 +30,7 @@
                         </svg>
                     </div>
                     <div class="tooltip">Toggle light & dark theme</div>
-                </label>
+                </div>
             </a>
             <a href="/about" onclick="refreshNavbar()" class="nav-item">About</a>
             <a href="/portfolio" onclick="refreshNavbar()" class="nav-item">Portfolio</a>
