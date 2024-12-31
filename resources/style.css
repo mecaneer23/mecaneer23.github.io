@@ -112,6 +112,13 @@ body {
     table {
         width: 45vw;
     }
+
+    .switch-container {
+        --vertical-padding: calc(4vh + 1.5rem - (var(--switch-size) * 0.56));
+        padding: calc(var(--vertical-padding) - 0.25vh) 1.5vw calc(var(--vertical-padding) + 0.25vh);
+        vertical-align: top;
+    }
+
 }
 
 @media (max-width: 1050px) {
@@ -134,7 +141,7 @@ body {
         padding: 0;
     }
 
-    .switch-container {
+    .switch-li {
         display: table-footer-group !important;
     }
 
