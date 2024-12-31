@@ -203,10 +203,6 @@ body {
     font-size: 1.5rem;
 }
 
-.no-padding {
-    padding: 0;
-}
-
 a:hover {
     color: var(--second-accent);
     transition-duration: 0.3s;
