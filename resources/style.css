@@ -135,7 +135,7 @@ body {
     }
 
     .switch-container {
-        display: table-footer-group;
+        display: table-footer-group !important;
     }
 
     #pfp {
