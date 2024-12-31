@@ -134,7 +134,7 @@ body {
         padding: 0;
     }
 
-    .no-padding {
+    .switch-container {
         display: table-footer-group;
     }
 
