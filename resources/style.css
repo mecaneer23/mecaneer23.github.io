@@ -472,6 +472,23 @@ footer ul {
     padding: 0;
 }
 
+.footer-contact-link:nth-child(2) {
+    margin: 4vh 0 2vh;
+}
+
+.footer-contact-link a {
+    padding: 1.5vh;
+    border-radius: 1vh;
+    background-color: var(--accent);
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.footer-contact-link a:hover {
+    background-color: var(--second-accent);
+    color: var(--navbar-background);
+}
+
 .logos-wrapper {
     display: inline-block;
 }
