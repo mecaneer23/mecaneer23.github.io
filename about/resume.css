@@ -123,12 +123,15 @@
     padding: 1vh;
 }
 
+.resume-skills ul li:not(:nth-last-child(1))::after {
+    content: " ◆ ";
+}
+
 .resume-skills li {
     width: fit-content;
     text-decoration: none;
     background-color: transparent;
     display: inline-block;
-    margin: 0 0.5vh 0 0;
 }
 
 .see-more-wrapper {
