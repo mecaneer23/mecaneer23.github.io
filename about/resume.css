@@ -35,6 +35,7 @@
     border-radius: 1vh;
     width: 25vw;
     cursor: zoom-in;
+    align-self: center;
 }
 
 .resume-header {
