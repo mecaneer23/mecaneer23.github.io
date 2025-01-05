@@ -32,22 +32,12 @@
 }
 
 .dark {
-    /* --text-color: #ffffff;
-    --background: #212121;
-    --navbar-background: #424242;
-    --accent: #ff9800;
-    --second-accent: #03a9f4; */
-
     --text-color: #eaefea;
     --background: #36393f;
     --navbar-background: #282a2f;
     --gray: #888888;
     --accent: #008000;
     --second-accent: #90ee90;
-    /* --accent: #2a8f95;
-    --accent: #8960a6;
-    --second-accent: #9390ee; */
-
 
     color-scheme: dark;
     --discord-color: #ffffff;
