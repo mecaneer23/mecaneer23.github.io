@@ -166,6 +166,22 @@ body {
     }
 }
 
+.skip {
+    position: absolute;
+    top: -5vh;
+    left: 1vh;
+    background-color: var(--second-accent) !important;
+    color: var(--background) !important;
+    z-index: 100;
+    transition: top 0.3s ease;
+    border-radius: 1vh;
+    padding: 1vh;
+}
+
+.skip:focus {
+    top: 1vh;
+}
+
 #main-nav {
     display: table;
     padding-inline-start: 0;

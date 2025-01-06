@@ -243,6 +243,14 @@ function updateTitle() {
     link.href = "/favicon.ico";
 }
 
+function skipToMainContent(event) {
+    event.preventDefault();
+    const mainContent = document.querySelector("main");
+    mainContent.setAttribute("tabindex", "-1");
+    mainContent.focus();
+    mainContent.removeAttribute("tabindex");
+}
+
 var keys = {}
 function handleKeyPress(event) {
     let { keyCode, type } = event;
