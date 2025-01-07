@@ -178,7 +178,7 @@ body {
     padding: 1vh;
 }
 
-.skip:focus {
+.skip:focus-visible {
     top: 1vh;
 }
 
