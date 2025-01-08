@@ -32,12 +32,13 @@
 }
 
 .dark {
-    --text-color: #eaefea;
-    --background: #36393f;
-    --navbar-background: #282a2f;
+    --text-color: #F9FAFB;
+    --second-accent: #AAC6E7;
+    --accent: #5A8ABF;
+    --background: #30343F;
+    --navbar-background: #1E2129;
+
     --gray: #888888;
-    --accent: #008000;
-    --second-accent: #90ee90;
 
     color-scheme: dark;
     --discord-color: #ffffff;
@@ -45,6 +46,16 @@
     --youtube-color: #ffffff;
     --linkedin-color: #ffffff;
 }
+
+/*
+DARK MODE:
+  very light: text
+  light: accent 2
+  medium: accent
+  dark: background
+  very dark: navbar background
+for light mode, invert the stack
+*/
 
 :root {
     --text-font: "Bahnschrift", "Arial", sans-serif;
