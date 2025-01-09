@@ -86,7 +86,6 @@
 
 .resume-nav a,
 .button {
-    width: fit-content;
     text-decoration: none;
     background-color: var(--accent);
     color: var(--text-color);
