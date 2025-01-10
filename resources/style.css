@@ -227,19 +227,14 @@ body {
     font-size: 1.5rem;
 }
 
-a:hover {
-    color: var(--second-accent);
-    transition-duration: 0.3s;
-}
-
-header a:hover,
-footer a:hover,
+a:hover,
 .current {
-    color: var(--second-accent);
+    transition-duration: 0.3s;
+    color: var(--accent);
 }
 
 a {
-    color: var(--accent);
+    color: var(--text-color);
     background-color: var(--background);
 }
 
@@ -381,7 +376,7 @@ footer a {
 }
 
 #hamburger span {
-    background-color: var(--accent);
+    background-color: var(--text-color);
     display: block;
     position: absolute;
     height: calc(var(--hamburger-size) * .15);
@@ -394,7 +389,7 @@ footer a {
 }
 
 #hamburger:hover span {
-    background-color: var(--second-accent);
+    background-color: var(--accent);
 }
 
 #hamburger span:nth-child(1) {
