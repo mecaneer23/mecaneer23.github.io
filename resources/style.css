@@ -425,7 +425,7 @@ footer a {
 }
 
 #burger-menu.open #nav {
-    right: 0px;
+    right: 0;
 }
 
 main p,
