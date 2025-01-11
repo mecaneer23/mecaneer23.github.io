@@ -195,8 +195,7 @@ body {
     position: absolute;
     top: -5vh;
     left: 1vh;
-    background-color: var(--second-accent) !important;
-    color: var(--background) !important;
+    background-color: var(--accent) !important;
     z-index: 100;
     transition: top 0.3s ease;
     border-radius: 1vh;
@@ -241,10 +240,16 @@ body {
     font-size: 1.5rem;
 }
 
-a:hover,
+.nav-item:hover:not(.switch-container) {
+    text-decoration: underline;
+}
+
 .current {
-    transition-duration: 0.3s;
-    color: var(--accent);
+    text-decoration: underline var(--accent) !important;
+}
+
+a:hover:not(.nav-item) {
+    text-decoration-color: var(--accent);
 }
 
 a {
@@ -315,12 +320,33 @@ a {
     width: 80%;
 }
 
-.switch:hover .tooltip {
-    display: block;
+@keyframes jiggle {
+    30% {
+        transform: rotate(5deg);
+    }
+
+    60% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.switch:hover,
+.switch-container:focus-visible {
+    animation: 0.3s jiggle;
+}
+
+.switch:hover .tooltip,
+.switch-container:focus-visible .tooltip {
+    opacity: 1;
 }
 
 .tooltip {
-    display: none;
+    opacity: 0;
+    transition: opacity 0.3s 0.2s;
     position: absolute;
     z-index: 1;
     top: 3vh;
@@ -377,6 +403,10 @@ footer a {
 
 #site-title a {
     font-size: 1.25rem;
+}
+
+#site-title:hover {
+    color: var(--accent);
 }
 
 #hamburger {
@@ -510,9 +540,8 @@ footer ul {
     text-decoration: none;
 }
 
-.footer-contact-link a:hover {
-    background-color: var(--second-accent);
-    color: var(--navbar-background);
+.footer-contact-link:hover {
+    animation: 0.3s jiggle;
 }
 
 .logos-wrapper {

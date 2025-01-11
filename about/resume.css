@@ -81,7 +81,6 @@
     text-align: center;
     margin: 3vh 0 5vh;
     width: 92vw;
-    line-height: 2.5;
 }
 
 .resume-nav a,
@@ -92,12 +91,12 @@
     padding: 1vh;
     border-radius: 1vh;
     cursor: pointer;
+    display: inline-block;
 }
 
 .resume-nav a:hover,
 .button:hover {
-    color: var(--background);
-    background-color: var(--second-accent);
+    animation: 0.3s jiggle;
 }
 
 .button.disabled {
