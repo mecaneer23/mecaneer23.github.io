@@ -14,17 +14,12 @@
     /* --accent: #008000;
     --text-color: #36393f;
     --background: #eaefea;
-    --navbar-background: #c1d0c1;
-    --second-accent: #005000; */
+    --navbar-background: #c1d0c1; */
 
     --text-color: #333333;
     --background: #ffffff;
     --navbar-background: #e5e5e5;
-    --accent: #4caf50;
-    --second-accent: #005000;
-
     --accent: #73afeb;
-    --second-accent: #012a59;
 
     --gray: #666666;
 
@@ -37,7 +32,6 @@
 
 .dark {
     --text-color: #ededee;
-    --second-accent: #AAC6E7;
     --accent: #0863bf;
     --background: #30343F;
     --navbar-background: #1E2129;
@@ -655,9 +649,31 @@ img#modal-content {
     cursor: pointer;
 }
 
-#back-to-top:hover {
-    background-color: var(--second-accent);
-    color: var(--background);
+@keyframes emanating-ring {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+#back-to-top:hover::before {
+    animation: emanating-ring 0.5s;
+    opacity: 0;
+    content: "";
+    display: block;
+    background-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: -0.5vh;
+    left: -0.5vh;
+    width: 9vh;
+    height: 9vh;
+    border: 1vh solid var(--accent);
 }
 
 .motto {
