@@ -22,6 +22,10 @@
     --navbar-background: #e5e5e5;
     --accent: #4caf50;
     --second-accent: #005000;
+
+    --accent: #0975E1;
+    --second-accent: #012a59;
+
     --gray: #666666;
 
     color-scheme: light;
@@ -32,9 +36,9 @@
 }
 
 .dark {
-    --text-color: #F9FAFB;
+    --text-color: #ededee;
     --second-accent: #AAC6E7;
-    --accent: #5A8ABF;
+    --accent: #0863bf;
     --background: #30343F;
     --navbar-background: #1E2129;
 
@@ -46,6 +50,16 @@
     --youtube-color: #ffffff;
     --linkedin-color: #ffffff;
 }
+
+/*
+- darken accent to work as background for white but not as foreground at all
+- maybe highlight background for navbar hover rather than text highlight
+- remove second accent and do something else for button highlight?
+- change resume headers to look less like buttons
+  - center header
+  - remove background
+  - make font slightly larger
+*/
 
 /*
 DARK MODE:
