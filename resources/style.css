@@ -147,7 +147,7 @@ body {
 
     .nav-item {
         display: block;
-        padding: 0;
+        padding: 0 0 2vh 0;
     }
 
     .switch-li {
