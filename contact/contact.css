@@ -63,18 +63,17 @@ form {
 
 #contact-submit {
     font-family: var(--text-font);
-    background-color: var(--accent) !important;
     color: var(--text-color);
     padding: 0.5vh 0.75vw;
-    border-color: var(--background) !important;
+    background-color: var(--accent) !important;
+    border: none !important;
     border-radius: 0.75vh;
     cursor: pointer;
     align-self: center;
 }
 
 #contact-submit:hover {
-    background-color: var(--background) !important;
-    border-color: var(--accent) !important;
+    animation: 0.3s jiggle;
 }
 
 span.asterisk {
