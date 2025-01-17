@@ -687,3 +687,7 @@ img#modal-content {
 .inline {
     display: inline;
 }
+
+.inline>.current::before {
+    content: "‣ ";
+}
