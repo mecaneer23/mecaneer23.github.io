@@ -183,6 +183,10 @@ body {
     .justify-apart :not(:first-child) {
         display: none;
     }
+
+    .inline>.current::before {
+        content: "‣ ";
+    }
 }
 
 .skip {
@@ -686,8 +690,4 @@ img#modal-content {
 
 .inline {
     display: inline;
-}
-
-.inline>.current::before {
-    content: "‣ ";
 }
