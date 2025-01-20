@@ -45,26 +45,6 @@
     --linkedin-color: #ffffff;
 }
 
-/*
-- darken accent to work as background for white but not as foreground at all
-- maybe highlight background for navbar hover rather than text highlight
-- remove second accent and do something else for button highlight?
-- change resume headers to look less like buttons
-  - center header
-  - remove background
-  - make font slightly larger
-*/
-
-/*
-DARK MODE:
-  very light: text
-  light: accent 2
-  medium: accent
-  dark: background
-  very dark: navbar background
-for light mode, invert the stack
-*/
-
 :root {
     --text-font: "Bahnschrift", "Arial", sans-serif;
     /* --header-font: "Futura"; */

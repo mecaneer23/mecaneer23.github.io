@@ -39,10 +39,12 @@
 }
 
 .resume-header {
-    padding: 1vw;
+    padding: 0.5vw;
     width: 90vw;
-    background-color: var(--accent);
+    text-decoration: underline var(--accent);
+    text-align: center;
     border-radius: 1vh;
+    font-size: 1.35em;
 }
 
 .resume-container {
