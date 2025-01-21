@@ -588,12 +588,8 @@ th {
     padding: 1vh;
 }
 
-th {
-    color: var(--accent)
-}
-
 td {
-    color: var(--text-color)
+    color: var(--text-color);
 }
 
 tr:nth-child(even) {
