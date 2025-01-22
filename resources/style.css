@@ -116,7 +116,7 @@ body {
     #nav {
         position: absolute;
         background-color: var(--navbar-background);
-        padding: 0 5vw;
+        padding: 0;
         /* border-left: 0.5vh solid var(--accent); */
         z-index: -1;
     }
@@ -127,7 +127,7 @@ body {
 
     .nav-item {
         display: block;
-        padding: 0 0 2vh 0;
+        padding: 1vh 5vw;
     }
 
     .switch-li {
@@ -312,12 +312,12 @@ a {
     }
 }
 
-.switch:hover,
+.switch-container:hover .switch,
 .switch-container:focus-visible {
     animation: 0.3s jiggle;
 }
 
-.switch:hover .tooltip,
+.switch-container:hover .tooltip,
 .switch-container:focus-visible .tooltip {
     opacity: 1;
 }
