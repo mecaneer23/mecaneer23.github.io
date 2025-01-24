@@ -72,16 +72,23 @@ body {
     /* generally large screens */
     #nav {
         display: block !important;
-        height: auto !important;
+        height: 100% !important;
     }
 
     #hamburger {
         display: none;
     }
 
+    .nav-item-wrapper {
+        display: table;
+        height: 100%;
+    }
+
     .nav-item {
-        display: inline-block;
-        padding: 4vh 1.5vw;
+        display: table-cell;
+        vertical-align: middle;
+        height: 100%;
+        padding: 0 1.5vw;
     }
 
     .about-container {
@@ -96,13 +103,6 @@ body {
     table {
         width: 45vw;
     }
-
-    .switch-container {
-        --vertical-padding: calc(4vh + 1.5rem - (var(--switch-size) * 0.56));
-        padding: calc(var(--vertical-padding) - 0.25vh) 1.5vw calc(var(--vertical-padding) + 0.25vh);
-        vertical-align: top;
-    }
-
 }
 
 @media (max-width: 1050px) {
@@ -114,6 +114,12 @@ body {
         padding: 0;
         /* border-left: 0.5vh solid var(--accent); */
         z-index: -1;
+        top: 12vh;
+    }
+
+    #main-nav {
+        display: table !important;
+        height: auto !important;
     }
 
     #hamburger {
@@ -159,8 +165,12 @@ body {
         display: none;
     }
 
-    .inline>.current::before {
+    .nav-item-wrapper>.current::before {
         content: "‣ ";
+    }
+
+    .nav-item-wrapper {
+        display: inline;
     }
 }
 
@@ -180,10 +190,15 @@ body {
 }
 
 #main-nav {
-    display: table;
+    display: flex;
     padding-inline-start: 0;
     margin: 0;
     list-style-type: none;
+    height: 100%;
+}
+
+#burger-menu {
+    height: 100%;
 }
 
 #nav {
@@ -354,6 +369,7 @@ a {
     background-color: var(--navbar-background);
     transform-style: preserve-3d;
     z-index: 100;
+    height: 12vh;
     /* background-image: url("pictureque.png");
     background-size: cover;
     background-position: center;
@@ -371,7 +387,15 @@ footer a {
 
 #site-title {
     margin: 0;
-    padding: 3.5vh 1.5vw;
+    padding: 0 1.5vw;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#title-link {
+    height: 100%;
+    display: table;
 }
 
 #site-title a {
@@ -657,8 +681,4 @@ img#modal-content {
     left: 0;
     right: 0;
     text-align: center;
-}
-
-.inline {
-    display: inline;
 }
