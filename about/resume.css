@@ -98,7 +98,9 @@
 }
 
 .resume-nav a:hover,
-.button:hover {
+.button:hover,
+.resume-nav a:focus-visible,
+.button:focus-visible {
     animation: 0.3s jiggle;
 }
 

@@ -501,6 +501,11 @@ footer h2 {
     text-decoration: none;
 }
 
+.h2-link:hover,
+.h2-link:focus-visible {
+    text-decoration: underline var(--accent);
+}
+
 main {
     width: 100%;
     margin: 2vh 1.5vw 10vh 3vw;
@@ -549,6 +554,8 @@ footer ul {
     text-decoration: none;
 }
 
+/* TODO: animate on .footer-contact-link a:focus-visible
+(but can't because needs to modify parent on child state) */
 .footer-contact-link:hover {
     animation: 0.3s jiggle;
 }
@@ -571,7 +578,8 @@ footer ul {
     transition: all 0.2s linear;
 }
 
-.logo:hover {
+.logo:hover,
+.footer-logos>li>a:focus-visible .logo {
     transform: scale(1.2);
 }
 
