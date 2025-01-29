@@ -376,7 +376,7 @@ a {
     transition: opacity 0.3s 0.2s;
     position: absolute;
     z-index: 1;
-    top: 3vh;
+    top: 4vh;
     left: 50%;
     transform: translateX(-50%);
     font-size: 2vh;
