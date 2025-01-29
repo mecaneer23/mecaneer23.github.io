@@ -389,7 +389,7 @@ function load() {
         setColorscheme(null, (localStorage.getItem("colorscheme") ? localStorage.getItem("colorscheme") == "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
         document.getElementsByClassName("switch-container")[0].addEventListener("mouseover", weirdThemeHandler);
         document.getElementsByClassName("switch-container")[0].addEventListener("mouseout", weirdThemeHandlerSetFalse);
-        document.getElementsByClassName("nav-item").forEach((element) => element.addEventListener("focus", openMenu));
+        Array.from(document.getElementsByClassName("nav-item")).forEach((element) => element.addEventListener("focus", openMenu));
         document.getElementById("current-year").innerHTML = (new Date()).getFullYear();
         if (pageNameIncludes("portfolio")) {
             Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("contextmenu", modal));
