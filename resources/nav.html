@@ -3,7 +3,8 @@
     <h1 id="site-title" onclick="refreshNavbar()">Gabriel Natenshon</h1>
 </a>
 <div id="burger-menu">
-    <a href="javascript:void(0);" class="hamburger-link" onclick="toggleMenu()" aria-label="Open sidebar navigation menu">
+    <a href="javascript:void(0);" class="hamburger-link" onclick="toggleMenu()"
+        aria-label="Open sidebar navigation menu">
         <div id="hamburger">
             <span></span>
             <span></span>
@@ -37,10 +38,26 @@
                     </div>
                 </a>
             </li>
-            <li class="nav-item-wrapper"><a href="/about" onclick="refreshNavbar()" class="nav-item">About</a></li>
-            <li class="nav-item-wrapper"><a href="/portfolio" onclick="refreshNavbar()" class="nav-item">Portfolio</a></li>
-            <li class="nav-item-wrapper"><a href="/contact" onclick="refreshNavbar()" class="nav-item">Contact</a></li>
-            <li class="nav-item-wrapper"><a href="/rates" onclick="refreshNavbar()" class="nav-item">Services & Rates</a></li>
+            <li class="nav-item-wrapper">
+                <a href="/about" onclick="refreshNavbar()" class="nav-item">
+                    <span class="nav-item-text">About</span>
+                </a>
+            </li>
+            <li class="nav-item-wrapper">
+                <a href="/portfolio" onclick="refreshNavbar()" class="nav-item">
+                    <span class="nav-item-text">Portfolio</span>
+                </a>
+            </li>
+            <li class="nav-item-wrapper">
+                <a href="/contact" onclick="refreshNavbar()" class="nav-item">
+                    <span class="nav-item-text">Contact</span>
+                </a>
+            </li>
+            <li class="nav-item-wrapper">
+                <a href="/rates" onclick="refreshNavbar()" class="nav-item">
+                    <span class="nav-item-text">Services & Rates</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </div>

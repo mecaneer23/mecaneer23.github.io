@@ -173,7 +173,7 @@ body {
         display: none;
     }
 
-    .nav-item-wrapper>.current::before {
+    .nav-item-wrapper>.current ::before {
         content: "‣ ";
     }
 
@@ -236,13 +236,42 @@ body {
     font-size: 1.5rem;
 }
 
-.nav-item:hover:not(.switch-container),
-.nav-item:focus-visible:not(.switch-container) {
-    text-decoration: underline;
+.nav-item-text {
+    display: inline-block;
+    position: relative;
 }
 
-.current {
-    text-decoration: underline var(--accent) !important;
+@keyframes underline {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: -100%;
+    }
+}
+
+.nav-item:hover:not(.switch-container):not(.current) ::after,
+.nav-item:focus-visible:not(.switch-container):not(.current) ::after,
+.current ::after {
+    content: "";
+    display: block;
+    animation: underline 0.3s linear;
+    right: 0;
+    position: absolute;
+    bottom: -1vh;
+    width: 100%;
+    height: 0.3vh;
+    background-color: var(--text-color);
+}
+
+.current ::after {
+    background-color: var(--accent);
+    animation: none;
+}
+
+.current:hover ::after {
+    animation: underline 0.3s linear;
 }
 
 a:hover:not(.nav-item),
