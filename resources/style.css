@@ -247,26 +247,42 @@ body {
     }
 
     100% {
-        width: -100%;
+        width: 100%;
+    }
+}
+
+@keyframes ununderline {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
     }
 }
 
 .nav-item:hover:not(.switch-container):not(.current) ::after,
 .nav-item:focus-visible:not(.switch-container):not(.current) ::after,
+.current:hover ::after {
+    animation: underline 0.3s linear;
+    width: 100%;
+}
+
+.nav-item:not(.switch-container):not(.current) ::after,
 .current ::after {
     content: "";
-    display: block;
-    animation: underline 0.3s linear;
+    animation: ununderline 0.3s linear;
     right: 0;
     position: absolute;
     bottom: -1vh;
-    width: 100%;
+    width: 0;
     height: 0.3vh;
     background-color: var(--text-color);
 }
 
 .current ::after {
     background-color: var(--accent);
+    width: 100%;
     animation: none;
 }
 
