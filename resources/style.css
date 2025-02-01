@@ -553,6 +553,10 @@ footer h2 {
     z-index: 60;
 }
 
+footer h2 {
+    margin-bottom: 0;
+}
+
 .h2-link {
     color: var(--text-color);
     text-decoration: none;
@@ -597,10 +601,13 @@ footer li {
 footer ul {
     list-style-type: none;
     padding: 0;
+    margin-top: 0;
 }
 
-.footer-contact-link:nth-child(2) {
-    margin: 4vh 0 2vh;
+.footer-contact-link {
+    display: flex;
+    justify-content: center;
+    margin: 1.5vh 0 0.5vh;
 }
 
 .footer-contact-link a {
@@ -609,11 +616,13 @@ footer ul {
     background-color: var(--accent);
     color: var(--text-color);
     text-decoration: none;
+    display: block;
+    width: fit-content;
+    line-height: 0.98;
 }
 
-/* TODO: animate on .footer-contact-link a:focus-visible
-(but can't because needs to modify parent on child state) */
-.footer-contact-link:hover {
+.footer-contact-link a:hover,
+.footer-contact-link a:focus-visible {
     animation: 0.3s jiggle;
 }
 
