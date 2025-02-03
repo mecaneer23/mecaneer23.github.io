@@ -184,7 +184,7 @@ body {
 
 .skip {
     position: absolute;
-    top: -5vh;
+    top: -10vh;
     left: 1vh;
     background-color: var(--accent) !important;
     z-index: 100;
