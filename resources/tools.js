@@ -234,6 +234,12 @@ function toggleWeirdColorscheme(_) {
     root.classList.add("weird");
 }
 
+function addMouseHighlight(event) {
+    const elem = this.querySelector(".underline-light");
+    const { width } = this.getBoundingClientRect();
+    elem.style.left = (event.pageX - this.offsetLeft) / width * 100 + "%";
+}
+
 function updateTitle() {
     if (!document.title.endsWith(" | " + window.location.host)) {
         document.title = document.title + " | Gabriel Natenshon | " + window.location.host;
@@ -390,6 +396,7 @@ function load() {
         document.getElementsByClassName("switch-container")[0].addEventListener("mouseover", weirdThemeHandler);
         document.getElementsByClassName("switch-container")[0].addEventListener("mouseout", weirdThemeHandlerSetFalse);
         Array.from(document.getElementsByClassName("nav-item")).forEach((element) => element.addEventListener("focus", openMenu));
+        Array.from(document.querySelectorAll(".nav-item:not(.switch-container)")).forEach(element => element.addEventListener("mousemove", addMouseHighlight));
         document.getElementById("current-year").innerHTML = (new Date()).getFullYear();
         if (pageNameIncludes("portfolio")) {
             Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("contextmenu", modal));

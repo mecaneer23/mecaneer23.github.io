@@ -173,7 +173,7 @@ body {
         display: none;
     }
 
-    .nav-item-wrapper>.current ::before {
+    .nav-item-wrapper>.current>::before {
         content: "‣ ";
     }
 
@@ -261,16 +261,15 @@ body {
     }
 }
 
-.nav-item:hover:not(.switch-container):not(.current) ::after,
-.nav-item:focus-visible:not(.switch-container):not(.current) ::after,
-.current:hover ::after {
+.nav-item:hover:not(.current) .underline,
+.nav-item:focus-visible:not(.current) .underline,
+.current:hover .underline {
     animation: underline 0.3s linear;
     width: 100%;
 }
 
-.nav-item:not(.switch-container):not(.current) ::after,
-.current ::after {
-    content: "";
+.nav-item:not(.current) .underline,
+.current .underline {
     animation: ununderline 0.3s linear;
     right: 0;
     position: absolute;
@@ -278,16 +277,24 @@ body {
     width: 0;
     height: 0.3vh;
     background-color: var(--text-color);
+    overflow: hidden;
 }
 
-.current ::after {
+.current .underline {
     background-color: var(--accent);
     width: 100%;
     animation: none;
 }
 
-.current:hover ::after {
+.current:hover .underline {
     animation: underline 0.3s linear;
+}
+
+.underline-light {
+    --light-size: 0.5vh;
+    position: absolute;
+    top: calc(50% - var(--light-size) / 2);
+    box-shadow: 0 0 calc(var(--light-size) * 2) calc(var(--light-size) * 2) color-mix(in srgb, var(--background), transparent);
 }
 
 a:hover:not(.nav-item),
