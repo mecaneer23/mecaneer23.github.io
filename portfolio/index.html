@@ -48,6 +48,12 @@
                         }
                         return "gray";
                     })
+                    .catch(
+                        error => {
+                            console.log('There was a problem with the fetch operation: ', error.message);
+                            return "gray";
+                        }
+                    )
             }
             (async function () {
                 const data = await getMostRecentRepo("mecaneer23");
@@ -63,7 +69,11 @@
                 document.querySelector("#most-recent-project h2").innerHTML = data.repo;
                 document.querySelector("#most-recent-project p").innerHTML = data.desc;
                 document.querySelector(".lang").innerHTML = data.lang;
-                document.querySelector(".lang-color").style.backgroundColor = await getLangColor(data.lang);
+                const langColor = await getLangColor(data.lang);
+                document.querySelector(".lang-color").style.backgroundColor = langColor;
+                if (langColor == "gray") {
+                    document.querySelector(".lang-color").innerHTML = "?";
+                }
             })();
         </script>
         <div id="most-recent-project-container" class="portfolio-container" style="display: none;">
