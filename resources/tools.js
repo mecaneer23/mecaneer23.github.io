@@ -241,6 +241,10 @@ function addMouseHighlight(event) {
     elem.style.left = (event.pageX - this.offsetLeft) / width * 100 + "%";
 }
 
+function removeMouseHighlight(_) {
+    this.querySelector('.underline-light').style.display = "none";
+}
+
 function updateTitle() {
     if (!document.title.endsWith(" | " + window.location.host)) {
         document.title = document.title + " | Gabriel Natenshon | " + window.location.host;
@@ -397,7 +401,10 @@ function load() {
         document.getElementsByClassName("switch-container")[0].addEventListener("mouseover", weirdThemeHandler);
         document.getElementsByClassName("switch-container")[0].addEventListener("mouseout", weirdThemeHandlerSetFalse);
         Array.from(document.getElementsByClassName("nav-item")).forEach((element) => element.addEventListener("focus", openMenu));
-        Array.from(document.querySelectorAll(".nav-item:not(.switch-container)")).forEach(element => element.addEventListener("mousemove", addMouseHighlight));
+        Array.from(document.querySelectorAll(".nav-item:not(.switch-container)")).forEach(element => {
+            element.addEventListener("mousemove", addMouseHighlight);
+            element.addEventListener("mouseout", removeMouseHighlight);
+        });
         document.getElementById("current-year").innerHTML = (new Date()).getFullYear();
         if (pageNameIncludes("portfolio")) {
             Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("contextmenu", modal));
