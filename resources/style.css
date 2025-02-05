@@ -292,6 +292,7 @@ body {
 
 .underline-light {
     --light-size: 0.5vh;
+    display: none;
     position: absolute;
     top: calc(50% - var(--light-size) / 2);
     box-shadow: 0 0 calc(var(--light-size) * 2) calc(var(--light-size) * 2) color-mix(in srgb, var(--background), transparent);

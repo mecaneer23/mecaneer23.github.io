@@ -236,6 +236,7 @@ function toggleWeirdColorscheme(_) {
 
 function addMouseHighlight(event) {
     const elem = this.querySelector(".underline-light");
+    elem.style.display = "block";
     const { width } = this.getBoundingClientRect();
     elem.style.left = (event.pageX - this.offsetLeft) / width * 100 + "%";
 }
