@@ -170,6 +170,20 @@ function closeModal(_) {
 function openMenu() {
     document.getElementById("burger-menu").classList.add("open");
     updateSideNavHeight();
+    moveThemeSwitchTop(false);
+}
+
+function moveThemeSwitchTop(is_top) {
+    return;
+    const mainNav = document.querySelector("#main-nav")
+    const themeSwitch = document.querySelector(".switch-li");
+    if (is_top) {
+        setTimeout(() => {
+            mainNav.insertBefore(themeSwitch, mainNav.firstChild);
+            return;
+        }, 800);
+    }
+    mainNav.appendChild(themeSwitch);
 }
 
 function toggleMenu() {
@@ -181,6 +195,7 @@ function toggleMenu() {
                 updateSideNavHeight("auto");
             }
         }, 1000);
+        moveThemeSwitchTop(true);
         return;
     }
     openMenu();
