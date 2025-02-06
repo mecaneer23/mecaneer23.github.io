@@ -180,6 +180,10 @@ body {
     .nav-item-wrapper {
         display: inline;
     }
+
+    .nav-item:focus-visible .underline {
+        bottom: -0.5vh !important;
+    }
 }
 
 .skip {
@@ -278,6 +282,7 @@ body {
     height: 0.3vh;
     background-color: var(--text-color);
     overflow: hidden;
+    transition: bottom 0.3s;
 }
 
 .current .underline {
