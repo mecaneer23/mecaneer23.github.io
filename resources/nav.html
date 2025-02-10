@@ -1,3 +1,47 @@
+<style>
+    #loading-screen {
+        position: absolute;
+        width: 100vw;
+        height: 200vh;
+        top: 0;
+        left: 0;
+        background-color: gray;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .loader {
+        border: 2vh solid #f3f3f3;
+        border-top: 2vh solid #3498db;
+        border-radius: 50%;
+        width: 5vh;
+        height: 5vh;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .loading-text {
+        font-size: larger;
+        margin-top: 5vh;
+        color: white;
+    }
+</style>
+<div id="loading-screen">
+    <div class="loader"></div>
+    <div class="loading-text">Loading... please wait</div>
+</div>
 <a href="#" class="skip" onclick="skipToMainContent(event)">Skip to main content</a>
 <a id="title-link" href="/about">
     <h1 id="site-title" onclick="refreshNavbar()">Gabriel Natenshon</h1>
