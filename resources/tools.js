@@ -458,5 +458,9 @@ function loader() {
 
 window.addEventListener("load", () => {
     loader();
-    document.getElementById("loading-screen").style.display = "none";
+    const loadingScreen = document.getElementById("loading-screen");
+    loadingScreen.style.display = "none";
+    setTimeout(() => {
+        loadingScreen.style.display = "none";
+    }, 3000);
 });
