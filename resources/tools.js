@@ -464,3 +464,12 @@ window.addEventListener("load", () => {
         loadingScreen.style.display = "none";
     }, 3000);
 });
+
+document.body.addEventListener("load", () => {
+    console.log("here")
+    const loadingScreen = document.getElementById("loading-screen");
+    loadingScreen.style.display = "none";
+    setTimeout(() => {
+        loadingScreen.style.display = "none";
+    }, 3000);
+});
