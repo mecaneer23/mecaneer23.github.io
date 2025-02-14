@@ -478,11 +478,7 @@ function waitForElem(selector) {
 }
 
 async function removeLoadingScreen() {
-    let loadingScreen = await waitForElem("#loading-screen");
-    loadingScreen.style.display = "none";
-    setTimeout(() => {
-        loadingScreen.style.display = "none";
-    }, 3000);
+    (await waitForElem("#loading-screen")).style.display = "none";
 }
 
 window.addEventListener("load", () => {
