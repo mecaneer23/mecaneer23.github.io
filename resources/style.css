@@ -265,9 +265,28 @@ body {
     }
 }
 
+@keyframes floaty {
+    0% {
+        bottom: -1vh;
+    }
+
+    100% {
+        bottom: -0.75vh;
+    }
+}
+
+@keyframes unfloaty {
+    0% {
+        bottom: -0.75vh;
+    }
+
+    100% {
+        bottom: -1vh;
+    }
+}
+
 .nav-item:hover:not(.current) .underline,
-.nav-item:focus-visible:not(.current) .underline,
-.current:hover .underline {
+.nav-item:focus-visible:not(.current) .underline {
     animation: underline 0.3s linear;
     width: 100%;
 }
@@ -285,14 +304,15 @@ body {
     transition: bottom 0.3s;
 }
 
+.current:hover .underline {
+    animation: floaty 0.3s;
+    bottom: -0.75vh;
+}
+
 .current .underline {
     background-color: var(--accent);
     width: 100%;
-    animation: none;
-}
-
-.current:hover .underline {
-    animation: underline 0.3s linear;
+    animation: unfloaty 0.3s;
 }
 
 .underline-light {
