@@ -118,7 +118,7 @@ body {
     }
 
     #main-nav {
-        display: table !important;
+        flex-direction: column !important;
         height: auto !important;
     }
 
@@ -132,7 +132,7 @@ body {
     }
 
     .switch-li {
-        display: table-footer-group !important;
+        order: 1;
     }
 
     #pfp {
