@@ -70,7 +70,9 @@
                 document.querySelector("#most-recent-project p").innerHTML = data.desc;
                 document.querySelector(".lang").innerHTML = data.lang;
                 const langColor = await getLangColor(data.lang);
-                document.querySelector(".lang-color").style.backgroundColor = langColor;
+                const langColorElement = document.querySelector(".lang-color");
+                langColorElement.style.backgroundColor = langColor;
+                langColorElement.style.display = "flex";
                 if (langColor == "gray") {
                     document.querySelector(".lang-color").innerHTML = "?";
                 }

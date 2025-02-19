@@ -81,7 +81,7 @@
     height: 1rem;
     margin-right: 0.5rem;
     font-size: small;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
