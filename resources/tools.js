@@ -118,6 +118,9 @@ function setModalContent(event, type, src) {
         newElem.style.left = "5vw";
     };
 
+    if (pageNameIncludes("gallery")) {
+        newElem.addEventListener("click", closeModal);
+    }
     newElem.onload = type === "img" ? adjustSizeAndPosition : setSize;
     modalData.isOpen = true;
 }
@@ -428,7 +431,11 @@ function load() {
             document.querySelector("img.profile").addEventListener("contextmenu", doABarrelRoll);
         }
         if (pageNameIncludes("about") || pageNameIncludes("gallery") || pageNameIncludes("chilling")) {
-            Array.from(document.querySelectorAll("img")).forEach((img) => img.addEventListener("click", modal));
+            Array.from(document.querySelectorAll("img")).forEach((img) => {
+                if (img.id !== "modal-content") {
+                    img.addEventListener("click", modal);
+                }
+            });
         }
         if (document.querySelector("#modal") != null && !pageNameIncludes("gallery")) {
             document.getElementById("modal").addEventListener("click", closeModal);
