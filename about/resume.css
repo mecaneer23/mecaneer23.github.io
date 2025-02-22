@@ -33,7 +33,7 @@
 .resume-card img {
     box-sizing: border-box;
     border-radius: 1vh;
-    width: 25vw;
+    width: calc(25vw * var(--zoom-scale));
     cursor: zoom-in;
     align-self: center;
 }

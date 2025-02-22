@@ -227,7 +227,7 @@ body {
 }
 
 .profile {
-    height: 50vh;
+    height: calc(50vh * var(--zoom-scale));
     cursor: zoom-in;
     border-radius: 1vw;
 }
@@ -342,8 +342,8 @@ a {
 }
 
 #picturesque {
-    height: 75vh;
-    width: 75vh;
+    height: calc(75vh * var(--zoom-scale));
+    width: calc(75vh * var(--zoom-scale));
 }
 
 .flex {

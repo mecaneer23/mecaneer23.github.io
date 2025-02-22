@@ -5,6 +5,7 @@ var modalData = {
     scrolled: false
 };
 const MODAL_ANIMATION_DELAY = 400;
+const initialDPR = window.devicePixelRatio || 1; // TODO: account for page reload after zooming
 
 function pageNameIncludes(name) {
     return window.location.pathname.indexOf(name) > -1
@@ -174,6 +175,13 @@ function openMenu() {
     document.getElementById("burger-menu").classList.add("open");
     updateSideNavHeight();
     moveThemeSwitchTop(false);
+}
+
+function updateScale() {
+    document.documentElement.style.setProperty(
+        "--zoom-scale",
+        window.devicePixelRatio / initialDPR
+    );
 }
 
 function moveThemeSwitchTop(is_top) {
@@ -446,6 +454,8 @@ function load() {
         window.addEventListener("scroll", handleScroll);
         updateTitle();
         refreshNavbar();
+        window.addEventListener('resize', updateScale);
+        updateScale();
         return document.body.hasAttribute("data-theme");
     } catch (e) {
         console.log(e);
