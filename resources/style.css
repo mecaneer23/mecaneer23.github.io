@@ -374,6 +374,13 @@ a {
     position: relative;
 }
 
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+}
+
 .toggle {
     content: '';
     background-color: var(--accent);

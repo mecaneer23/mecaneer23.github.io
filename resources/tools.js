@@ -356,6 +356,9 @@ function refreshNavbar() {
     Array.from(document.getElementById("main-nav").children)
         .forEach((elem) => {
             let link = elem.querySelector("a");
+            if (!link) {
+                return;
+            }
             if (link.pathname.split("/")[1] === document.location.pathname.split("/")[1]) {
                 link.classList.add('current');
             } else {
