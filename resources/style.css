@@ -227,7 +227,7 @@ body {
 }
 
 .profile {
-    height: calc(50vh * var(--zoom-scale));
+    height: calc(31rem * var(--zoom-scale));
     cursor: zoom-in;
     border-radius: 1vw;
 }
@@ -446,7 +446,7 @@ button {
     top: 4vh;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 2vh;
+    font-size: 1.25rem;
     width: max-content;
     margin-top: 0.5vh;
     padding: 0.5vh;
@@ -802,7 +802,7 @@ img#modal-content {
 }
 
 .motto {
-    font-size: 4vh;
+    font-size: 2.25em;
     position: absolute;
     left: 0;
     right: 0;
