@@ -1,0 +1,4 @@
+- feat: right click on image should open modal with video
+- feat: add hobbies section to about page; add card with link to video gallery page
+- feat: make videos sortable
+- feat: use YouTube API to fetch titles rather than hard-coding them
