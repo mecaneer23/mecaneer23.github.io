@@ -26,7 +26,7 @@
                     });
             }
 
-            async function redirectToGithubRepo(url, tried) {
+            async function redirect(url, tried) {
                 dictionary = await initializeDictionary();
                 tried = tried || false;
                 url = url || window.location.pathname.toLowerCase();
@@ -74,11 +74,11 @@
                         window.location.href = newUrl;
                         return;
                     }
-                    redirectToGithubRepo(newUrl, tried = true);
+                    redirect(newUrl, tried = true);
                 }
             }
 
-            redirectToGithubRepo();
+            redirect();
         </script>
         <h2>404: File not found</h2>
         <p>Check the file path in the url bar or click <a href="/">here</a> to be redirected back to the home page.</p>
