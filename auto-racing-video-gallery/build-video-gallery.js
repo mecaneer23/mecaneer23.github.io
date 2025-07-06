@@ -1,6 +1,10 @@
-function buildGallery(videos) {
+async function buildGallery(videos) {
     const gallery = document.getElementById('video-gallery');
-    for (let [name, id] of Object.entries(videos)) {
+    for (let id of videos) {
+        const name = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${id}`)
+            .then(response => response.json())
+            .then(data => data.title);
+
         const a = document.createElement('a');
         a.classList.add('portfolio-card');
 
@@ -22,13 +26,13 @@ function buildGallery(videos) {
     }
 }
 
-buildGallery({
-    "Session 1": "mbkfff-S2zU",
-    "Session 2": "nMZrSdiTNWA",
-    "Session 3": "6hsDIV0GnkA",
-    "Session 4": "3Zt_6KRTVnA",
-    "Practice 1": "QHYgmLixB8w",
-    "Practice 2": "cKGwXQK9vCA",
-    "Qualifying 2": "dI-OYXi_F2Y",
-    "Sprint Race": "mMDEL-l7G40",
-});
+buildGallery([
+    "mbkfff-S2zU",
+    "nMZrSdiTNWA",
+    "6hsDIV0GnkA",
+    "3Zt_6KRTVnA",
+    "QHYgmLixB8w",
+    "cKGwXQK9vCA",
+    "dI-OYXi_F2Y",
+    "mMDEL-l7G40",
+]);

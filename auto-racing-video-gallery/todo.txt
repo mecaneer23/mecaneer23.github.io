@@ -1,3 +1,2 @@
 - feat: right click on image should open modal with video
 - feat: make videos sortable
-- feat: use YouTube API to fetch titles rather than hard-coding them
