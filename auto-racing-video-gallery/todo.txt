@@ -1,2 +1,3 @@
 - feat: right click on image should open modal with video
 - feat: make videos sortable
+- feat: style card information
