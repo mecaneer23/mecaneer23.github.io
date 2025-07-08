@@ -1,0 +1,19 @@
+.video-card-title {
+    margin-left: 0;
+}
+
+.video-card-event {
+    display: inline;
+}
+
+.video-card-event::after {
+    content: " ◆ ";
+}
+
+.video-card-track {
+    display: inline;
+}
+
+.video-card-car {
+    color: var(--gray);
+}

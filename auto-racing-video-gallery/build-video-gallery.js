@@ -28,7 +28,7 @@ async function buildGallery(videos) {
         thumbnail.alt = `Thumbnail for ${parsedTitle.name} video`;
         card.appendChild(thumbnail);
 
-        const title = document.createElement('p');
+        const title = document.createElement('h3');
         title.classList.add('video-card-title');
         title.textContent = parsedTitle.name;
         card.appendChild(title);
