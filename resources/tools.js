@@ -435,13 +435,13 @@ function load() {
             element.addEventListener("mouseout", removeMouseHighlight);
         });
         document.getElementById("current-year").innerHTML = (new Date()).getFullYear();
-        if (pageNameIncludes("portfolio")) {
+        if (pageNameIncludes("portfolio") || pageNameIncludes("auto-racing-video-gallery")) {
             Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("contextmenu", modal));
         }
         if (pageNameIncludes("about")) {
             document.querySelector("img.profile").addEventListener("contextmenu", doABarrelRoll);
         }
-        if (pageNameIncludes("about") || pageNameIncludes("gallery") || pageNameIncludes("chilling")) {
+        if (pageNameIncludes("about") || (pageNameIncludes("gallery") && !pageNameIncludes("video")) || pageNameIncludes("chilling")) {
             Array.from(document.querySelectorAll("img")).forEach((img) => {
                 if (img.id !== "modal-content") {
                     img.addEventListener("click", modal);
