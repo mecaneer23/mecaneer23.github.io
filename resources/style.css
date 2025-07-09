@@ -446,7 +446,7 @@ button {
     top: 4vh;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.25rem;
+    font-size: 1rem;
     width: max-content;
     margin-top: 0.5vh;
     padding: 0.5vh;
@@ -461,7 +461,7 @@ button {
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
-    border-width: 1vh;
+    border-width: 0.5rem;
     border-style: solid;
     border-color: transparent transparent var(--accent) transparent;
 }
