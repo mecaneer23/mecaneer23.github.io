@@ -403,6 +403,10 @@ button {
     width: 80%;
 }
 
+.switch-li {
+    display: block;
+}
+
 @keyframes jiggle {
     30% {
         transform: rotate(5deg);
