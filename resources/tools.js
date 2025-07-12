@@ -74,6 +74,9 @@ function setModalContent(event, type, src) {
     const newElem = document.createElement(type);
     newElem.id = "modal-content";
     newElem.src = src;
+    if (type === "iframe") {
+        newElem.setAttribute("allow", "autoplay");
+    }
 
     const triggerRect = event.target.getBoundingClientRect();
     if (!modalData.isOpen) {
@@ -126,7 +129,7 @@ function setModalContent(event, type, src) {
     modalData.isOpen = true;
 }
 
-function modal(event) {
+async function modal(event) {
     if (
         pageNameIncludes("portfolio")
         && event.srcElement.parentElement.href.indexOf("github.com") == -1
@@ -137,6 +140,10 @@ function modal(event) {
         } catch (err) {
             console.error("threw error " + err + " while trying to construct modal iframe");
         }
+    }
+    if (pageNameIncludes("video-gallery")) {
+        setModalContent(event, "iframe", `http://www.youtube.com/embed/${event.srcElement.parentElement.dataset.videoId}?autoplay=1&controls=1`);
+        return;
     }
     setModalContent(event, "img", event.srcElement.src)
 }

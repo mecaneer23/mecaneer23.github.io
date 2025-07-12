@@ -55,6 +55,8 @@ async function buildGallery(videos) {
             card.appendChild(driver);
         }
 
+        card.dataset.videoId = id;
+
         gallery.appendChild(card);
     }
 }
