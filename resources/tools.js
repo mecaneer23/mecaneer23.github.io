@@ -142,7 +142,7 @@ async function modal(event) {
         }
     }
     if (pageNameIncludes("video-gallery")) {
-        setModalContent(event, "iframe", `http://www.youtube.com/embed/${event.srcElement.parentElement.dataset.videoId}?autoplay=1&controls=1`);
+        setModalContent(event, "iframe", `https://www.youtube.com/embed/${event.srcElement.parentElement.dataset.videoId}?autoplay=1&controls=1&enablejsapi=1`);
         return;
     }
     setModalContent(event, "img", event.srcElement.src)

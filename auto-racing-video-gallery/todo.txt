@@ -1,4 +1,3 @@
-- feat: make video preview autoplay
 - feat: make it easier to exit the modal
 - fix: don't show context menu when right-clicking image in gallery
 - feat: make videos sortable
