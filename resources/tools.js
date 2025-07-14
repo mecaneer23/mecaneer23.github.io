@@ -460,7 +460,7 @@ function load() {
                 }
             });
         }
-        if (document.querySelector("#modal") != null && !pageNameIncludes("gallery")) {
+        if (document.querySelector("#modal") != null && (!pageNameIncludes("gallery") || pageNameIncludes("video-gallery"))) {
             document.getElementById("modal").addEventListener("click", closeModal);
         }
         window.addEventListener("keyup", handleKeyPress);
