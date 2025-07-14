@@ -443,7 +443,12 @@ function load() {
         });
         document.getElementById("current-year").innerHTML = (new Date()).getFullYear();
         if (pageNameIncludes("portfolio") || pageNameIncludes("auto-racing-video-gallery")) {
-            Array.from(document.getElementsByTagName("img")).forEach((img) => img.addEventListener("contextmenu", modal));
+            Array.from(document.getElementsByTagName("img")).forEach((img) => {
+                img.addEventListener("contextmenu", (event) => {
+                    event.preventDefault();
+                    modal(event);
+                });
+            });
         }
         if (pageNameIncludes("about")) {
             document.querySelector("img.profile").addEventListener("contextmenu", doABarrelRoll);
