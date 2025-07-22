@@ -11,8 +11,10 @@ function parseVideoTitle(title) {
 
 async function buildGallery(videos) {
     const gallery = document.getElementById('video-gallery');
+    const labels = new Set();
+    const defaultDriver = "Mecaneer23";
     for (let id of videos) {
-        const videoTitle = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${id}`)
+        const videoTitle = await fetch(`https://api.playerx.io/oembed?url=https://www.youtube.com/watch?v=${id}`)
             .then(response => response.json())
             .then(data => data.title);
 
@@ -37,28 +39,36 @@ async function buildGallery(videos) {
         event.classList.add('video-card-event');
         event.textContent = parsedTitle.event;
         card.appendChild(event);
+        labels.add(parsedTitle.event);
 
         const track = document.createElement('p');
         track.classList.add('video-card-track');
         track.textContent = parsedTitle.track;
         card.appendChild(track);
+        labels.add(parsedTitle.track);
 
         const car = document.createElement('p');
         car.classList.add('video-card-car');
         car.textContent = parsedTitle.car;
         card.appendChild(car);
+        labels.add(parsedTitle.car);
 
-        if (parsedTitle.driver !== "Mecaneer23") {
+        if (parsedTitle.driver !== defaultDriver) {
+            if (!labels.has(defaultDriver)) {
+                labels.add(defaultDriver);
+            }
             const driver = document.createElement('p');
             driver.classList.add('video-card-driver');
             driver.textContent = parsedTitle.driver;
             card.appendChild(driver);
+            labels.add(parsedTitle.driver);
         }
 
         card.dataset.videoId = id;
 
         gallery.appendChild(card);
     }
+    console.log("Labels:", Array.from(labels).sort().join(', '));
 }
 
 buildGallery([
