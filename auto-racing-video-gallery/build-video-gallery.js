@@ -72,4 +72,6 @@ buildGallery([
     "mMDEL-l7G40",
     "xbAJCkjp_9o",
     "N_hYaMPB-B8",
+    "BvIzHKu9Ltg",
+    "oARmJUbhhMs",
 ]);
