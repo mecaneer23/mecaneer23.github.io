@@ -14,7 +14,7 @@ async function buildGallery(videos) {
     const labels = new Set();
     const defaultDriver = "Mecaneer23";
     for (let id of videos) {
-        const videoTitle = await fetch(`https://api.playerx.io/oembed?url=https://www.youtube.com/watch?v=${id}`)
+        const videoTitle = await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${id}`)
             .then(response => response.json())
             .then(data => data.title);
 
