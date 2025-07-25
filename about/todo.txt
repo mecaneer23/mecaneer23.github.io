@@ -1,0 +1,7 @@
+- feat: create css overlay on robotics image to shade in a gradient and get darker everywhere that isn't around media
+  - alternatively just swap the image with another one from the robotics gallery
+- feat: make resume header/nav sticky
+  - make sure this is done in a way that doesn't get in the way too much
+  - maybe use this for reference? https://jsfiddle.net/mariusc23/s6mLJ/31/
+
+- do I want to remove the back to top button on mobile?
