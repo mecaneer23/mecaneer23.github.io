@@ -83,6 +83,8 @@
     text-align: center;
     margin: 3vh 0 4vh;
     width: 92vw;
+    /* position: sticky;
+    top: 3vh; */
 }
 
 .resume-nav a,
@@ -171,3 +173,19 @@
     align-items: center;
     width: 92vw;
 }
+
+/* #robotics-image {
+    background-color: blue;
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    width: 100%; */
+    /* content: url(/about/images/robotics.jpg); */
+    /* alt: "Conference circle"; */
+    /* background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1)); */
+    /* box-sizing: border-box;
+    border-radius: 1vh;
+    width: calc(25vw * var(--zoom-scale));
+    cursor: zoom-in;
+    align-self: center;
+} */
