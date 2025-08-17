@@ -3,5 +3,5 @@
 - feat: make resume header/nav sticky
   - make sure this is done in a way that doesn't get in the way too much
   - maybe use this for reference? https://jsfiddle.net/mariusc23/s6mLJ/31/
-
-- do I want to remove the back to top button on mobile?
+- feat: differentiate between vertical screens and mobile
+  - do I want to remove the back to top button on mobile?
