@@ -116,17 +116,13 @@
 }
 
 .resume-skills {
-    display: flex;
     justify-content: center;
 }
 
 .resume-skills ul {
     margin: 0;
-    max-width: 78vw;
     text-align: center;
     list-style-type: none;
-    background-color: var(--navbar-background);
-    border-radius: 1vh;
     padding-inline-start: 0;
     padding: 1vh;
 }
