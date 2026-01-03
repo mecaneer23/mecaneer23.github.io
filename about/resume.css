@@ -45,6 +45,8 @@
     text-align: center;
     border-radius: 1vh;
     font-size: 1.35em;
+    display: block;
+    font-weight: bold;
 }
 
 .resume-container {
