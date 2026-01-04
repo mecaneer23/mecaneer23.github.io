@@ -15,10 +15,29 @@ function toTop(_) {
     root.scrollTop = 0;
 }
 
+function spinLikeATop(event) {
+    event.preventDefault();
+    const backToTopButton = document.getElementById("back-to-top");
+    const originalAngle = parseInt(backToTopButton.style.transform.replace(/[^\d.]/g, '')) || 0;
+    let angle = originalAngle;
+    let changeAmount = 30;
+    const spinInterval = setInterval(() => {
+        angle += changeAmount;
+        changeAmount -= 0.25;
+        console.log(changeAmount)
+        backToTopButton.style.transform = `rotate(${angle}deg)`;
+        if (angle >= originalAngle + (360 * 5) || changeAmount <= 0) {
+            clearInterval(spinInterval);
+            backToTopButton.style.transform = `rotate(${originalAngle}deg)`;
+        }
+    }, 10);
+}
+
 function initBackToTop() {
-    backToTopButton = document.getElementById("back-to-top");
+    const backToTopButton = document.getElementById("back-to-top");
     if (backToTopButton == null) return;
     backToTopButton.addEventListener("click", toTop);
+    backToTopButton.addEventListener("contextmenu", spinLikeATop);
 }
 
 function handleScroll(_) {
@@ -26,7 +45,7 @@ function handleScroll(_) {
     if (document.getElementById("burger-menu").classList.contains("open")) {
         toggleMenu();
     }
-    backToTopButton = document.getElementById("back-to-top");
+    const backToTopButton = document.getElementById("back-to-top");
     if (backToTopButton == null) return;
     if (root.scrollTop > offset) {
         backToTopButton.style.display = "flex";
