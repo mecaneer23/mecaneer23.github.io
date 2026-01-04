@@ -24,7 +24,6 @@ function spinLikeATop(event) {
     const spinInterval = setInterval(() => {
         angle += changeAmount;
         changeAmount -= 0.25;
-        console.log(changeAmount)
         backToTopButton.style.transform = `rotate(${angle}deg)`;
         if (angle >= originalAngle + (360 * 5) || changeAmount <= 0) {
             clearInterval(spinInterval);
