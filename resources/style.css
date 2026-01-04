@@ -798,11 +798,11 @@ img#modal-content {
     background-color: transparent;
     border-radius: 50%;
     position: absolute;
-    top: -0.5vh;
-    left: -0.5vh;
-    width: 9vh;
-    height: 9vh;
-    border: 1vh solid var(--accent);
+    top: -0.5vmin;
+    left: -0.5vmin;
+    width: 9vmin;
+    height: 9vmin;
+    border: 1vmin solid var(--accent);
 }
 
 .motto {
