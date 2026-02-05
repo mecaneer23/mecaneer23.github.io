@@ -342,7 +342,7 @@ function handleKeyPress(event) {
         goToSecretPage();
     } else if (isKeyDown && keys[66] && keys[82]) { // b + r
         doABarrelRoll();
-    } else if (isKeyDown && keys[83]) { // s
+    } else if (isKeyDown && keys[83] && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) { // s
         document.body.style.opacity = 0;
         setTimeout(() => {
             window.location.href = "/office?return=" +
