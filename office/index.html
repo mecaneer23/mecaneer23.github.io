@@ -2,477 +2,488 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>The Office</title>
-  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
-  <style>
-    html,
-    body {
-      margin: 0;
-      height: 100%;
-      overflow: hidden;
-      transition: opacity 0.2s ease;
-    }
+    <meta charset="UTF-8">
+    <title>The Office</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+            transition: opacity 0.2s ease;
+        }
 
-    .a-enter-vr-button {
-      display: none !important;
-    }
-  </style>
+        .a-enter-vr-button {
+            display: none !important;
+        }
+    </style>
 </head>
 
 <body>
 
-  <a-scene renderer="antialias:true; colorManagement:true" background="color: #e8e4dc" tabindex="0"
-    style="outline: none;" room-textures>
+    <a-scene renderer="antialias:true; colorManagement:true" background="color: #e8e4dc" tabindex="0"
+        style="outline: none;" room-textures>
 
-    <a-assets>
-      <a-asset-item id="desk-obj" src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Office_Desk_1.obj"></a-asset-item>
-      <a-asset-item id="desk-mtl" src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Office_Desk_1.mtl"></a-asset-item>
-      <a-asset-item id="clock-obj" src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Clock.obj"></a-asset-item>
-      <a-asset-item id="clock-mtl" src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Clock.mtl"></a-asset-item>
-      <a-asset-item id="clock-hands-obj" src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Clock_A.obj"></a-asset-item>
-      <a-asset-item id="clock-hands-mtl" src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Clock_A.mtl"></a-asset-item>
-      <a-asset-item id="chair-obj"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Chair_Office_Base_B.obj"></a-asset-item>
-      <a-asset-item id="chair-mtl"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Chair_Office_Base_B.mtl"></a-asset-item>
-      <a-asset-item id="wheel-obj"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Chair_Office_Wheel.obj"></a-asset-item>
-      <a-asset-item id="wheel-mtl"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Chair_Office_Wheel.mtl"></a-asset-item>
-      <a-asset-item id="chair-bottom-obj"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Chair_Office_Bottom.obj"></a-asset-item>
-      <a-asset-item id="chair-bottom-mtl"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Chair_Office_Bottom.mtl"></a-asset-item>
-      <a-asset-item id="monitor-obj"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Computer_Monitor.obj"></a-asset-item>
-      <a-asset-item id="monitor-mtl"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Computer_Monitor.mtl"></a-asset-item>
-      <a-asset-item id="keyboard-obj"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Computer_Keyboard.obj"></a-asset-item>
-      <a-asset-item id="keyboard-mtl"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Computer_Keyboard.mtl"></a-asset-item>
-      <a-asset-item id="mouse-obj" src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Computer_Mouse.obj"></a-asset-item>
-      <a-asset-item id="mouse-mtl" src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Computer_Mouse.mtl"></a-asset-item>
-      <a-asset-item id="pc-tower-obj"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Computer_Case.obj"></a-asset-item>
-      <a-asset-item id="pc-tower-mtl"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Computer_Case.mtl"></a-asset-item>
-      <a-asset-item id="coffee-obj"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/CoffeeCup_Filled.obj"></a-asset-item>
-      <a-asset-item id="coffee-mtl"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/CoffeeCup_Filled.mtl"></a-asset-item>
-      <a-asset-item id="lamp-obj" src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Lamp_1.obj"></a-asset-item>
-      <a-asset-item id="lamp-mtl" src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Lamp_1.mtl"></a-asset-item>
-      <a-asset-item id="desk-plant-obj"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Nature_Deco_3.obj"></a-asset-item>
-      <a-asset-item id="desk-plant-mtl"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Nature_Deco_3.mtl"></a-asset-item>
-      <a-asset-item id="pot-obj" src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Nature_Deco.obj"></a-asset-item>
-      <a-asset-item id="pot-mtl" src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Nature_Deco.mtl"></a-asset-item>
-      <a-asset-item id="bamboo-obj"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Nature_Deco_Bamboo1.obj"></a-asset-item>
-      <a-asset-item id="bamboo-mtl"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Nature_Deco_Bamboo1.mtl"></a-asset-item>
-      <a-asset-item id="painting-obj"
-        src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Painting_FullUV.obj"></a-asset-item>
-      <a-asset-item id="painting-mtl" src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Painting.mtl"></a-asset-item>
-    </a-assets>
+        <a-assets>
+            <a-asset-item id="desk-obj"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Office_Desk_1.obj"></a-asset-item>
+            <a-asset-item id="desk-mtl"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Office_Desk_1.mtl"></a-asset-item>
+            <a-asset-item id="clock-obj" src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Clock.obj"></a-asset-item>
+            <a-asset-item id="clock-mtl" src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Clock.mtl"></a-asset-item>
+            <a-asset-item id="clock-hands-obj"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Clock_A.obj"></a-asset-item>
+            <a-asset-item id="clock-hands-mtl"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Clock_A.mtl"></a-asset-item>
+            <a-asset-item id="chair-obj"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Chair_Office_Base_B.obj"></a-asset-item>
+            <a-asset-item id="chair-mtl"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Chair_Office_Base_B.mtl"></a-asset-item>
+            <a-asset-item id="wheel-obj"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Chair_Office_Wheel.obj"></a-asset-item>
+            <a-asset-item id="wheel-mtl"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Chair_Office_Wheel.mtl"></a-asset-item>
+            <a-asset-item id="chair-bottom-obj"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Chair_Office_Bottom.obj"></a-asset-item>
+            <a-asset-item id="chair-bottom-mtl"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Chair_Office_Bottom.mtl"></a-asset-item>
+            <a-asset-item id="monitor-obj"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Computer_Monitor.obj"></a-asset-item>
+            <a-asset-item id="monitor-mtl"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Computer_Monitor.mtl"></a-asset-item>
+            <a-asset-item id="keyboard-obj"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Computer_Keyboard.obj"></a-asset-item>
+            <a-asset-item id="keyboard-mtl"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Computer_Keyboard.mtl"></a-asset-item>
+            <a-asset-item id="mouse-obj"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Computer_Mouse.obj"></a-asset-item>
+            <a-asset-item id="mouse-mtl"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Computer_Mouse.mtl"></a-asset-item>
+            <a-asset-item id="pc-tower-obj"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Computer_Case.obj"></a-asset-item>
+            <a-asset-item id="pc-tower-mtl"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Computer_Case.mtl"></a-asset-item>
+            <a-asset-item id="coffee-obj"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/CoffeeCup_Filled.obj"></a-asset-item>
+            <a-asset-item id="coffee-mtl"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/CoffeeCup_Filled.mtl"></a-asset-item>
+            <a-asset-item id="lamp-obj" src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Lamp_1.obj"></a-asset-item>
+            <a-asset-item id="lamp-mtl" src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Lamp_1.mtl"></a-asset-item>
+            <a-asset-item id="desk-plant-obj"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Nature_Deco_3.obj"></a-asset-item>
+            <a-asset-item id="desk-plant-mtl"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Nature_Deco_3.mtl"></a-asset-item>
+            <a-asset-item id="pot-obj"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Nature_Deco.obj"></a-asset-item>
+            <a-asset-item id="pot-mtl"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Nature_Deco.mtl"></a-asset-item>
+            <a-asset-item id="bamboo-obj"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Nature_Deco_Bamboo1.obj"></a-asset-item>
+            <a-asset-item id="bamboo-mtl"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Nature_Deco_Bamboo1.mtl"></a-asset-item>
+            <a-asset-item id="painting-obj"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Painting_FullUV.obj"></a-asset-item>
+            <a-asset-item id="painting-mtl"
+                src="VNB Low Poly Office Set V1.1.0/OBJ/Separated/Painting.mtl"></a-asset-item>
+        </a-assets>
 
-    <a-box class="floor-tile" rotation="0 0 0" width="6" height="0.1" depth="6" position="3 -0.4 -3"
-      color="#dddddd"></a-box>
-    <a-box class="floor-tile" rotation="0 0 0" width="6" height="0.1" depth="6" position="-3 -0.4 -3"
-      color="#dddddd"></a-box>
+        <a-box class="floor-tile" rotation="0 0 0" width="6" height="0.1" depth="6" position="3 -0.4 -3"
+            color="#dddddd"></a-box>
+        <a-box class="floor-tile" rotation="0 0 0" width="6" height="0.1" depth="6" position="-3 -0.4 -3"
+            color="#dddddd"></a-box>
 
-    <a-box id="wall-back" position="0 1.6 -5.99" width="12" height="4" depth="0.1" color="#d4c5b9"></a-box>
-    <a-box id="wall-left" position="-5.99 1.6 -3" rotation="0 90 0" width="6" height="4" depth="0.1"
-      color="#d4c5b9"></a-box>
-    <a-box id="wall-right" position="5.99 1.6 -3" rotation="0 -90 0" width="6" height="4" depth="0.1"
-      color="#d4c5b9"></a-box>
-    <a-box id="wall-front" position="0 1.6 0" rotation="0 0 0" width="12" height="4" depth="0.1"
-      color="#d4c5b9"></a-box>
-    <a-box id="ceiling" position="0 3.65 -3" width="12" height="0.1" depth="6" color="#d4c5b9"></a-box>
+        <a-box id="wall-back" position="0 1.6 -5.99" width="12" height="4" depth="0.1" color="#d4c5b9"></a-box>
+        <a-box id="wall-left" position="-5.99 1.6 -3" rotation="0 90 0" width="6" height="4" depth="0.1"
+            color="#d4c5b9"></a-box>
+        <a-box id="wall-right" position="5.99 1.6 -3" rotation="0 -90 0" width="6" height="4" depth="0.1"
+            color="#d4c5b9"></a-box>
+        <a-box id="wall-front" position="0 1.6 0" rotation="0 0 0" width="12" height="4" depth="0.1"
+            color="#d4c5b9"></a-box>
+        <a-box id="ceiling" position="0 3.65 -3" width="12" height="0.1" depth="6" color="#d4c5b9"></a-box>
 
-    <a-entity obj-model="obj: #painting-obj; mtl: #painting-mtl" position="-2 2 -5.9" rotation="0 0 0"
-      scale="4 4 4"></a-entity>
-    <a-image id="painting" src="VNB Low Poly Office Set V1.1.0/Textures/gearsNoBackground.png" position="-2 2 -5.85"
-      width="2" height="2"></a-image>
+        <a-entity obj-model="obj: #painting-obj; mtl: #painting-mtl" position="-2 2 -5.9" rotation="0 0 0"
+            scale="4 4 4"></a-entity>
+        <a-image id="painting" src="VNB Low Poly Office Set V1.1.0/Textures/gearsNoBackground.png" position="-2 2 -5.85"
+            width="2" height="2"></a-image>
 
 
-    <a-entity id="desk" obj-model="obj: #desk-obj; mtl: #desk-mtl" position="0 -0.3 -3" rotation="0 0 0"
-      scale="0.8 0.8 0.8">
-      <a-entity obj-model="obj: #monitor-obj; mtl: #monitor-mtl" position="0 1 -0.2" rotation="0 0 0" scale="1.5 1 1">
-        <a-text value="Click the screen to return" align="center" width="2" color="#000000" position="0 0.33 0.04"
-          class="clickable" scale="0.2 0.2 0.2" wrap-count="12"></a-text>
-        <a-plane position="0 0.35 0.035" width="0.375" height="0.375" color="#4fe0ff" opacity="1" class="clickable"
-          material="side:double"></a-plane>
-      </a-entity>
-      <a-entity obj-model="obj: #keyboard-obj; mtl: #keyboard-mtl" position="0 1 0.2" rotation="0 0 0"
-        scale="1 1 1"></a-entity>
-      <a-entity obj-model="obj: #mouse-obj; mtl: #mouse-mtl" position="0.3 1 0.2" rotation="0 0 0"
-        scale="1 1 1"></a-entity>
-      <a-entity obj-model="obj: #coffee-obj; mtl: #coffee-mtl" position="0.5 1 0.3" rotation="0 0 0"
-        scale="1 1 1"></a-entity>
-      <a-entity obj-model="obj: #desk-plant-obj; mtl: #desk-plant-mtl" position="0.55 1 -0.2" scale="0.4 0.4 0.4"
-        rotation="0 0 0"></a-entity>
-      <a-entity obj-model="obj: #lamp-obj; mtl: #lamp-mtl" position="-0.45 1 -0.2" rotation="0 0 0"
-        scale="0.5 0.5 0.5"></a-entity>
-      <a-entity obj-model="obj: #pc-tower-obj; mtl: #pc-tower-mtl" position="0.66 0.75 0.15" rotation="0 0 90"
-        scale="1 1 1"></a-entity>
-    </a-entity>
+        <a-entity id="desk" obj-model="obj: #desk-obj; mtl: #desk-mtl" position="0 -0.3 -3" rotation="0 0 0"
+            scale="0.8 0.8 0.8">
+            <a-entity obj-model="obj: #monitor-obj; mtl: #monitor-mtl" position="0 1 -0.2" rotation="0 0 0"
+                scale="1.5 1 1">
+                <a-text value="Click the screen to return" align="center" width="2" color="#000000"
+                    position="0 0.33 0.04" class="clickable" scale="0.2 0.2 0.2" wrap-count="12"></a-text>
+                <a-plane position="0 0.35 0.035" width="0.375" height="0.375" color="#4fe0ff" opacity="1"
+                    class="clickable" material="side:double"></a-plane>
+            </a-entity>
+            <a-entity obj-model="obj: #keyboard-obj; mtl: #keyboard-mtl" position="0 1 0.2" rotation="0 0 0"
+                scale="1 1 1"></a-entity>
+            <a-entity obj-model="obj: #mouse-obj; mtl: #mouse-mtl" position="0.3 1 0.2" rotation="0 0 0"
+                scale="1 1 1"></a-entity>
+            <a-entity obj-model="obj: #coffee-obj; mtl: #coffee-mtl" position="0.5 1 0.3" rotation="0 0 0"
+                scale="1 1 1"></a-entity>
+            <a-entity obj-model="obj: #desk-plant-obj; mtl: #desk-plant-mtl" position="0.55 1 -0.2" scale="0.4 0.4 0.4"
+                rotation="0 0 0"></a-entity>
+            <a-entity obj-model="obj: #lamp-obj; mtl: #lamp-mtl" position="-0.45 1 -0.2" rotation="0 0 0"
+                scale="0.5 0.5 0.5"></a-entity>
+            <a-entity obj-model="obj: #pc-tower-obj; mtl: #pc-tower-mtl" position="0.66 0.75 0.15" rotation="0 0 90"
+                scale="1 1 1"></a-entity>
+        </a-entity>
 
-    <a-entity id="chair" obj-model="obj: #chair-obj; mtl: #chair-mtl" position="0 -0.3 -2.2" rotation="0 180 0"
-      scale="1 1 1">
-      <a-entity obj-model="obj: #chair-bottom-obj; mtl: #chair-bottom-mtl" position="0 0 0" rotation="0 0 0"
-        scale="1 1 1"></a-entity>
-      <a-entity obj-model="obj: #wheel-obj; mtl: #wheel-mtl" position="0.34 0.05 0.11" rotation="0 0 0"
-        scale="1 1 1"></a-entity>
-      <a-entity obj-model="obj: #wheel-obj; mtl: #wheel-mtl" position="-0.34 0.05 0.11" rotation="0 0 0"
-        scale="1 1 1"></a-entity>
-      <a-entity obj-model="obj: #wheel-obj; mtl: #wheel-mtl" position="0 0.05 0.35" rotation="0 180 0"
-        scale="1 1 1"></a-entity>
-      <a-entity obj-model="obj: #wheel-obj; mtl: #wheel-mtl" position="-0.21 0.05 -0.27" rotation="0 180 0"
-        scale="1 1 1"></a-entity>
-      <a-entity obj-model="obj: #wheel-obj; mtl: #wheel-mtl" position="0.21 0.05 -0.27" rotation="0 0 0"
-        scale="1 1 1"></a-entity>
-    </a-entity>
+        <a-entity id="chair" obj-model="obj: #chair-obj; mtl: #chair-mtl" position="0 -0.3 -2.2" rotation="0 180 0"
+            scale="1 1 1">
+            <a-entity obj-model="obj: #chair-bottom-obj; mtl: #chair-bottom-mtl" position="0 0 0" rotation="0 0 0"
+                scale="1 1 1"></a-entity>
+            <a-entity obj-model="obj: #wheel-obj; mtl: #wheel-mtl" position="0.34 0.05 0.11" rotation="0 0 0"
+                scale="1 1 1"></a-entity>
+            <a-entity obj-model="obj: #wheel-obj; mtl: #wheel-mtl" position="-0.34 0.05 0.11" rotation="0 0 0"
+                scale="1 1 1"></a-entity>
+            <a-entity obj-model="obj: #wheel-obj; mtl: #wheel-mtl" position="0 0.05 0.35" rotation="0 180 0"
+                scale="1 1 1"></a-entity>
+            <a-entity obj-model="obj: #wheel-obj; mtl: #wheel-mtl" position="-0.21 0.05 -0.27" rotation="0 180 0"
+                scale="1 1 1"></a-entity>
+            <a-entity obj-model="obj: #wheel-obj; mtl: #wheel-mtl" position="0.21 0.05 -0.27" rotation="0 0 0"
+                scale="1 1 1"></a-entity>
+        </a-entity>
 
-    <a-entity id="bamboo-plant" position="5.6 -0.4 -5.2">
-      <a-entity obj-model="obj: #pot-obj; mtl: #pot-mtl" position="0 0 0" scale="1 1 1"></a-entity>
-      <a-entity obj-model="obj: #bamboo-obj; mtl: #bamboo-mtl" position="0 0.15 0" scale="1 1.5 1"></a-entity>
-    </a-entity>
+        <a-entity id="bamboo-plant" position="5.6 -0.4 -5.2">
+            <a-entity obj-model="obj: #pot-obj; mtl: #pot-mtl" position="0 0 0" scale="1 1 1"></a-entity>
+            <a-entity obj-model="obj: #bamboo-obj; mtl: #bamboo-mtl" position="0 0.15 0" scale="1 1.5 1"></a-entity>
+        </a-entity>
 
-    <a-entity id="bamboo-plant2" position="5.6 -0.4 -0.8">
-      <a-entity obj-model="obj: #pot-obj; mtl: #pot-mtl" position="0 0 0" scale="1 1 1" rotation="0 180 0"></a-entity>
-      <a-entity obj-model="obj: #bamboo-obj; mtl: #bamboo-mtl" position="0 0.15 0" scale="1 1.5 1"></a-entity>
-    </a-entity>
+        <a-entity id="bamboo-plant2" position="5.6 -0.4 -0.8">
+            <a-entity obj-model="obj: #pot-obj; mtl: #pot-mtl" position="0 0 0" scale="1 1 1"
+                rotation="0 180 0"></a-entity>
+            <a-entity obj-model="obj: #bamboo-obj; mtl: #bamboo-mtl" position="0 0.15 0" scale="1 1.5 1"></a-entity>
+        </a-entity>
 
-    <a-entity obj-model="obj: #clock-obj; mtl: #clock-mtl" position="5.93 2.5 -3" scale="1 1 1" rotation="0 -90 0">
-      <a-entity id="hour-hand" obj-model="obj: #clock-hands-obj; mtl: #clock-hands-mtl" position="0 0 0.01"
-        scale="1 0.5 1"></a-entity>
-      <a-entity id="minute-hand" obj-model="obj: #clock-hands-obj; mtl: #clock-hands-mtl" position="0 0 0.01"
-        scale="1 1 1"></a-entity>
-      <a-entity id="second-hand" obj-model="obj: #clock-hands-obj; mtl: #clock-hands-mtl" position="0 0 0.01"
-        scale="0.5 1 0.5"></a-entity>
-    </a-entity>
+        <a-entity obj-model="obj: #clock-obj; mtl: #clock-mtl" position="5.93 2.5 -3" scale="1 1 1" rotation="0 -90 0">
+            <a-entity id="hour-hand" obj-model="obj: #clock-hands-obj; mtl: #clock-hands-mtl" position="0 0 0.01"
+                scale="1 0.5 1"></a-entity>
+            <a-entity id="minute-hand" obj-model="obj: #clock-hands-obj; mtl: #clock-hands-mtl" position="0 0 0.01"
+                scale="1 1 1"></a-entity>
+            <a-entity id="second-hand" obj-model="obj: #clock-hands-obj; mtl: #clock-hands-mtl" position="0 0 0.01"
+                scale="0.5 1 0.5"></a-entity>
+        </a-entity>
 
-    <a-entity id="camera-rig" position="0 0 -2.2" rotation="0 0 0" player-movement position-display>
-      <a-camera id="main-camera" look-controls="pointerLockEnabled:false" cursor="rayOrigin: mouse; fuse: false">
-      </a-camera>
-    </a-entity>
+        <a-entity id="camera-rig" position="0 0 -2.2" rotation="0 0 0" player-movement position-display>
+            <a-camera id="main-camera" look-controls="pointerLockEnabled:false" cursor="rayOrigin: mouse; fuse: false">
+            </a-camera>
+        </a-entity>
 
-  </a-scene>
+    </a-scene>
 
-  <script>
-    const ROOM_BOUNDS = { minX: -5.94, maxX: 5.94, minZ: -5.94, maxZ: -0.05 };
+    <script>
+        const ROOM_BOUNDS = { minX: -5.94, maxX: 5.94, minZ: -5.94, maxZ: -0.05 };
 
-    function returnToPage() {
-      window.location.href = (new URLSearchParams(window.location.search)).get("return") || "index.html";
-    }
+        function returnToPage() {
+            window.location.href = (new URLSearchParams(window.location.search)).get("return") || "index.html";
+        }
 
-    const sceneEl = document.querySelector("a-scene");
-    if (sceneEl) {
-      sceneEl.addEventListener("loaded", () => {
-        sceneEl.focus && sceneEl.focus();
-        const worldPos = new THREE.Vector3();
-        const worldQuat = new THREE.Quaternion();
-        const worldScale = new THREE.Vector3();
+        const sceneEl = document.querySelector("a-scene");
+        if (sceneEl) {
+            sceneEl.addEventListener("loaded", () => {
+                sceneEl.focus && sceneEl.focus();
+                const worldPos = new THREE.Vector3();
+                const worldQuat = new THREE.Quaternion();
+                const worldScale = new THREE.Vector3();
 
-        ["wall-back", "wall-left", "wall-right", "wall-front"].forEach((id) => {
-          const el = document.getElementById(id);
-          if (el && el.object3D) {
-            el.object3D.updateMatrixWorld(true);
-            el.object3D.matrixWorld.decompose(worldPos, worldQuat, worldScale);
-          }
+                ["wall-back", "wall-left", "wall-right", "wall-front"].forEach((id) => {
+                    const el = document.getElementById(id);
+                    if (el && el.object3D) {
+                        el.object3D.updateMatrixWorld(true);
+                        el.object3D.matrixWorld.decompose(worldPos, worldQuat, worldScale);
+                    }
+                });
+            });
+
+            sceneEl.addEventListener("click", () => { sceneEl.focus && sceneEl.focus(); });
+
+            function onSceneClick(e) {
+                const intersected = e.detail?.intersectedEl;
+                if (!intersected) return;
+                let el = intersected;
+                while (el) {
+                    if (el.classList && el.classList.contains("clickable")) {
+                        returnToPage();
+                        return;
+                    }
+                    el = el.parentElement;
+                }
+            }
+            sceneEl.addEventListener("click", onSceneClick);
+            sceneEl.addEventListener("loaded", () => {
+                const cam = document.getElementById("main-camera");
+                if (cam) cam.addEventListener("click", onSceneClick);
+            });
+        }
+
+
+        function makeGridTexture(baseColor, lineColor, gridSize) {
+            const size = 128;
+            const canvas = document.createElement("canvas");
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext("2d");
+            ctx.fillStyle = baseColor;
+            ctx.fillRect(0, 0, size, size);
+            ctx.strokeStyle = lineColor;
+            ctx.lineWidth = 1;
+            const step = Math.max(4, Math.floor(size / gridSize));
+            for (let i = 0; i <= size; i += step) {
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i, size);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(0, i);
+                ctx.lineTo(size, i);
+                ctx.stroke();
+            }
+            const tex = new THREE.CanvasTexture(canvas);
+            tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
+            tex.repeat.set(6, 6);
+            return tex;
+        }
+
+        function applyTextureToEntity(el, texture) {
+            if (!el || !el.object3D) return;
+            el.object3D.traverse(function (child) {
+                if (child.isMesh && child.material) {
+                    const mat = child.material;
+                    if (Array.isArray(mat)) mat.forEach(function (m) { m.map = texture; m.needsUpdate = true; });
+                    else { mat.map = texture; mat.needsUpdate = true; }
+                }
+            });
+        }
+
+        AFRAME.registerComponent("room-textures", {
+            init: function () {
+                this.el.addEventListener("loaded", function () {
+                    const T = window.THREE || (window.AFRAME && window.AFRAME.THREE);
+                    if (!T) return;
+                    const wallTex = makeGridTexture("#d4c5b9", "rgba(0,0,0,0.12)", 12);
+                    const ceilingTex = makeGridTexture("#c4b9ad", "rgba(0,0,0,0.14)", 10);
+                    const floorTex = makeGridTexture("#30343F", "rgba(0,0,0,0.18)", 2);
+                    ["wall-back", "wall-left", "wall-right", "wall-front"].forEach(function (id) {
+                        const el = document.getElementById(id);
+                        if (el) applyTextureToEntity(el, wallTex);
+                    });
+                    const ceilingEl = document.getElementById("ceiling");
+                    if (ceilingEl) applyTextureToEntity(ceilingEl, ceilingTex);
+                    document.querySelectorAll(".floor-tile").forEach(function (el) {
+                        applyTextureToEntity(el, floorTex);
+                    });
+                });
+            }
         });
-      });
 
-      sceneEl.addEventListener("click", () => { sceneEl.focus && sceneEl.focus(); });
+        const BOUNDS_INSET = 0.45;
+        const DEBUG_LOG_INTERVAL = 60;
 
-      function onSceneClick(e) {
-        const intersected = e.detail?.intersectedEl;
-        if (!intersected) return;
-        let el = intersected;
-        while (el) {
-          if (el.classList && el.classList.contains("clickable")) {
-            returnToPage();
-            return;
-          }
-          el = el.parentElement;
+        function getBounds() {
+            let minX = Number(ROOM_BOUNDS.minX) + BOUNDS_INSET;
+            let maxX = Number(ROOM_BOUNDS.maxX) - BOUNDS_INSET;
+            let minZ = Number(ROOM_BOUNDS.minZ) + BOUNDS_INSET;
+            let maxZ = Number(ROOM_BOUNDS.maxZ) - BOUNDS_INSET;
+            if (!Number.isFinite(minX)) minX = -5.92;
+            if (!Number.isFinite(maxX)) maxX = 5.92;
+            if (!Number.isFinite(minZ)) minZ = -5.92;
+            if (!Number.isFinite(maxZ)) maxZ = -0.07;
+            if (minX > maxX) { minX = maxX = (minX + maxX) / 2; }
+            if (minZ > maxZ) { minZ = maxZ = (minZ + maxZ) / 2; }
+            return { minX, maxX, minZ, maxZ };
         }
-      }
-      sceneEl.addEventListener("click", onSceneClick);
-      sceneEl.addEventListener("loaded", () => {
-        const cam = document.getElementById("main-camera");
-        if (cam) cam.addEventListener("click", onSceneClick);
-      });
-    }
 
+        const DESK_COLLISION = { minX: -1, maxX: 1, minZ: -3.5, maxZ: -2.5 };
+        const FLOOR_Y = 0;
 
-    function makeGridTexture(baseColor, lineColor, gridSize) {
-      const size = 128;
-      const canvas = document.createElement("canvas");
-      canvas.width = size;
-      canvas.height = size;
-      const ctx = canvas.getContext("2d");
-      ctx.fillStyle = baseColor;
-      ctx.fillRect(0, 0, size, size);
-      ctx.strokeStyle = lineColor;
-      ctx.lineWidth = 1;
-      const step = Math.max(4, Math.floor(size / gridSize));
-      for (let i = 0; i <= size; i += step) {
-        ctx.beginPath();
-        ctx.moveTo(i, 0);
-        ctx.lineTo(i, size);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.moveTo(0, i);
-        ctx.lineTo(size, i);
-        ctx.stroke();
-      }
-      const tex = new THREE.CanvasTexture(canvas);
-      tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
-      tex.repeat.set(6, 6);
-      return tex;
-    }
-
-    function applyTextureToEntity(el, texture) {
-      if (!el || !el.object3D) return;
-      el.object3D.traverse(function (child) {
-        if (child.isMesh && child.material) {
-          const mat = child.material;
-          if (Array.isArray(mat)) mat.forEach(function (m) { m.map = texture; m.needsUpdate = true; });
-          else { mat.map = texture; mat.needsUpdate = true; }
+        function isInDeskFootprint(x, z) {
+            return x >= DESK_COLLISION.minX && x <= DESK_COLLISION.maxX && z >= DESK_COLLISION.minZ && z <= DESK_COLLISION.maxZ;
         }
-      });
-    }
 
-    AFRAME.registerComponent("room-textures", {
-      init: function () {
-        this.el.addEventListener("loaded", function () {
-          const T = window.THREE || (window.AFRAME && window.AFRAME.THREE);
-          if (!T) return;
-          const wallTex = makeGridTexture("#d4c5b9", "rgba(0,0,0,0.12)", 12);
-          const ceilingTex = makeGridTexture("#c4b9ad", "rgba(0,0,0,0.14)", 10);
-          const floorTex = makeGridTexture("#30343F", "rgba(0,0,0,0.18)", 2);
-          ["wall-back", "wall-left", "wall-right", "wall-front"].forEach(function (id) {
-            const el = document.getElementById(id);
-            if (el) applyTextureToEntity(el, wallTex);
-          });
-          const ceilingEl = document.getElementById("ceiling");
-          if (ceilingEl) applyTextureToEntity(ceilingEl, ceilingTex);
-          document.querySelectorAll(".floor-tile").forEach(function (el) {
-            applyTextureToEntity(el, floorTex);
-          });
+        function clampOutOfDesk(newX, newZ, newY, velocity) {
+            if (!isInDeskFootprint(newX, newZ)) return { x: newX, z: newZ };
+            if (newY > FLOOR_Y + 0.1) return { x: newX, z: newZ };
+            const dLeft = newX - DESK_COLLISION.minX;
+            const dRight = DESK_COLLISION.maxX - newX;
+            const dFront = newZ - DESK_COLLISION.minZ;
+            const dBack = DESK_COLLISION.maxZ - newZ;
+            const minD = Math.min(dLeft, dRight, dFront, dBack);
+            if (minD === dLeft) { newX = DESK_COLLISION.minX; if (velocity) velocity.x = 0; }
+            else if (minD === dRight) { newX = DESK_COLLISION.maxX; if (velocity) velocity.x = 0; }
+            else if (minD === dFront) { newZ = DESK_COLLISION.minZ; if (velocity) velocity.z = 0; }
+            else { newZ = DESK_COLLISION.maxZ; if (velocity) velocity.z = 0; }
+            return { x: newX, z: newZ };
+        }
+
+        AFRAME.registerComponent("player-movement", {
+            schema: {
+                acceleration: { type: "number", default: 2 },
+                maxVelocity: { type: "number", default: 0.08 },
+                friction: { type: "number", default: 12 },
+                jumpForce: { type: "number", default: 0.25 },
+                gravity: { type: "number", default: -0.02 },
+                groundY: { type: "number", default: 0 },
+                crouchOffset: { type: "number", default: -0.4 },
+                crouchSpeedMult: { type: "number", default: 0.5 }
+            },
+            init: function () {
+                this.velocity = new THREE.Vector3(0, 0, 0);
+                this.velocityY = 0;
+                this.tickCount = 0;
+                this.keys = { w: false, a: false, s: false, d: false, shift: false };
+                this.forward = new THREE.Vector3();
+                this.right = new THREE.Vector3();
+                this.moveDir = new THREE.Vector3();
+                this.currentCrouchOffset = 0;
+                this.onKeyDown = this.onKeyDown.bind(this);
+                this.onKeyUp = this.onKeyUp.bind(this);
+                window.addEventListener("keydown", this.onKeyDown);
+                window.addEventListener("keyup", this.onKeyUp);
+            },
+            onKeyDown: function (e) {
+                const k = e.code;
+                if (k === "KeyW" || k === "ArrowUp") { this.keys.w = true; e.preventDefault(); }
+                if (k === "KeyS" || k === "ArrowDown") { this.keys.s = true; e.preventDefault(); }
+                if (k === "KeyA" || k === "ArrowLeft") { this.keys.a = true; e.preventDefault(); }
+                if (k === "KeyD" || k === "ArrowRight") { this.keys.d = true; e.preventDefault(); }
+                if (k === "Space") {
+                    e.preventDefault();
+                    const y = this.el.object3D.position.y;
+                    if (y <= this.data.groundY + 0.01) this.velocityY = this.data.jumpForce;
+                }
+                if (k === "ShiftLeft" || k === "ShiftRight") {
+                    this.keys.shift = true;
+                }
+            },
+            onKeyUp: function (e) {
+                const k = e.code;
+                if (k === "KeyW" || k === "ArrowUp") this.keys.w = false;
+                if (k === "KeyS" || k === "ArrowDown") this.keys.s = false;
+                if (k === "KeyA" || k === "ArrowLeft") this.keys.a = false;
+                if (k === "KeyD" || k === "ArrowRight") this.keys.d = false;
+                if (k === "ShiftLeft" || k === "ShiftRight") this.keys.shift = false;
+            },
+            tick: function (time, delta) {
+                const dt = Math.min((delta || 16) / 1000, 0.1);
+                const d = this.data;
+                const b = getBounds();
+                const obj = this.el.object3D;
+                if (!obj) return;
+                const px = obj.position.x, py = obj.position.y, pz = obj.position.z;
+
+                const cameraEl = this.el.sceneEl && this.el.sceneEl.camera && this.el.sceneEl.camera.el ? this.el.sceneEl.camera.el : null;
+                if (cameraEl && cameraEl.object3D) {
+                    cameraEl.object3D.updateMatrixWorld(true);
+                    this.forward.set(0, 0, -1).applyQuaternion(cameraEl.object3D.quaternion);
+                    this.forward.y = 0;
+                    if (this.forward.lengthSq() > 0.0001) this.forward.normalize();
+                    else this.forward.set(0, 0, 1);
+                    this.right.set(1, 0, 0).applyQuaternion(cameraEl.object3D.quaternion);
+                    this.right.y = 0;
+                    if (this.right.lengthSq() > 0.0001) this.right.normalize();
+                    else this.right.set(1, 0, 0);
+                } else {
+                    this.forward.set(0, 0, -1);
+                    this.right.set(1, 0, 0);
+                }
+
+                const atMinX = px <= b.minX + 0.001, atMaxX = px >= b.maxX - 0.001;
+                const atMinZ = pz <= b.minZ + 0.001, atMaxZ = pz >= b.maxZ - 0.001;
+                const moveX = (this.keys.d ? 1 : 0) - (this.keys.a ? 1 : 0);
+                const moveZ = (this.keys.w ? 1 : 0) - (this.keys.s ? 1 : 0);
+
+                const speedMult = this.keys.shift ? d.crouchSpeedMult : 1;
+                const accel = d.acceleration * speedMult;
+                const maxVel = d.maxVelocity * speedMult;
+
+                this.moveDir.set(0, 0, 0);
+                if (moveX !== 0 || moveZ !== 0) {
+                    this.moveDir.addScaledVector(this.forward, moveZ).addScaledVector(this.right, moveX);
+                    if (this.moveDir.lengthSq() > 0.0001) this.moveDir.normalize();
+                    if (!(atMaxX && this.moveDir.x > 0) && !(atMinX && this.moveDir.x < 0)) {
+                        this.velocity.x += this.moveDir.x * accel * dt;
+                    }
+                    if (!(atMaxZ && this.moveDir.z > 0) && !(atMinZ && this.moveDir.z < 0)) {
+                        this.velocity.z += this.moveDir.z * accel * dt;
+                    }
+                }
+                const speed = Math.sqrt(this.velocity.x * this.velocity.x + this.velocity.z * this.velocity.z);
+                if (speed > maxVel) {
+                    const scale = maxVel / speed;
+                    this.velocity.x *= scale;
+                    this.velocity.z *= scale;
+                }
+                const frictionFactor = 1 - Math.min(1, d.friction * dt);
+                if (moveX === 0 && moveZ === 0) {
+                    this.velocity.x *= frictionFactor;
+                    this.velocity.z *= frictionFactor;
+                }
+
+                let newX = px + this.velocity.x;
+                let newZ = pz + this.velocity.z;
+                let newY = py;
+
+                if (isInDeskFootprint(newX, newZ)) {
+                    newY = py;
+                    this.velocityY = 0;
+                } else {
+                    newY = py + this.velocityY;
+                    this.velocityY += d.gravity;
+                    if (newY <= d.groundY) {
+                        newY = d.groundY;
+                        this.velocityY = 0;
+                    }
+                    if (newY < d.groundY) newY = d.groundY;
+                }
+
+                const beforeClampX = newX, beforeClampZ = newZ;
+                newX = Math.max(b.minX, Math.min(b.maxX, newX));
+                newZ = Math.max(b.minZ, Math.min(b.maxZ, newZ));
+                if (Math.abs(newX - beforeClampX) > 0.0001) {
+                    this.velocity.x = 0;
+                }
+                if (Math.abs(newZ - beforeClampZ) > 0.0001) {
+                    this.velocity.z = 0;
+                }
+
+                const deskClamp = clampOutOfDesk(newX, newZ, newY, this.velocity);
+                newX = deskClamp.x;
+                newZ = deskClamp.z;
+
+                obj.position.set(newX, newY, newZ);
+                this.el.setAttribute("position", { x: newX, y: newY, z: newZ });
+
+                const targetCrouch = this.keys.shift ? d.crouchOffset : 0;
+                const crouchSpeed = 8;
+                this.currentCrouchOffset += (targetCrouch - this.currentCrouchOffset) * Math.min(1, crouchSpeed * dt);
+                if (cameraEl && cameraEl.object3D) {
+                    cameraEl.object3D.position.y = 1.3 + this.currentCrouchOffset;
+                }
+
+                const hourHand = document.getElementById("hour-hand");
+                const minuteHand = document.getElementById("minute-hand");
+                const secondHand = document.getElementById("second-hand");
+                const now = new Date();
+                const hours = now.getHours();
+                const minutes = now.getMinutes();
+                const seconds = now.getSeconds();
+                hourHand.setAttribute("rotation", `0 0 ${360 - (hours * 30 + minutes / 2)}`);
+                minuteHand.setAttribute("rotation", `0 0 ${360 - (minutes * 6 + seconds / 12)}`);
+                secondHand.setAttribute("rotation", `0 0 ${360 - (seconds * 6)}`);
+
+                this.tickCount = (this.tickCount || 0) + 1;
+            },
+            remove: function () {
+                window.removeEventListener("keydown", this.onKeyDown);
+                window.removeEventListener("keyup", this.onKeyUp);
+            }
         });
-      }
-    });
-
-    const BOUNDS_INSET = 0.45;
-    const DEBUG_LOG_INTERVAL = 60;
-
-    function getBounds() {
-      let minX = Number(ROOM_BOUNDS.minX) + BOUNDS_INSET;
-      let maxX = Number(ROOM_BOUNDS.maxX) - BOUNDS_INSET;
-      let minZ = Number(ROOM_BOUNDS.minZ) + BOUNDS_INSET;
-      let maxZ = Number(ROOM_BOUNDS.maxZ) - BOUNDS_INSET;
-      if (!Number.isFinite(minX)) minX = -5.92;
-      if (!Number.isFinite(maxX)) maxX = 5.92;
-      if (!Number.isFinite(minZ)) minZ = -5.92;
-      if (!Number.isFinite(maxZ)) maxZ = -0.07;
-      if (minX > maxX) { minX = maxX = (minX + maxX) / 2; }
-      if (minZ > maxZ) { minZ = maxZ = (minZ + maxZ) / 2; }
-      return { minX, maxX, minZ, maxZ };
-    }
-
-    const DESK_COLLISION = { minX: -1, maxX: 1, minZ: -3.5, maxZ: -2.5 };
-    const FLOOR_Y = 0;
-
-    function isInDeskFootprint(x, z) {
-      return x >= DESK_COLLISION.minX && x <= DESK_COLLISION.maxX && z >= DESK_COLLISION.minZ && z <= DESK_COLLISION.maxZ;
-    }
-
-    function clampOutOfDesk(newX, newZ, newY, velocity) {
-      if (!isInDeskFootprint(newX, newZ)) return { x: newX, z: newZ };
-      if (newY > FLOOR_Y + 0.1) return { x: newX, z: newZ };
-      const dLeft = newX - DESK_COLLISION.minX;
-      const dRight = DESK_COLLISION.maxX - newX;
-      const dFront = newZ - DESK_COLLISION.minZ;
-      const dBack = DESK_COLLISION.maxZ - newZ;
-      const minD = Math.min(dLeft, dRight, dFront, dBack);
-      if (minD === dLeft) { newX = DESK_COLLISION.minX; if (velocity) velocity.x = 0; }
-      else if (minD === dRight) { newX = DESK_COLLISION.maxX; if (velocity) velocity.x = 0; }
-      else if (minD === dFront) { newZ = DESK_COLLISION.minZ; if (velocity) velocity.z = 0; }
-      else { newZ = DESK_COLLISION.maxZ; if (velocity) velocity.z = 0; }
-      return { x: newX, z: newZ };
-    }
-
-    AFRAME.registerComponent("player-movement", {
-      schema: {
-        acceleration: { type: "number", default: 2 },
-        maxVelocity: { type: "number", default: 0.08 },
-        friction: { type: "number", default: 12 },
-        jumpForce: { type: "number", default: 0.25 },
-        gravity: { type: "number", default: -0.02 },
-        groundY: { type: "number", default: 0 },
-        crouchOffset: { type: "number", default: -0.4 },
-        crouchSpeedMult: { type: "number", default: 0.5 }
-      },
-      init: function () {
-        this.velocity = new THREE.Vector3(0, 0, 0);
-        this.velocityY = 0;
-        this.tickCount = 0;
-        this.keys = { w: false, a: false, s: false, d: false, shift: false };
-        this.forward = new THREE.Vector3();
-        this.right = new THREE.Vector3();
-        this.moveDir = new THREE.Vector3();
-        this.currentCrouchOffset = 0;
-        this.onKeyDown = this.onKeyDown.bind(this);
-        this.onKeyUp = this.onKeyUp.bind(this);
-        window.addEventListener("keydown", this.onKeyDown);
-        window.addEventListener("keyup", this.onKeyUp);
-      },
-      onKeyDown: function (e) {
-        const k = e.code;
-        if (k === "KeyW" || k === "ArrowUp") { this.keys.w = true; e.preventDefault(); }
-        if (k === "KeyS" || k === "ArrowDown") { this.keys.s = true; e.preventDefault(); }
-        if (k === "KeyA" || k === "ArrowLeft") { this.keys.a = true; e.preventDefault(); }
-        if (k === "KeyD" || k === "ArrowRight") { this.keys.d = true; e.preventDefault(); }
-        if (k === "Space") {
-          e.preventDefault();
-          const y = this.el.object3D.position.y;
-          if (y <= this.data.groundY + 0.01) this.velocityY = this.data.jumpForce;
-        }
-        if (k === "ShiftLeft" || k === "ShiftRight") {
-          this.keys.shift = true;
-        }
-      },
-      onKeyUp: function (e) {
-        const k = e.code;
-        if (k === "KeyW" || k === "ArrowUp") this.keys.w = false;
-        if (k === "KeyS" || k === "ArrowDown") this.keys.s = false;
-        if (k === "KeyA" || k === "ArrowLeft") this.keys.a = false;
-        if (k === "KeyD" || k === "ArrowRight") this.keys.d = false;
-        if (k === "ShiftLeft" || k === "ShiftRight") this.keys.shift = false;
-      },
-      tick: function (time, delta) {
-        const dt = Math.min((delta || 16) / 1000, 0.1);
-        const d = this.data;
-        const b = getBounds();
-        const obj = this.el.object3D;
-        if (!obj) return;
-        const px = obj.position.x, py = obj.position.y, pz = obj.position.z;
-
-        const cameraEl = this.el.sceneEl && this.el.sceneEl.camera && this.el.sceneEl.camera.el ? this.el.sceneEl.camera.el : null;
-        if (cameraEl && cameraEl.object3D) {
-          cameraEl.object3D.updateMatrixWorld(true);
-          this.forward.set(0, 0, -1).applyQuaternion(cameraEl.object3D.quaternion);
-          this.forward.y = 0;
-          if (this.forward.lengthSq() > 0.0001) this.forward.normalize();
-          else this.forward.set(0, 0, 1);
-          this.right.set(1, 0, 0).applyQuaternion(cameraEl.object3D.quaternion);
-          this.right.y = 0;
-          if (this.right.lengthSq() > 0.0001) this.right.normalize();
-          else this.right.set(1, 0, 0);
-        } else {
-          this.forward.set(0, 0, -1);
-          this.right.set(1, 0, 0);
-        }
-
-        const atMinX = px <= b.minX + 0.001, atMaxX = px >= b.maxX - 0.001;
-        const atMinZ = pz <= b.minZ + 0.001, atMaxZ = pz >= b.maxZ - 0.001;
-        const moveX = (this.keys.d ? 1 : 0) - (this.keys.a ? 1 : 0);
-        const moveZ = (this.keys.w ? 1 : 0) - (this.keys.s ? 1 : 0);
-
-        const speedMult = this.keys.shift ? d.crouchSpeedMult : 1;
-        const accel = d.acceleration * speedMult;
-        const maxVel = d.maxVelocity * speedMult;
-
-        this.moveDir.set(0, 0, 0);
-        if (moveX !== 0 || moveZ !== 0) {
-          this.moveDir.addScaledVector(this.forward, moveZ).addScaledVector(this.right, moveX);
-          if (this.moveDir.lengthSq() > 0.0001) this.moveDir.normalize();
-          if (!(atMaxX && this.moveDir.x > 0) && !(atMinX && this.moveDir.x < 0)) {
-            this.velocity.x += this.moveDir.x * accel * dt;
-          }
-          if (!(atMaxZ && this.moveDir.z > 0) && !(atMinZ && this.moveDir.z < 0)) {
-            this.velocity.z += this.moveDir.z * accel * dt;
-          }
-        }
-        const speed = Math.sqrt(this.velocity.x * this.velocity.x + this.velocity.z * this.velocity.z);
-        if (speed > maxVel) {
-          const scale = maxVel / speed;
-          this.velocity.x *= scale;
-          this.velocity.z *= scale;
-        }
-        const frictionFactor = 1 - Math.min(1, d.friction * dt);
-        if (moveX === 0 && moveZ === 0) {
-          this.velocity.x *= frictionFactor;
-          this.velocity.z *= frictionFactor;
-        }
-
-        let newX = px + this.velocity.x;
-        let newZ = pz + this.velocity.z;
-        let newY = py;
-
-        if (isInDeskFootprint(newX, newZ)) {
-          newY = py;
-          this.velocityY = 0;
-        } else {
-          newY = py + this.velocityY;
-          this.velocityY += d.gravity;
-          if (newY <= d.groundY) {
-            newY = d.groundY;
-            this.velocityY = 0;
-          }
-          if (newY < d.groundY) newY = d.groundY;
-        }
-
-        const beforeClampX = newX, beforeClampZ = newZ;
-        newX = Math.max(b.minX, Math.min(b.maxX, newX));
-        newZ = Math.max(b.minZ, Math.min(b.maxZ, newZ));
-        if (Math.abs(newX - beforeClampX) > 0.0001) {
-          this.velocity.x = 0;
-        }
-        if (Math.abs(newZ - beforeClampZ) > 0.0001) {
-          this.velocity.z = 0;
-        }
-
-        const deskClamp = clampOutOfDesk(newX, newZ, newY, this.velocity);
-        newX = deskClamp.x;
-        newZ = deskClamp.z;
-
-        obj.position.set(newX, newY, newZ);
-        this.el.setAttribute("position", { x: newX, y: newY, z: newZ });
-
-        const targetCrouch = this.keys.shift ? d.crouchOffset : 0;
-        const crouchSpeed = 8;
-        this.currentCrouchOffset += (targetCrouch - this.currentCrouchOffset) * Math.min(1, crouchSpeed * dt);
-        if (cameraEl && cameraEl.object3D) {
-          cameraEl.object3D.position.y = 1.3 + this.currentCrouchOffset;
-        }
-
-        const hourHand = document.getElementById("hour-hand");
-        const minuteHand = document.getElementById("minute-hand");
-        const secondHand = document.getElementById("second-hand");
-        const now = new Date();
-        const hours = now.getHours();
-        const minutes = now.getMinutes();
-        const seconds = now.getSeconds();
-        hourHand.setAttribute("rotation", `0 0 ${360 - (hours * 30 + minutes / 2)}`);
-        minuteHand.setAttribute("rotation", `0 0 ${360 - (minutes * 6 + seconds / 12)}`);
-        secondHand.setAttribute("rotation", `0 0 ${360 - (seconds * 6)}`);
-
-        this.tickCount = (this.tickCount || 0) + 1;
-      },
-      remove: function () {
-        window.removeEventListener("keydown", this.onKeyDown);
-        window.removeEventListener("keyup", this.onKeyUp);
-      }
-    });
 
 
-  </script>
+    </script>
 
 </body>
 
