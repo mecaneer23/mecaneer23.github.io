@@ -179,7 +179,7 @@
         const ROOM_BOUNDS = { minX: -5.94, maxX: 5.94, minZ: -5.94, maxZ: -0.05 };
 
         function returnToPage() {
-            window.location.href = (new URLSearchParams(window.location.search)).get("return") || "index.html";
+            window.location.href = (new URLSearchParams(window.location.search)).get("return") || "/index.html";
         }
 
         const sceneEl = document.querySelector("a-scene");
