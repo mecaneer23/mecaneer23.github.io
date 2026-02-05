@@ -109,23 +109,23 @@
 
 
         <a-entity id="desk" obj-model="obj: #desk-obj; mtl: #desk-mtl" position="0 -0.3 -3" rotation="0 0 0"
-            scale="0.8 0.8 0.8">
-            <a-entity obj-model="obj: #monitor-obj; mtl: #monitor-mtl" position="0 1 -0.2" rotation="0 0 0"
-                scale="1.5 1 1">
+            scale="1 1 1">
+            <a-entity obj-model="obj: #monitor-obj; mtl: #monitor-mtl" position="0 0.95 -0.2" rotation="0 0 0"
+                scale="1.8 1 1">
                 <a-text value="Click the screen to return" align="center" width="2" color="#000000"
-                    position="0 0.33 0.04" class="clickable" scale="0.2 0.2 0.2" wrap-count="12"></a-text>
+                    position="0 0.35 0.04" class="clickable" scale="0.15 0.2 0.2" wrap-count="12"></a-text>
                 <a-plane position="0 0.35 0.035" width="0.375" height="0.375" color="#4fe0ff" opacity="1"
                     class="clickable" material="side:double"></a-plane>
             </a-entity>
-            <a-entity obj-model="obj: #keyboard-obj; mtl: #keyboard-mtl" position="0 1 0.2" rotation="0 0 0"
+            <a-entity obj-model="obj: #keyboard-obj; mtl: #keyboard-mtl" position="0 0.95 0.2" rotation="0 0 0"
                 scale="1 1 1"></a-entity>
-            <a-entity obj-model="obj: #mouse-obj; mtl: #mouse-mtl" position="0.3 1 0.2" rotation="0 0 0"
+            <a-entity obj-model="obj: #mouse-obj; mtl: #mouse-mtl" position="0.3 0.95 0.2" rotation="0 0 0"
                 scale="1 1 1"></a-entity>
-            <a-entity obj-model="obj: #coffee-obj; mtl: #coffee-mtl" position="0.5 1 0.3" rotation="0 0 0"
+            <a-entity obj-model="obj: #coffee-obj; mtl: #coffee-mtl" position="0.5 0.95 0.3" rotation="0 0 0"
                 scale="1 1 1"></a-entity>
-            <a-entity obj-model="obj: #desk-plant-obj; mtl: #desk-plant-mtl" position="0.55 1 -0.2" scale="0.4 0.4 0.4"
+            <a-entity obj-model="obj: #desk-plant-obj; mtl: #desk-plant-mtl" position="0.55 0.95 -0.2" scale="0.4 0.4 0.4"
                 rotation="0 0 0"></a-entity>
-            <a-entity obj-model="obj: #lamp-obj; mtl: #lamp-mtl" position="-0.45 1 -0.2" rotation="0 0 0"
+            <a-entity obj-model="obj: #lamp-obj; mtl: #lamp-mtl" position="-0.45 0.95 -0.2" rotation="0 0 0"
                 scale="0.5 0.5 0.5"></a-entity>
             <a-entity obj-model="obj: #pc-tower-obj; mtl: #pc-tower-mtl" position="0.66 0.75 0.15" rotation="0 0 90"
                 scale="1 1 1"></a-entity>
@@ -167,7 +167,8 @@
                 scale="0.5 1 0.5"></a-entity>
         </a-entity>
 
-        <a-entity id="camera-rig" position="0 0 -2.2" rotation="0 0 0" player-movement position-display>
+        <a-entity id="camera-rig" position="0 -0.3 -3.13" rotation="0 0 0" player-movement position-display
+            animation="property: position; to: 0 0 -2.2; dur: 1500; easing: easeOutQuad; startEvents: start-zoom-out">
             <a-camera id="main-camera" look-controls="pointerLockEnabled:false" cursor="rayOrigin: mouse; fuse: false">
             </a-camera>
         </a-entity>
@@ -196,6 +197,18 @@
                         el.object3D.matrixWorld.decompose(worldPos, worldQuat, worldScale);
                     }
                 });
+
+                const cameraRig = document.getElementById("camera-rig");
+                if (cameraRig) {
+                    const playerMovement = cameraRig.components["player-movement"];
+                    if (playerMovement) playerMovement.pause();
+
+                    cameraRig.emit("start-zoom-out");
+
+                    cameraRig.addEventListener("animationcomplete", () => {
+                        if (playerMovement) playerMovement.play();
+                    }, { once: true });
+                }
             });
 
             sceneEl.addEventListener("click", () => { sceneEl.focus && sceneEl.focus(); });
