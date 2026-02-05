@@ -342,6 +342,12 @@ function handleKeyPress(event) {
         goToSecretPage();
     } else if (isKeyDown && keys[66] && keys[82]) { // b + r
         doABarrelRoll();
+    } else if (isKeyDown && keys[83]) { // s
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+            window.location.href = "/office?return=" +
+                encodeURIComponent(window.location.pathname);
+        }, 200);
     } else if (!pageNameIncludes("gallery")) {
         closeModal();
     }
