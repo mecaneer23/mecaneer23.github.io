@@ -171,7 +171,8 @@
         </a-entity>
 
         <a-entity id="camera-rig" position="0 -0.3 -3.13" rotation="0 0 0" player-movement position-display
-            animation="property: position; to: 0 0 -2.2; dur: 1500; easing: easeOutQuad; startEvents: start-zoom-out">
+            animation__zoomout="property: position; to: 0 0 -2.2; dur: 1500; easing: easeOutQuad; startEvents: start-zoom-out"
+            animation__zoomin="property: position; to: 0 -0.3 -2.9; dur: 1000; easing: easeOutQuad; startEvents: start-zoom-in">
             <a-camera id="main-camera" look-controls="pointerLockEnabled:false" cursor="rayOrigin: mouse; fuse: false">
             </a-camera>
         </a-entity>
@@ -182,7 +183,17 @@
         const ROOM_BOUNDS = { minX: -5.94, maxX: 5.94, minZ: -5.94, maxZ: -0.05 };
 
         function returnToPage() {
-            window.location.href = (new URLSearchParams(window.location.search)).get("return") || "/index.html";
+            const cameraRig = document.getElementById("camera-rig");
+            if (cameraRig) {
+                const playerMovement = cameraRig.components["player-movement"];
+                if (playerMovement) playerMovement.pause();
+
+                cameraRig.emit("start-zoom-in");
+
+                cameraRig.addEventListener("animationcomplete", () => {
+                    window.location.href = (new URLSearchParams(window.location.search)).get("return") || "/index.html";
+                }, { once: true });
+            }
         }
 
         const sceneEl = document.querySelector("a-scene");
@@ -208,9 +219,12 @@
 
                     cameraRig.emit("start-zoom-out");
 
-                    cameraRig.addEventListener("animationcomplete", () => {
+                    function resumeMovement() {
                         if (playerMovement) playerMovement.play();
-                    }, { once: true });
+                        cameraRig.removeEventListener("animationcomplete", resumeMovement, { once: true });
+                    }
+
+                    cameraRig.addEventListener("animationcomplete", resumeMovement, { once: true });
                 }
             });
 
