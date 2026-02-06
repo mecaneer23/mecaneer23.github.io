@@ -114,8 +114,10 @@
                 scale="1.8 1 1">
                 <a-text value="Click here to return to the website" align="center" width="2" color="#000000"
                     position="0 0.35 0.04" class="clickable" scale="0.15 0.2 0.2" wrap-count="12"></a-text>
-                <a-plane position="0 0.34 0.035" width="0.375" height="0.375" color="#4fe0ff" opacity="1"
-                    class="clickable" material="side:double"></a-plane>
+                <a-text value="Click here to return to the website" align="center" width="2" color="#ffffff"
+                    position="0 0.35 0.037" class="clickable" scale="0.151 0.201 0.201" wrap-count="12"></a-text>
+                <a-image id="monitor-screen" position="0 0.34 0.036" width="0.375" height="0.375"
+                    class="clickable"></a-image>
                 <a-image id="monitor-logo" src="VNB Low Poly Office Set V1.1.0/Textures/gearsNoBackground.png"
                     position="0 0.35 -0.09" rotation="0 180 0" width="0.1" height="0.18"></a-image>
                 <a-circle position="0 0.35 -0.089" radius="0.1" rotation="0 180 0" color="#ffffff"></a-circle>
@@ -225,6 +227,12 @@
                     }
 
                     cameraRig.addEventListener("animationcomplete", resumeMovement, { once: true });
+                }
+
+                const dataUrl = sessionStorage.getItem("screenshot");
+
+                if (dataUrl) {
+                    document.getElementById("monitor-screen").setAttribute("material", "src", dataUrl);
                 }
             });
 

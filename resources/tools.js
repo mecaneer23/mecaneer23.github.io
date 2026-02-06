@@ -40,7 +40,7 @@ function initBackToTop() {
 }
 
 function handleScroll(_) {
-    offset = 300
+    const offset = 300
     if (document.getElementById("burger-menu").classList.contains("open")) {
         toggleMenu();
     }
@@ -343,11 +343,7 @@ function handleKeyPress(event) {
     } else if (isKeyDown && keys[66] && keys[82]) { // b + r
         doABarrelRoll();
     } else if (isKeyDown && keys[83] && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) { // s
-        document.body.style.opacity = 0;
-        setTimeout(() => {
-            window.location.href = "/office?return=" +
-                encodeURIComponent(window.location.pathname);
-        }, 200);
+        window.toOffice();
     } else if (!pageNameIncludes("gallery")) {
         closeModal();
     }
