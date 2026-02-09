@@ -175,7 +175,9 @@
         <a-entity id="camera-rig" position="0 -0.3 -3.13" rotation="0 0 0" player-movement position-display
             animation__zoomout="property: position; to: 0 0 -2.2; dur: 1500; easing: easeOutQuad; startEvents: start-zoom-out"
             animation__zoomin="property: position; to: 0 -0.3 -2.9; dur: 1000; easing: easeOutQuad; startEvents: start-zoom-in">
-            <a-camera id="main-camera" look-controls="pointerLockEnabled:false" cursor="rayOrigin: mouse; fuse: false">
+            <a-camera id="main-camera" look-controls="pointerLockEnabled:true">
+                <a-text id="crosshair" position="0 0 -0.2" scale="0.05 0.05 0.05" value="+" color="#000000" cursor="rayOrigin: entity; fuse: false">
+                </a-text>
             </a-camera>
         </a-entity>
 
@@ -236,8 +238,6 @@
                 }
             });
 
-            sceneEl.addEventListener("click", () => { sceneEl.focus && sceneEl.focus(); });
-
             function onSceneClick(e) {
                 const intersected = e.detail?.intersectedEl;
                 if (!intersected) return;
@@ -250,7 +250,11 @@
                     el = el.parentElement;
                 }
             }
-            sceneEl.addEventListener("click", onSceneClick);
+            sceneEl.addEventListener("click", (e) => {
+                sceneEl.focus && sceneEl.focus();
+                onSceneClick(e);
+            });
+
             sceneEl.addEventListener("loaded", () => {
                 const cam = document.getElementById("main-camera");
                 if (cam) cam.addEventListener("click", onSceneClick);
