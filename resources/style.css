@@ -103,6 +103,10 @@ body {
     table {
         width: 45vw;
     }
+
+    .justify-apart :first-child {
+        display: none;
+    }
 }
 
 @media (max-width: 1050px) {
