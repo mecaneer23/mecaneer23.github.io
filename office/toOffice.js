@@ -2,10 +2,10 @@ import html2canvas from 'https://cdn.jsdelivr.net/npm/html2canvas-pro@1.6.6/+esm
 window.toOffice = toOffice;
 
 async function takeAndStoreScreenshot() {
-    const canvas = await html2canvas(document.documentElement, {
+    const canvas = await html2canvas(document.body, {
         useCORS: true,
-        x: window.scrollX,
-        y: window.scrollY,
+        scrollX: -window.pageXOffset,
+        scrollY: -window.pageYOffset,
         width: window.innerWidth,
         height: window.innerHeight,
 
@@ -15,6 +15,7 @@ async function takeAndStoreScreenshot() {
 
     sessionStorage.removeItem("screenshot");
     sessionStorage.setItem("screenshot", canvas.toDataURL("image/png"));
+    return canvas.toDataURL("image/png");
 }
 
 
