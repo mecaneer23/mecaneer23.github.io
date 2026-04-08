@@ -545,6 +545,13 @@ footer a {
     transition: .25s ease-in-out;
 }
 
+.hamburger-link {
+    background-color: transparent;
+    text-decoration: none;
+    text-decoration-color: var(--accent);
+    cursor: pointer;
+}
+
 .hamburger-link:hover #hamburger span,
 .hamburger-link:focus-visible #hamburger span {
     background-color: var(--accent);
