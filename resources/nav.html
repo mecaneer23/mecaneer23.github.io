@@ -47,13 +47,14 @@
     <h1 id="site-title" onclick="refreshNavbar()">Gabriel Natenshon</h1>
 </a>
 <div id="burger-menu">
-    <div class="hamburger-link" onclick="toggleMenu()"
-        aria-label="Open sidebar navigation menu">
+    <div class="hamburger-link" id="hamburger-link" onclick="toggleMenu()"
+        title="Open sidebar navigation menu">
         <div id="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
+        <label style="display: none;" for="hamburger-link">Open sidebar navigation menu</label>
     </div>
     <nav id="nav">
         <ul id="main-nav">
