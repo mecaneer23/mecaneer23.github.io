@@ -232,6 +232,7 @@ body {
 
 .profile {
     height: calc(31rem * var(--zoom-scale));
+    width: auto;
     cursor: zoom-in;
     border-radius: 1vw;
 }
