@@ -84,4 +84,7 @@ buildGallery([
     "N_hYaMPB-B8",
     "BvIzHKu9Ltg",
     "oARmJUbhhMs",
+    "wOilAzHPYv0",
+    "soTKUOW0TSo",
+    "RXusBKMiYdo",
 ]);
