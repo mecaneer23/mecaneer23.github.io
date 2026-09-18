@@ -95,4 +95,6 @@ buildGallery([
     "0ya4YkLm5D4",
     "I21jqio-t18",
     "_mVChb8o2O4",
+    "FtDduF52P0o",
+    "nF_1VqXYrqU",
 ]);
